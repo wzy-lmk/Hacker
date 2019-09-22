@@ -6,6 +6,8 @@ public class UserBean {
     private String email;
     private String phone;
     private String password;
+    private String newphone;
+
 
     public int getId() {
         return id;
@@ -45,6 +47,14 @@ public class UserBean {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNewPhone() {
+        return newphone;
+    }
+
+    public void setNewPhone(String Newphone) {
+        this.newphone = Newphone;
     }
 
     @Override

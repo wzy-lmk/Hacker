@@ -1,8 +1,12 @@
 package team.AI.serviceIMP;
 
 import team.AI.DaoIMP.UserIMP;
+import team.AI.bean.HistroyAct;
 import team.AI.bean.UserBean;
 import team.AI.service.UserService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserServiceIMP implements UserService {
     UserIMP loginIMP = new UserIMP();
@@ -41,5 +45,24 @@ public class UserServiceIMP implements UserService {
     */
     public int emailToUpdatePWD(UserBean userBean) {
         return loginIMP.emailToUpdatePWD(userBean);
+    }
+
+    /*
+        修改个人信息
+    */
+    public int ChangeSelfinfo(UserBean userBean) {
+        return loginIMP.ChangeSelfinfo(userBean);
+    }
+    /*
+        添加历史信息
+    */
+    public int InsertHistroyinfo(HistroyAct histroyAct){
+        return loginIMP.InsertHistroyinfo(histroyAct);
+    }
+    /*
+        查询历史信息
+    */
+    public List<HistroyAct> Selecthistroyinfo() {
+        return loginIMP.Selecthistroyinfo();
     }
 }
