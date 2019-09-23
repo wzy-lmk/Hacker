@@ -1,6 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="team.AI.bean.UserBean" %>
 <%@ page import="team.AI.bean.HistroyAct" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -39,287 +39,294 @@
 					
 					<div class="form-group">
 						<label for="username">用户名</label>
-						<input class="form-control" name="username" type="text" id="username" required="" placeholder="" value="<%= userBean.getName()%>">
-					</div>
-					
-					<div class="form-group">
-						<label for="password">密码</label>
-						<input class="form-control" name="password" type="text" id="password" required="" placeholder="" value="<%= userBean.getPassword()%>">
-					</div>
-					
-					<div class="form-group">
-						<label for="email">邮箱</label>
-						<input class="form-control" name="email" type="email" id="email" required="" placeholder="" value="<%= userBean.getEmail()%>">
-					</div>
-					
-					<div class="form-group">
-						<label for="tel">联系方式</label>
-						<input class="form-control" name="tel" type="tel" id="tel" required="" placeholder="" value="<%=userBean.getPhone()%>">
-					</div>
-					
-					<div class="form-group text-center">
-						<button class="btn btn-primary" onclick="changeInfo()" type="button">修改</button>
-					</div>
-				
+										<input class="form-control" name="username" type="text" id="username" required="" placeholder="" value="<%= userBean.getName()%>">
+									</div>
+									
+									<div class="form-group">
+										<label for="password">密码</label>
+										<input class="form-control" name="password" type="text" id="password" required="" placeholder="" value="<%= userBean.getPassword()%>">
+									</div>
+									
+									<div class="form-group">
+										<label for="email">邮箱</label>
+										<input class="form-control" name="email" type="email" id="email" required="" placeholder="" value="<%= userBean.getEmail()%>">
+									</div>
+									
+									<div class="form-group">
+										<label for="tel">联系方式</label>
+										<input class="form-control" name="tel" type="tel" id="tel" required="" placeholder="" value="<%=userBean.getPhone()%>">
+									</div>
+									
+									<div class="form-group text-center">
+										<button class="btn btn-primary" onclick="changeInfo()" type="button">修改</button>
+									</div>
+									
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 <!--modal end-->
-
-<!-- Topbar Start -->
-<div class="navbar-custom topnav-navbar">
-	<div class="container-fluid">
-		<!-- LOGO -->
-		<a href="index.html" class="topnav-logo">
+						
+						<!-- Topbar Start -->
+						<div class="navbar-custom topnav-navbar">
+							<div class="container-fluid">
+								<!-- LOGO -->
+								<a href="index.html" class="topnav-logo">
                     <span class="topnav-logo-lg">
                         <img src="assets/images/logo-light.png" alt="" height="16">
                     </span>
-			<span class="topnav-logo-sm">
+									<span class="topnav-logo-sm">
                         <img src="assets/images/logo_sm.png" alt="" height="16">
                     </span>
-		</a>
-		
-		<ul class="list-unstyled topbar-right-menu float-right mb-0">
-			<li class="dropdown notification-list">
-				<a class="nav-link right-bar-toggle" href="javascript: void(0);">
-					<i class="dripicons-gear noti-icon"></i>
-				</a>
-			</li>
-			
-			<li class="dropdown notification-list">
-				<a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true"
-				   aria-expanded="false">
+								</a>
+								
+								<ul class="list-unstyled topbar-right-menu float-right mb-0">
+									<li class="dropdown notification-list">
+										<a class="nav-link right-bar-toggle" href="javascript: void(0);">
+											<i class="dripicons-gear noti-icon"></i>
+										</a>
+									</li>
+									
+									<li class="dropdown notification-list">
+										<a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true"
+										   aria-expanded="false">
                             <span class="account-user-avatar">
                                 <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                             </span>
-					<span>
+											<span>
                                 <span class="account-user-name"><%=userBean.getName()%></span>
                             </span>
-				</a>
-				<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
-					<!-- item-->
-					<div class=" dropdown-header noti-title">
-						<h6 class="text-overflow m-0">欢迎！</h6>
-					</div>
-					
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="mdi mdi-account-circle mr-1"></i>
-						<span>我的账户</span>
-					</a>
-					
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="mdi mdi-account-edit mr-1"></i>
-						<span>设置</span>
-					</a>
-					
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="mdi mdi-lifebuoy mr-1"></i>
-						<span>支持</span>
-					</a>
-					
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="mdi mdi-lock-outline mr-1"></i>
-						<span>锁定屏幕</span>
-					</a>
-					
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="mdi mdi-logout mr-1"></i>
-						<span>退出</span>
-					</a>
-				
-				</div>
-			</li>
-		
-		</ul>
-		<a class="button-menu-mobile disable-btn">
-			<div class="lines">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</a>
-	
-	</div>
-</div>
-<!-- end Topbar -->
-
-
-<div class="container-fluid">
-	
-	<!-- Begin page -->
-	<div class="wrapper">
-		
-		<!-- ============================================================== -->
-		
-		<!-- Start Page Content here -->
-		<!-- ============================================================== -->
-		
-		<!-- Start Content-->
-		
-		<!-- ========== Left Sidebar Start ========== -->
-		<div class="left-side-menu">
-			
-			<div class="leftbar-user">
-				<a href="#">
-					<img src="assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
-					<span class="leftbar-user-name"><%=userBean.getName()%></span>
-				</a>
-			</div>
-			
-			<!--- Sidemenu -->
-			<ul class="metismenu side-nav">
-				
-				<li class="side-nav-title side-nav-item">功能列表</li>
-				
-				<li class="side-nav-item">
-					<a href="javascript: void(0);" class="side-nav-link">
-						<i class="dripicons-meter"></i>
-						<span> 个人首页 </span>
-					</a>
-				</li>
-				
-				<li class="side-nav-item">
-					<a href="javascript: void(0);" class="side-nav-link">
-						<i class="dripicons-copy"></i>
-						<span> 网站敏感词查询 </span>
-					</a>
-				</li>
-				
-				<li class="side-nav-title side-nav-item mt-1">入侵检测</li>
-				
-				<li class="side-nav-item">
-					<a href="javascript: void(0);" class="side-nav-link">
-						<i class="dripicons-view-apps"></i>
-						<span> 攻击信息 </span>
-					</a>
-				</li>
-				
-				<li class="side-nav-item">
-					<a href="javascript: void(0);" class="side-nav-link">
-						<i class="dripicons-briefcase"></i>
-						<span>网站监控</span>
-					</a>
-				</li>
-				
-				<li class="side-nav-item">
-					<a href="widgets.html" class="side-nav-link">
-						<i class="dripicons-heart"></i>
-						<!--<span class="badge badge-light float-right">New</span>-->
-						<span>黑客入侵检测</span>
-					</a>
-				</li>
-			</ul>
-			
-			<!-- End Sidebar -->
-			<div class="clearfix"></div>
-			<!-- Sidebar -left -->
-		
-		</div>
-		<!-- Left Sidebar End -->
-		
-		<div class="content-page">
-			<div class="content">
-				
-				<!-- start page title -->
-				<div class="row">
-					<div class="col-12">
-						<div class="page-title-box">
-							<div class="page-title-right">
-								<ol class="breadcrumb m-0">
-									<li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-									
-									<li class="breadcrumb-item active">个人首页</li>
-								</ol>
-							</div>
-							<h4 class="page-title">首页</h4>
-						</div> <!-- end page-title-box -->
-					</div> <!-- end col-->
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-12">
-						<!-- Profile -->
-						<div class="card bg-primary">
-							<div class="card-body profile-user-box">
+										</a>
+										<div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
+											<!-- item-->
+											<div class=" dropdown-header noti-title">
+												<h6 class="text-overflow m-0">欢迎！</h6>
+											</div>
+											
+											<!-- item-->
+											<a href="javascript:void(0);" class="dropdown-item notify-item">
+												<i class="mdi mdi-account-circle mr-1"></i>
+												<span>我的账户</span>
+											</a>
+											
+											<!-- item-->
+											<a href="javascript:void(0);" class="dropdown-item notify-item">
+												<i class="mdi mdi-account-edit mr-1"></i>
+												<span>设置</span>
+											</a>
+											
+											<!-- item-->
+											<a href="javascript:void(0);" class="dropdown-item notify-item">
+												<i class="mdi mdi-lifebuoy mr-1"></i>
+												<span>支持</span>
+											</a>
+											
+											<!-- item-->
+											<a href="javascript:void(0);" class="dropdown-item notify-item">
+												<i class="mdi mdi-lock-outline mr-1"></i>
+												<span>锁定屏幕</span>
+											</a>
+											
+											<!-- item-->
+											<a href="javascript:void(0);" class="dropdown-item notify-item">
+												<i class="mdi mdi-logout mr-1"></i>
+												<span>退出</span>
+											</a>
+										
+										</div>
+									</li>
 								
-								<div class="row">
-									<div class="col-sm-8">
-										<div class="media">
-											<span class="float-left m-2 mr-4"><img src="assets/images/users/avatar-2.jpg" style="height: 100px;" alt="" class="rounded-circle img-thumbnail"></span>
-											<div class="media-body">
-												
-												<h4 class="mt-1 mb-1 text-white"><%=userBean.getName()%></h4>
-												<p class="font-13 text-white-50"> <%=userBean.getEmail()%></p>
-												
-												<ul class="mb-0 list-inline text-light">
-													<li class="list-inline-item mr-3">
-														<h5 class="mb-1">
-															10
-														</h5>
-														<p class="mb-0 font-13 text-white-50">任务数</p>
-													</li>
-													<li class="list-inline-item">
-														<h5 class="mb-1">2</h5>
-														<p class="mb-0 font-13 text-white-50">进行中</p>
-													</li>
-												</ul>
-											</div> <!-- end media-body-->
-										</div>
-									</div> <!-- end col-->
-									
-									<div class="col-sm-4">
-										<div class="text-center mt-sm-0 mt-3 text-sm-right">
-											<button type="button" class="btn btn-light" data-toggle="modal" data-target="#info-modal">
-												<i class="mdi mdi-account-edit mr-1"></i>编辑信息
-											</button>
-										</div>
-									</div> <!-- end col-->
-								</div> <!-- end row -->
-							
-							</div> <!-- end card-body/ profile-user-box-->
-						</div><!--end profile/ card -->
-					</div> <!-- end col-->
-				</div>
-				
-				
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="card">
-							<div class="card-body">
-								<div class="dropdown float-right">
-									<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-										<i class="mdi mdi-dots-vertical"></i>
-									</a>
-									<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(20px, 22px, 0px);">
-										<!-- item-->
-										<a href="javascript:void(0);" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置</font></font></a>
-										<!-- item-->
-										<a href="javascript:void(0);" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作</font></font></a>
+								</ul>
+								<a class="button-menu-mobile disable-btn">
+									<div class="lines">
+										<span></span>
+										<span></span>
+										<span></span>
 									</div>
-								</div>
-								<h4 class="header-title mb-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">近期活动</font></font></h4>
+								</a>
+							
+							</div>
+						</div>
+						<!-- end Topbar -->
+						
+						
+						<div class="container-fluid">
+							
+							<!-- Begin page -->
+							<div class="wrapper">
 								
-								<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 456px;"><div class="slimscroll" style="max-height: 330px; overflow: hidden; width: auto; height: 456px;">
+								<!-- ============================================================== -->
+								
+								<!-- Start Page Content here -->
+								<!-- ============================================================== -->
+								
+								<!-- Start Content-->
+								
+								<!-- ========== Left Sidebar Start ========== -->
+								<div class="left-side-menu">
 									
-									<div class="timeline-alt pb-0">
-										<%
-											for(int i=0;i<3;i++){
-											    HistroyAct histroyAct =(HistroyAct) session.getAttribute("histroy"+i);
-										%>
+									<div class="leftbar-user">
+										<a href="#">
+											<img src="assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
+											<span class="leftbar-user-name"><%=userBean.getName()%></span>
+										</a>
+									</div>
+									
+									<!--- Sidemenu -->
+									<ul class="metismenu side-nav">
+										
+										<li class="side-nav-title side-nav-item">功能列表</li>
+										
+										<li class="side-nav-item">
+											<a href="javascript: void(0);" class="side-nav-link">
+												<i class="dripicons-meter"></i>
+												<span> 个人首页 </span>
+											</a>
+										</li>
+										
+										<li class="side-nav-item">
+											<a href="javascript: void(0);" class="side-nav-link">
+												<i class="dripicons-copy"></i>
+												<span> 网站敏感词查询 </span>
+											</a>
+										</li>
+										
+										<li class="side-nav-title side-nav-item mt-1">入侵检测</li>
+										
+										<li class="side-nav-item">
+											<a href="javascript: void(0);" class="side-nav-link">
+												<i class="dripicons-view-apps"></i>
+												<span> 攻击信息 </span>
+											</a>
+										</li>
+										
+										<li class="side-nav-item">
+											<a href="javascript: void(0);" class="side-nav-link">
+												<i class="dripicons-briefcase"></i>
+												<span>网站监控</span>
+											</a>
+										</li>
+										
+										<li class="side-nav-item">
+											<a href="widgets.html" class="side-nav-link">
+												<i class="dripicons-heart"></i>
+												<!--<span class="badge badge-light float-right">New</span>-->
+												<span>黑客入侵检测</span>
+											</a>
+										</li>
+									</ul>
+									
+									<!-- End Sidebar -->
+									<div class="clearfix"></div>
+									<!-- Sidebar -left -->
+								
+								</div>
+								<!-- Left Sidebar End -->
+								
+								<div class="content-page">
+									<div class="content">
+										
+										<!-- start page title -->
+										<div class="row">
+											<div class="col-12">
+												<div class="page-title-box">
+													<div class="page-title-right">
+														<ol class="breadcrumb m-0">
+															<li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+															
+															<li class="breadcrumb-item active">个人首页</li>
+														</ol>
+													</div>
+													<h4 class="page-title">首页</h4>
+												</div> <!-- end page-title-box -->
+											</div> <!-- end col-->
+										</div>
+										
+										<div class="row">
+											<div class="col-sm-12">
+												<!-- Profile -->
+												<div class="card bg-primary">
+													<div class="card-body profile-user-box">
+														
+														<div class="row">
+															<div class="col-sm-8">
+																<div class="media">
+																	<span class="float-left m-2 mr-4"><img src="assets/images/users/avatar-2.jpg" style="height: 100px;" alt="" class="rounded-circle img-thumbnail"></span>
+																	<div class="media-body">
+																		
+																		<h4 class="mt-1 mb-1 text-white"><%=userBean.getName()%></h4>
+																		<p class="font-13 text-white-50"> <%=userBean.getEmail()%></p>
+																		
+																		<ul class="mb-0 list-inline text-light">
+																			<li class="list-inline-item mr-3">
+																				<h5 class="mb-1">
+																					10
+																				</h5>
+																				<p class="mb-0 font-13 text-white-50">任务数</p>
+																			</li>
+																			<li class="list-inline-item">
+																				<h5 class="mb-1">2</h5>
+																				<p class="mb-0 font-13 text-white-50">进行中</p>
+																			</li>
+																		</ul>
+																	</div> <!-- end media-body-->
+																</div>
+															</div> <!-- end col-->
+															
+															<div class="col-sm-4">
+																<div class="text-center mt-sm-0 mt-3 text-sm-right">
+																	<button type="button" class="btn btn-light" data-toggle="modal" data-target="#info-modal">
+																		<i class="mdi mdi-account-edit mr-1"></i>编辑信息
+																	</button>
+																</div>
+															</div> <!-- end col-->
+														</div> <!-- end row -->
+													
+													</div> <!-- end card-body/ profile-user-box-->
+												</div><!--end profile/ card -->
+											</div> <!-- end col-->
+										</div>
+										
+										
+										<div class="row">
+											<!-- 开始-->
+											<div class="col-lg-4">
+												<div class="card">
+													<div class="card-body">
+
+
+														<div class="dropdown float-right">
+															<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+																<i class="mdi mdi-dots-vertical"></i>
+															</a>
+															<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(20px, 22px, 0px);">
+																<!-- item-->
+																<a href="javascript:void(0);" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置</font></font></a>
+																<!-- item-->
+																<a href="javascript:void(0);" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作</font></font></a>
+															</div>
+														</div>
+														<h4 class="header-title mb-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">近期活动</font></font></h4>
+														
+														<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 456px;"><div class="slimscroll" style="max-height: 330px; overflow: hidden; width: auto; height: 456px;">
+															
+															<div class="timeline-alt pb-0">
+															
+															
+															
+						<%
+						    for(int i=0;i<3;i++){
+    						HistroyAct histroyAct =(HistroyAct) session.getAttribute("histroy"+i);
+    					%>
+										
 										<div class="timeline-item">
 											<i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
 											<div class="timeline-item-info">
 												<a href="#" class="text-info font-weight-bold mb-1 d-block"><font
 														style="vertical-align: inherit;"><font
 														style="vertical-align: inherit;">
-													<%= histroyAct.getActname()%>
+												  <%=histroyAct.getActname()%>
 												</font></font></a>
 												<small><span class="font-weight-bold"><font
 														style="vertical-align: inherit;"><font
@@ -328,14 +335,16 @@
 												<p class="mb-0 pb-2">
 													<small class="text-muted"><font
 															style="vertical-align: inherit;"><font
-															style="vertical-align: inherit;"><%=histroyAct.getActtime()%></font></font>
+															style="vertical-align: inherit;">
+														
+														<%=histroyAct.getActtime()%></font></font>
 													</small>
 												</p>
 											</div>
 										</div>
-										<%}%>
-										
-										<!--
+								<%}%>
+								
+								<!--
 										<font style="vertical-align: inherit;"><font
 												style="vertical-align: inherit;">发送短信
 										</font></font>
@@ -363,15 +372,14 @@
 													<small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22小时前</font></font></small>
 												</p>
 											</div>
-										</div>
+										</div>-->
 									</div>
-									-->
 									<!-- end timeline -->
 								</div><div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 247.5px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- end slimscroll -->
 							</div>
 							<!-- end card-body -->
 						</div>
-						<!-- end card-->
+						<!-- end card   结束-->
 					</div>
 					
 					<div class="col-xl-8" style="padding-left: 0px;">

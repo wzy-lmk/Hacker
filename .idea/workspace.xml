@@ -8,14 +8,35 @@
   <component name="ChangeListManager">
     <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/HistroyRecordServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/ImgServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AttackRecordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AttackRecordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/UserIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/UserIMP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/UserServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/UserServiceIMP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/HistroyRecordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/HistroyRecordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/LoginServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/HistroyRecordServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/ImgServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/SensitiveWordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/SensitiveWordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +84,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -121,22 +143,22 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.41686746" />
+    <property name="project.structure.side.proportion" value="0.21589793" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/AIRep/src/main/resources" />
-      <recent name="$PROJECT_DIR$/AIRep/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/AIRep/src/main" />
       <recent name="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG" />
       <recent name="D:\IDEA-WorkSpace\Antihacker\HackerWeb\src\main\java" />
       <recent name="D:\IDEA-WorkSpace\Antihacker\AIRep\src\main\java" />
       <recent name="D:\IDEA-WorkSpace\Antihacker\SenesitiveWord\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/AIRep/src/main/resources" />
+      <recent name="$PROJECT_DIR$/AIRep/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -151,7 +173,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Antihacker">
+  <component name="RunManager" selected="Application.AIHeckerCheckIMP">
+    <configuration name="AIHeckerCheckIMP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="team.AI.DaoIMP.AIHeckerCheckIMP" />
+      <module name="HackerWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="team.AI.DaoIMP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DBUtiles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="team.AI.utils.DBUtiles" />
       <module name="HackerWeb" />
@@ -191,15 +226,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebsiteProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="team.SensitiveWord.crawler.WebsiteProcessor" />
-      <module name="SenesitiveWord" />
+    <configuration name="team.AI.service in HackerWeb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HackerWeb" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="team.SensitiveWord.crawler.*" />
+          <option name="PATTERN" value="team.AI.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="team.AI.service" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -277,18 +313,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.WebsiteProcessor" />
       <item itemvalue="Application.DBUtiles" />
       <item itemvalue="Application.DownloadIMG" />
       <item itemvalue="Application.UserIMP" />
+      <item itemvalue="Application.AIHeckerCheckIMP" />
+      <item itemvalue="JUnit.team.AI.service in HackerWeb" />
       <item itemvalue="Tomcat Server.Antihacker" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AIHeckerCheckIMP" />
+        <item itemvalue="JUnit.team.AI.service in HackerWeb" />
+        <item itemvalue="Application.DBUtiles" />
         <item itemvalue="Application.UserIMP" />
         <item itemvalue="Application.DownloadIMG" />
-        <item itemvalue="Application.DBUtiles" />
-        <item itemvalue="Application.WebsiteProcessor" />
       </list>
     </recent_temporary>
   </component>
@@ -321,6 +359,11 @@
       <workItem from="1569136854766" duration="8129000" />
       <workItem from="1569153839109" duration="11844000" />
       <workItem from="1569217992502" duration="2036000" />
+      <workItem from="1569222293636" duration="2811000" />
+      <workItem from="1569237307790" duration="3236000" />
+      <workItem from="1569240971383" duration="220000" />
+      <workItem from="1569241246228" duration="501000" />
+      <workItem from="1569241929969" duration="4480000" />
     </task>
     <task id="LOCAL-00001" summary="new project">
       <created>1569120254623</created>
@@ -375,5 +418,10 @@
     <MESSAGE value="new project" />
     <MESSAGE value="lmk" />
     <option name="LAST_COMMIT_MESSAGE" value="lmk" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Hacker$team_AI_service_in_HackerWeb.ic" NAME="team.AI.service in HackerWeb Coverage Results" MODIFIED="1569242222140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>team.AI.service.*</FILTER>
+    </SUITE>
   </component>
 </project>

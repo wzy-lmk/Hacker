@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -39,6 +40,16 @@ public class LoginServlet extends HttpServlet {
                 int sum=0;
                 int count=0;
                 HttpSession session = request.getSession();
+
+                /*
+                    历史记录
+                 */
+                UserServiceIMP userServiceIMP=new UserServiceIMP();
+                List<HistroyAct> list = userServiceIMP.Selecthistroyinfo();
+                for(int i=0;i<3;i++){
+                    HistroyAct histroyAct =(HistroyAct) list.get(i);
+                    session.setAttribute("histroy"+i,histroyAct);
+                }
                 //用户个人信息
                 session.setAttribute("userinfo",bean);
                 //总任务数
