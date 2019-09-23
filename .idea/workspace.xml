@@ -6,54 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="new project">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgChange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgMd5.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgMd5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DealUrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DealUrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgAddress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgChange.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgMd5.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgMd5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/DaoIMP/UserIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/DaoIMP/UserIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/UserServiceIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/UserServiceIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AttackRecordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AttackRecordServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/LoginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb.war" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/UserIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/UserIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/bean/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/bean/UserBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/SensitiveWordServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/SensitiveWordServiceIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/UserServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/UserServiceIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/DBUtiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/DBUtiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AttackRecordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AttackRecordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/DaoIMP/UserIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/DaoIMP/UserIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/bean/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/bean/UserBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/UserServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/UserServiceIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/AttackRecordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/AttackRecordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/SensitiveWordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/SensitiveWordServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/DBUtiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/DBUtiles.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,13 +49,6 @@
         <item name="AI@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="AI: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="AI@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="AI: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="histroyrecode: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -166,7 +121,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41686746" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -364,7 +319,8 @@
       <workItem from="1569130402912" duration="5295000" />
       <workItem from="1569136164407" duration="656000" />
       <workItem from="1569136854766" duration="8129000" />
-      <workItem from="1569153839109" duration="11035000" />
+      <workItem from="1569153839109" duration="11844000" />
+      <workItem from="1569217992502" duration="2036000" />
     </task>
     <task id="LOCAL-00001" summary="new project">
       <created>1569120254623</created>
@@ -380,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569121051026</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lmk">
+      <created>1569165309778</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569165309779</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -410,6 +373,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new project" />
-    <option name="LAST_COMMIT_MESSAGE" value="new project" />
+    <MESSAGE value="lmk" />
+    <option name="LAST_COMMIT_MESSAGE" value="lmk" />
   </component>
 </project>
