@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public interface SenesitiveWordService {
 
-    public int startCrawler(String url,int... type);
+    public String startCrawler(String url,int... type);
 
     public String getResult(ArrayList<UrlInfo> infolist);
 

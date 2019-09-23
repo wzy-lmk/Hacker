@@ -37,15 +37,11 @@ public class SensitiveWordServlet extends HttpServlet {
         String choose = req.getParameter("choose");
         String url = req.getParameter("url");
         String content = req.getParameter("content");
-        System.out.println(choose);
+        System.out.println("url---"+url+"choose---"+choose);
+        String result=null;
         int type[];
-        /**
-         * 4,0
-         * ffv
-         * 法轮功，中共下台，中共伪政权
-         */
 
-        if (choose.trim()!=""&&choose!=null){
+        if (null!=choose&&choose.trim()!=""){
             String[] split = choose.split(",");
 
             if (content!=null){
@@ -58,12 +54,13 @@ public class SensitiveWordServlet extends HttpServlet {
                 type[i]=Integer.parseInt(split[i]);
             }
             //启动爬虫
-            serviceIMP.startCrawler(url,type);
+            result = serviceIMP.startCrawler(url, type);
 
         }else {
-            serviceIMP.startCrawler(url,0,1,2,3,4);
-            WebsiteProcessor.getInfoList();
+            result=serviceIMP.startCrawler(url,0,1,2,3,4);
         }
+
+        resp.getWriter().print(result);
     }
 
     @Override

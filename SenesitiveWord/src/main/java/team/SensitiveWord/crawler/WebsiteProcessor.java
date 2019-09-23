@@ -23,7 +23,7 @@ public class WebsiteProcessor extends BreadthCrawler {
     //要匹配的敏感词库
     private static int[] sentype;
 
-    public static ArrayList getInfoList(){
+    public ArrayList getInfoList(){
         return infolists;
     }
 
@@ -61,7 +61,7 @@ public class WebsiteProcessor extends BreadthCrawler {
     public static ArrayList<UrlInfo> StartCrawler(String url,int... stype){
         //爬虫启动失败，url不符合规范
         if (!urlTool.CheckUrl(url)){
-            return null;
+            return infolists;
         }
         //获取要匹配的敏感词库
         sentype = new int[stype.length];
