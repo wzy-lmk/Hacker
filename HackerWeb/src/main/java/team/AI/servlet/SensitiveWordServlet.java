@@ -30,10 +30,6 @@ public class SensitiveWordServlet extends HttpServlet {
         session.setAttribute("count",count);
         session.setAttribute("sum",sum);
 
-
-
-
-
         String choose = req.getParameter("choose");
         String url = req.getParameter("url");
         String content = req.getParameter("content");
