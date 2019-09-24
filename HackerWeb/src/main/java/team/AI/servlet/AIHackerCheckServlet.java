@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-@WebServlet("/ImgServlet")
+@WebServlet("/AIHackerCheckServlet")
 public class AIHackerCheckServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -53,7 +53,7 @@ public class AIHackerCheckServlet extends HttpServlet {
                         }
                     }
                     if(lists.isEmpty()){
-                        lists.add("你要检查的网站暂时安全,请继续关注本网站");
+                        response.getWriter().print("none");
                     }
 
                 }else{
@@ -80,12 +80,13 @@ public class AIHackerCheckServlet extends HttpServlet {
                         }
                     }
                     if(lists.isEmpty()){
-                        lists.add("你要检查的网站暂时安全,请继续关注本网站");
+                        //你要检查的网站暂时安全,请继续关注本网站
+                        response.getWriter().print("none");
                     }
                 }
             }
             String resultJson = JSONObject.toJSONString(lists);
-
+            response.getWriter().print(resultJson);
 
         }
 

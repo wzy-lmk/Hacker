@@ -22,13 +22,13 @@ public class SensitiveWordServlet extends HttpServlet {
         /*
                 计算任务数和正在进行的任务数
          */
-        HttpSession session = req.getSession();
-        int sum=(int)session.getAttribute("sum");
-        int count =(int) session.getAttribute("count");
-        count++;
-        sum++;
-        session.setAttribute("count",count);
-        session.setAttribute("sum",sum);
+//        HttpSession session = req.getSession();
+//        int sum=(int)session.getAttribute("sum");
+//        int count =(int) session.getAttribute("count");
+//        count++;
+//        sum++;
+//        session.setAttribute("count",count);
+//        session.setAttribute("sum",sum);
 
         String choose = req.getParameter("choose");
         String url = req.getParameter("url");
