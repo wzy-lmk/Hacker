@@ -88,6 +88,7 @@ public class AIHackerCheckServlet extends HttpServlet {
             String resultJson = JSONObject.toJSONString(lists);
             response.getWriter().print(resultJson);
 
+
         }
 
     }

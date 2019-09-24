@@ -32,6 +32,9 @@ public class UrlInfo {
         this.content = content;
     }
 
+    public UrlInfo() {
+    }
+
     public String getUrl() {
         return url;
     }
