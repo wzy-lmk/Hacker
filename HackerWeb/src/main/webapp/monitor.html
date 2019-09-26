@@ -485,7 +485,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
-                            <form class="p-2">
+                            <form class="p-2" id="monitor-form">
                                 <div class="form-group">
                                     <label>类型</label>
                                     <select class="form-control form-control-light">
@@ -498,14 +498,14 @@
 
                                 <div class="form-group">
                                         <label for="task-description">任务名称</label>
-                                        <textarea class="form-control form-control-light" id="task-description" rows="1" placeholder=""></textarea>
+                                        <textarea class="form-control form-control-light" name="name" id="task-description" rows="1" placeholder=""></textarea>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="task-title">网站url</label>
-                                            <input type="text" class="form-control form-control-light" id="task-title" placeholder="http(s)://">
+                                            <input type="text" name="url" class="form-control form-control-light" id="task-title" placeholder="http(s)://">
                                         </div>
                                     </div>
                                     <br>
@@ -559,14 +559,14 @@
                                 
                                 <div class="text-right">
                                     <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary">Create</button>
+                                    <button type="button" class="btn btn-primary" onclick="submitMonitor()">Create</button>
                                 </div>
                             </form>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-
+    </div>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
@@ -574,6 +574,28 @@
         <script src="assets/js/vendor/dragula.min.js"></script>
         <!-- demo js -->
         <script src="assets/js/ui/component.dragula.js"></script>
+
+        <script>
+            function submitMonitor() {
+                $.ajax({
+                    type: "post",
+                    url: "#",
+                    data: $('#monitor-form').serialize(),
+                    dataType: "json",
+                    success: function (res) {
+                        console.log(res)
+                        if (res=="none"){
+                            $.NotificationApp.send("查询成功", "你要检查的网站暂时安全,请继续关注本网站", "top-center","rgba(0,0,0,0.2)","success")
+                        }
+                        esle
+                        {
+                            console.log(res);
+                        }
+                    }
+                });
+            }
+        </script>
+
 
     </body>
 
