@@ -30,9 +30,12 @@ public class Excel {
         sheet.setColumnWidth(1, 400 * 20);
 
         Iterator<UrlInfo> iterator = arrayList.iterator();
-        while(iterator.hasNext()){
-            UrlInfo urlInfo = (UrlInfo)iterator.next();
+
             for(int x=0;x<row;x++){
+                UrlInfo urlInfo=null;
+                if(iterator.hasNext()){
+                    urlInfo = (UrlInfo)iterator.next();
+                }
                 XSSFRow row1 = sheet.createRow(x);
                 for (int i = 0; i < col; i++) {
                     XSSFCell cell1 = row1.createCell(i);
@@ -45,7 +48,7 @@ public class Excel {
                 }
                 j++;
             }
-        }
+
         InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
         Properties properties = new Properties();
         try {
@@ -74,9 +77,16 @@ public class Excel {
         UrlInfo urlInfo=new UrlInfo();
         urlInfo.setUrl("http://www.chzu.edu.cn/login/htm");
         urlInfo.setHits("各种敏感词长度应该还好");
+
+        UrlInfo urlInfo1=new UrlInfo();
+        urlInfo1.setUrl("http://www.chzu.edu.cn/login/htm");
+        urlInfo1.setHits("各敏感");
+
+
         ArrayList<UrlInfo> arrayList=new ArrayList<UrlInfo>();
         arrayList.add(urlInfo);
-        excel.Excel(1,2,arrayList);
+        arrayList.add(urlInfo1);
+        excel.Excel(2,2,arrayList);
         System.out.println("结束");
 
     }
