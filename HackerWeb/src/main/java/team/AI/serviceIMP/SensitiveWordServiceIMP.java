@@ -10,19 +10,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SensitiveWordServiceIMP implements SenesitiveWordService {
+    ArrayList<UrlInfo> urlInfos ;
+    Map<String,String> result= new HashMap<>();
+    FileDowmLoadServiceIMP serviceIMP = new FileDowmLoadServiceIMP();
 
     @Override
     public String startCrawler(String url, int... type) {
-        ArrayList<UrlInfo> urlInfos = WebsiteProcessor.StartCrawler(url, type);
+        urlInfos = WebsiteProcessor.StartCrawler(url, type);
         System.out.println("==========="+urlInfos);
         return  getResult(urlInfos);
+    }
+
+    public String getFile(){
+        if (null!=urlInfos&&urlInfos.size()!=0){
+            FileDowmLoadServiceIMP serviceIMP= new FileDowmLoadServiceIMP();
+            String name = serviceIMP.CreateFile(urlInfos);
+            return name;
+        }
+        return null;
     }
 
     @Override
     public String getResult(ArrayList<UrlInfo> infolist) {
         //未爬取到信息
         if (infolist.size()==0){
-            Map result= new HashMap();
             result.put("result","fail");
             result.put("info","请检查输入的url是否正确，或该站点禁制爬虫访问");
             System.out.println(JSONObject.toJSONString(result));
@@ -73,8 +84,8 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
             }
         }
         total=zero+one+two+three+four+five;
-        return "["+zero+","+one+","+two+","+three+","+four+","+five+"]";
+        result.put("data","["+zero+","+one+","+two+","+three+","+four+","+five+"]");
+        result.put("file",serviceIMP.CreateFile(urlInfos));
+        return JSONObject.toJSONString(result);
     }
-
-
 }

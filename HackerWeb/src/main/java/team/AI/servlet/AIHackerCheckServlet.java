@@ -22,9 +22,11 @@ public class AIHackerCheckServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String url = request.getParameter("url");
+
         AIHeckerCheckServiceIMP aiHeckerCheckServiceIMP=new AIHeckerCheckServiceIMP();
         ArrayList HeckerCheck = aiHeckerCheckServiceIMP.HeckerCheck();
         ArrayList<String> lists = new ArrayList<>();
+
         if(!url.equals("")){
             ImgAddress imgAddress=new ImgAddress();
             ArrayList address = imgAddress.imgAddress(url);
@@ -32,6 +34,7 @@ public class AIHackerCheckServlet extends HttpServlet {
 
             PickkPicText pickkPicText=new PickkPicText();
             Iterator iterator = address.iterator();
+
             while(iterator.hasNext()){
                 String imgHalfAddr = (String)iterator.next();//图片地址
                 if(dealUrl.isNet(imgHalfAddr)){

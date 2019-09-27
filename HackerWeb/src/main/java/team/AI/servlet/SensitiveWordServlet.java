@@ -33,7 +33,6 @@ public class SensitiveWordServlet extends HttpServlet {
         String choose = req.getParameter("choose");
         String url = req.getParameter("url");
         String content = req.getParameter("content");
-        System.out.println("url---"+url+"choose---"+choose);
         String result=null;
         int type[];
 

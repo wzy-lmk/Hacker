@@ -234,7 +234,7 @@
                                                 </select>
                                                 <br>
                                                 <div class="mb-2">
-                                                    <br>    
+                                                    <br>
                                                     <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                        自定义敏感词(可选)
                                                      </font></font>
@@ -246,9 +246,15 @@
                                                 <hr>
                                                 <div class="clearfix"></div>
                                                 <br>
-                                                <div class="col-sm-6" style="margin-left: auto;margin-right:auto;">
+                                                <div class="col-sm-6" id="querybutton" style="margin-left: auto;margin-right:auto;display: block">
                                                     <button type="button" onclick="submitCheck()" id="submit-minganci" class="btn btn-block btn-xs btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交查询</font></font></button>
                                                 </div>
+                                                <div class="text-center" id="loading" style="display:none">
+                                                    <div class="spinner-border text-success" role="status">
+                                                        <span class="sr-only"></span>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                             <br>
                                             <div class="col-md-6"></div>
@@ -262,12 +268,26 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body" style="margin-left: auto;margin-right:auto;">
-                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                                暂无查询结果
-                                        </font></font>
-
-                                        
-                                        
+                                        <!--<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-->
+                                                <!--<span id="query-result">暂无查询结果</span>-->
+                                        <!--</font></font>-->
+                                            <div class="p-2">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <img data-dz-thumbnail="" class="avatar-sm rounded bg-light" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAARmElEQVR4Xu2dC3AV1RnHv715k3sTAiQkQCCEAMlNIECAAkYLLZRH0BYVFRk7WqpSsA+UIoxaoFqgIgoVqAULYsGCVKlSHrW10NKpJooo8lAKqCCvoOGRB4GQbOfcEE3SJGd3757ds3f/O5Nhxpzv9f/Oz+9u7j4UwgEFoECzCijQBgpAgeYVACDYHVCgBQUACLYHFAAg2ANQwJgCmCDGdIOVSxQAIC5pNMo0pgAAMaYbrFyiAABxSaNRpjEFAIgx3WDlEgUAiEsajTKNKQBAjOkGK5coAEBc0miUaUwBAGJMN1i5RAEA4pJGo0xjCgAQY7rByiUKSA1IaWnpUI/Hc4uqqjku6YflZd62b8CqrYMO/sHywA4JKC0gly9f9ldVVe13iI6OTfP2/QPIGx43bUNe4WLHFiEwcWkBKSsre56IJgmsHa6JiAHCjsSo5Mdf6LPjFxCloQIyA7KDiIaiYWIVqAOERWkf2WnZqr5/e0BsRGd5ByDO6pfp2dYHhDnvGNV17Yo+W+8yPZBDHQIQhzbOrLQbA1ILSdrmFX223WRWDCf7ASBO7p4JuTcFCHPbKSptZ0mud/hGZWO1CWEc6wKAOLZ15iTeHCCBSRKd9m5xyakRfx72/nlzojnPCwBxXs9MzbglQFiglMjUgycuH/3OtkGHPzc1sEOcARCHNEpUmjxAWNykiI6ffVFzbNTm/oc+EpWHrH4BiKydsSgvLYCwVNpFJp85U3Hixu3XHXrHotSkCANApGiDfUloBYRl2Dq83YXzVcXjtgz6mH1H5YoDgLiizc0XqQcQ5sUbFneprKr0ji2DD7zuBukAiBu63EKNegFhrqI9MVXRYa0mr+v371WhLh8ACfUOc+ozAghz6VE8avuIjg8/3/eNhaEsofSAnLt6lr6oOk1VNVcc0YcITyS1i0imhPBER+RrFJC64rrEZCxY3nvzLEcUayBJqQAp2J2TRdU1BURqQUJY4qAL1SXRNaozv8j1KGEBUNjP9fGjqI93CLWJSDLQIrEmwQLCsusanfnc0txNPxKbqT3ebQdk5LtZKWFV6v2KRxlFRN+wRwZrovbz5VOe7wYanjDOmoAaopgByDVI1i/N3TRBQ0hHLbENkK/ACFPuJZU6OEq1IJNNj8mibyeMkwIUswAJQBKTtXVp71cLgpRHKnNbABlb5J+okvqk28Bo3HkGyoSkqdTba9/gNBOQa5Nk19LcTTdItcuDSMZyQArezppCCi0LIueQM72/w6P0rYTv2lKX2YCwIrpE99izPPe1frYUZHJQSwEpKMxcS6RMNLmGkHB3R9IUGpd4j+W1iACEFZEanfHxiaqT/Tb3311heVEmBrQMkDGFmesUUu40MfeQczWj86LASbyVhyhAWA0do9KOn1VO9N+Uu7fYyprMjGUJIGOKMmcqqjLfzMRD1dfcrisps1Ufy8oTCQgron1Up+JT5aeGbLtu3xHLijIxkHBAxhRl3aCo9CYRhZuYd8i6ig9vQ490WUpdortbUqNoQFgR7SKSL5yrLhn2+oAP9lhSlIlBhANSUOjfTqSONDFnTa7aRSZTSnSqprVaFx2/dJTOV32pdbnhdXm+62lG56cN2+sxtAIQlk98eJtLPoq/+Xd5W7fryc/utUIBKSjMYs+1Ys+3suwY1u5GKkiaQJleMR9Txhb5LamFAcJAEX1YBQirIzbMW9Uhqtukxb3WO+ZJjsIAGf12RpxHifgPEWWLbnKd/5kZz1B+G7HDyipArJoiVgLC+hThiajJjOk7fUHOmmes2hfBxBEGyJi3MucoHmV2MMnpsR2ddDtNTWsY7p3z/6TiKyfpQlWJHlfNrn3t9ItUXl1qii8tTmZ2WUJ9vUO0LDW8xmpA6hLN9Q761bzs1Y8aTtwiQ2GAWHnuwa6gXdF7GyVGpgRk2178Mm0/u5EOlzv70b4j2txCP0yZKXQr2AUIKyrXN3j5PP+qqUILDNK5EECufby6EGRums1TojvTyt615367L+yi2R/fr9lW5oXs6t/f9tgiNEU7AWGF9Yod+McFOWuk/X5MDCBv+Ud7POpWoZ2t57xX3ACan7km8F9eOrEs8BMqx6Npy9gmElaO3YAEIPEO3LIge81YYUUG4VgIIGPf9s9XFVXsZ4N6RXeOyaDlvWpvkd755V/oqSMzgpBELtPvtbubJrQX9ylEBkCY4v7YvF0Lc9ZaexmBhlaLAaTQv04l1bKx2SrMSy/nFQXKLb16gSa8N1hD6c5Ykh8/in7c6XFhycoCCCswMzZ3z6Kc9VJd5CgEkILCrF1ElC+sq004rv8n3pKqs7Tq2EL69NIhOll5jK7UVFqZiqmx2GUn7PITUYdMgLAau8fkHFrce2NPUfXq9SsKkM+IqLPeZIJZX/88JBg/dbbFl0/QmSsnqPDcDtp7sZCOVtjzUEF2y+6yHpvNKKlJH7IBwpLsGtPz+L4vz6fvHLbzqrDCNToWBYiqMb6pyxgkD6Yv+OrPvWY5Z999PPHfB+jDi/Y8VHBDtri4MgLC+pYanX42LLIya1nWm+Kv7Wlho4gC5BMiSjNrg+rxExMWSxmxfurlG0hJUR2pfZT+u3ljPLGUHJXK3t3XIPQvD02hovM79aQT9NrEiBRa2kPcM9pkBYQJlxyZejE9KvO6R/y/2Re0kAYdiAGkKGsHqc5/fdqopNtoVOJ4yoitvVrmw9IimnXwboNSGzPzx+bR7LTnjBlrsJIZEJZ+2/Ckyl7xgwt+nrHgHxrKMX2JIED8q0lVrd1JpkvztcP5WS8EJhI7Ju7JN+3SFS0pf7P1WJrSUdwVO7IDwjTyhbW+OtA37K4He85br0UzM9cIAcTq67DMFKQpX3d2nErshx0/3X8rHSk/IDrkV/7HJ91HtybeKyyeEwBhxUeHxdTkx4362bQe854VJkYTjoUAMvZdf75arbI/9YbEManzDBqXXDsQpx+4kz4qe9+yuualr6FuMeIusXcKIExwhRQa1vqmuQ/1XDDHqgYIAWT01owoT9uIc0QUY1UhIuMsyXmFurXKCoT4wQcjiP0J2IojOTKVlnR/VWgoJwFSJ8Sw1mOfnd5z4U+ECnPNuRBAmO+Cwix2ld0YK4oQFWNIwgga0mYEDW1be5nQ6cuf0+S9BXRVrRIVsoHfUW1up3tSpguN5URAmCDXx49eOzPzaeGvqxYGiNXnIewcgX0PYsbhC2tNHaI7U6QnuoG7Jw8/RP8q2WZGCE0+ZnVZEnimr8jj9S9epHVnLP1Yb1o5+fEjN8/KXCz0ddXCALHyjkL2Z9jF2RtNE76xo8s1lfTKqd9bepWwVXcUslqPXjpIByreo8oa5z3C6njl0Z2PZT07TFTzhQFy7WOWJfeksy8EH+62iHp6e5ui06XqcmLXc5VUFQcuNfnwYhEdqThoim+tTqy6J11rPrKuU1V1rs/nE3bSLhSQWkjseaqJrA3VkpeV00NLPjKvcT4gRZlDFFX5q0rklVloWXJrH9mJ2BMWO0Wly5KS1Hk4HhCm7tjCrO+rRLW3/OFoUYFFGRsAh449EhKABD5qFfmnk6qG9PvsdPS1yaWAQ7+CIQNIYJKw94Ko6lr9MoS+xRPpq9nNQqFfqMkVhhQgTJtrz+rdRERtTNbKke7YM3inpz5FSZH6L8t3ZMEmJx1ygNSek2TnqqT+2o5n9prcn6DcsZfm3J38EEV5QuKKnKC0MGockoDUiXHt2b3TrHw8qdFGmGmX6x1EBW0nEvsXR3AKhDQgTBr2jbuihE9TSBnthrfcDvANte11a8FtRTmtQx6Q+rLXf096h8jO/a+q1d6K6jKqqCkjp7wvnb0fvZXHS+xRRHX/yvyedDm3vfasXAVIfVnKysp2EDn/tl3trcZKIwoAECOqwcY1CgAQ17QahRpRAIAYUQ02rlEAgLim1SjUiAIAxIhqsHGNAgDENa1GoUYUACBGVIONaxQAIK5pNQo1ogAAMaIabFyjAABxTatRqBEFAIgR1WDjGgUAiGtajUKNKABAjKgGG9coAEBc02oUakQBAGJENdi4RgEA4ppWo1AjCgAQI6rBxjUKABDXtBqFGlEAgBhRDTauUQCAuKbVKNSIAgDEiGqwcY0CAMQ1rUahRhQAIEZUg41rFAAgrmk1CjWiAAAxohpsXKMAALGp1eXVpYE3v35WecimDOQMOyLhFooPl+fNFQDEpn3y93ObaOXJeTZFlzusFe9v16oAANGqlMnr5n46mQ6U7zbZa2i4S45MpSXdX5WiGABiUxsASMvCb8h+x6bONAwLQGxqQ2NA/LF5pmVi5WQyK+/GOQMQ07aDMUd2v/6gKUBmpz1nrJh6Vo39jk+6j25NvDdov8wB28TMf/2D5RwsJE35BSCmtMy4EwCiXzsAol8znoXCW2DX7wGIfuUBiH7NeBYApBmF8BHra2HwEYuHkQ2/xwTRLzomiH7NeBaYIJggvD3S5Mk/TtK5soldgAmiX19MEP2a8SwwQTBBeHsEE4SrkA0LMEH0i44Jol8zngUmCCYIb49ggnAVsmEBJoh+0TFB9GvGs8AEwQTh7RFMEK5CNizABNEvOiaIfs14FpggmCC8PYIJwlXIhgWYIPpFxwTRrxnPAhMEE4S3RzBBuArZsEC2CWKDBFKHxKUmNrcHgNjcAE54AGJzfwCIzQ0AIAEFcA6i8RxE7u1qfXaYINZr3iCibBOE3dedbcKDG/aX727wOCF2T7qZx8biFQ3cmeW/sV8AYmbXDPiSERC3PrThT2dXEgAxsIlFmgAQ/eqK+h4EgOjvhXALAKJfYgCiXzOeBU7SNZ6ks3MQfMT6Wiycg/DQEvx7TBD9AmOC6NeMZ4EJggnC2yOEcxCuRNYvwATRrzkmiH7NeBaYIJggvD2CCcJVyIYFmCD6RccE0a8ZzwITBBOEt0cwQbgK2bAAE0S/6Jgg+jXjWWCCYILw9ggmCFchGxZggugXHRNEv2Y8C0wQTBDeHsEE4SpkwwIZJ8h4E16VtvHsyv+73N3fqp9pCjf1CrZgnbP3xeNq3mBVNNleNkBMLs/x7nAtls0tBCA2N4ATHoDY3B8AYnMDAEhAAZykazxJl3u7Wp8dJoj1mjeIKNsEcfP9IHiJp80wNBUegOhviqjvQQCI/l4ItwAg+iUGIPo141ngHETjOQg+Yk1uoBTOQXhoCf49Joh+gTFB9GvGs8AEwQTh7RE83Z2rkA0LMEH0i44Jol8zngUmCCYIb49ggnAVsmEBJoh+0TFB9GvGs8AEwQTh7RFMEK5CNizABNEvOiaIfs14FpggmCC8PYIJwlXIhgWYIPpFxwTRrxnPAhMEE4S3RzBBuArZsAATRL/omCD6NeNZYIJggvD2CCYIVyEbFsg4QcySgf2f3qqDXWRpxtE4Z1ysaIaqQfiQDZAgSglJUwBic1sBiM0NaCF8p6h0WpSxQYoEVVWd6/P55ohKBucgzSh7qGIvPfbJJFG6O9rvtNT5NChuuBQ1ABAb23Cs8jCtPv2UjRnIFTouLIF6eQfS8IRx0iQGQKRpBRKRUQEAImNXkJM0CgAQaVqBRGRUAIDI2BXkJI0CAESaViARGRUAIDJ2BTlJowAAkaYVSERGBQCIjF1BTtIoAECkaQUSkVEBACJjV5CTNAoAEGlagURkVACAyNgV5CSNAgBEmlYgERkVACAydgU5SaMAAJGmFUhERgUAiIxdQU7SKABApGkFEpFRAQAiY1eQkzQKABBpWoFEZFQAgMjYFeQkjQIARJpWIBEZFQAgMnYFOcmkwEiv1/uGqIRkfi7WS0Q0QVTh8BsyCiR7vd4zoqqRFpDS0tI5iqLMFlU4/IaEAs94vd4HRVYiLSCsaLsfPypSePgOTgFVVTf5fL6bg/PCt5YaEJY+myREdIeiKD355WBFiCtwRlGUY9XV1cvj4uJesKJW6QGxQgTEgALNKQBAsDegQAsKABBsDygAQLAHoIAxBTBBjOkGK5coAEBc0miUaUwBAGJMN1i5RAEA4pJGo0xjCgAQY7rByiUK/A9d+qRubZkBUwAAAABJRU5ErkJggg==">
+                                                    </div>
+                                                    <div class="col pl-0">
+                                                        <a href="javascript:void(0);" class="text-muted font-weight-bold" id="filename" data-dz-name="">1569491553785.xlsx</a>
+                                                        <p class="mb-0" data-dz-size="">0.73MB</p>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <!-- Button -->
+                                                        <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove="">
+                                                            <i class="dripicons-cross"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -485,10 +505,6 @@
                 $.NotificationApp.send("正在查询", "这可能需要一段时间，请耐心等候。", "top-center","rgba(0,0,0,0.2)","success")
 
             })
-
-
-
-
         </script>
     </body>
     <script src="assets/js/pages/demo.chartjs.js"></script>
