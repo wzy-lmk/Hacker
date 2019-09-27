@@ -9,7 +9,7 @@ import org.apache.commons.io.IOUtils;
 
 public class ImgMd5 {
 
-    public String getMd5(File file) {
+    public static String getMd5(File file) {
         try (FileInputStream fileInputStream = new FileInputStream(file)) {
             return DigestUtils.md5Hex(IOUtils.toByteArray(fileInputStream));
         } catch (IOException e) {
@@ -18,7 +18,7 @@ public class ImgMd5 {
     }
 
     public static void main(String[] args) throws Exception {
-        //System.out.println(getMd5(new File("/Users/apple/Desktop/img.zip")));
+        System.out.println(getMd5(new File("/Users/apple/Desktop/img.zip")));
     }
 
 

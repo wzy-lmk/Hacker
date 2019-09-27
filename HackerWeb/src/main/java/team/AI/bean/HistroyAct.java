@@ -2,9 +2,18 @@ package team.AI.bean;
 
 public class HistroyAct {
 
+    private String user;
     private String actname;
     private String actcontent;
     private String acttime;
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public String getActname() {
         return actname;

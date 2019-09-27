@@ -41,5 +41,5 @@ public interface UserService {
     /*
         查询历史信息
     */
-    public abstract List<HistroyAct> Selecthistroyinfo();
+    public abstract List<HistroyAct> Selecthistroyinfo(HistroyAct histroyAct);
 }

@@ -1,6 +1,5 @@
 package team.AI.DaoIMP;
 
-import com.alibaba.druid.sql.dialect.db2.visitor.DB2ASTVisitor;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import team.AI.Dao.AIHeckerCheckDao;
@@ -10,7 +9,6 @@ import team.AI.utils.DBUtiles;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class AIHeckerCheckIMP implements AIHeckerCheckDao {
     /*
@@ -29,6 +27,8 @@ public class AIHeckerCheckIMP implements AIHeckerCheckDao {
         }
         return null;
     }
+
+
 
     public static void main(String[] args) {
         AIHeckerCheckIMP aiHeckerCheckIMP=new AIHeckerCheckIMP();

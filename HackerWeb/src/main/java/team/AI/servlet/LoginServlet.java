@@ -45,7 +45,9 @@ public class LoginServlet extends HttpServlet {
                     历史记录
                  */
                 UserServiceIMP userServiceIMP=new UserServiceIMP();
-                List<HistroyAct> list = userServiceIMP.Selecthistroyinfo();
+                HistroyAct histroyAct1=new HistroyAct();
+                histroyAct1.setUser(bean.getName());
+                List<HistroyAct> list = userServiceIMP.Selecthistroyinfo(histroyAct1);
                 for(int i=0;i<3;i++){
                     HistroyAct histroyAct =(HistroyAct) list.get(i);
                     session.setAttribute("histroy"+i,histroyAct);
