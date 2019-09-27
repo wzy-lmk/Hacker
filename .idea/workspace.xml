@@ -6,9 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="download file">
+    <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/null'2019_09_24_09_09_410'.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/null'2019_09_24_09_09_620'.xlsx" beforeDir="false" />
     </list>
@@ -51,8 +50,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="-1159">
+              <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -233,17 +235,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -252,7 +244,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569586168259" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569586950973" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -464,11 +456,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569585908328</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="download file">
+      <created>1569586234577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569586234577</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98655000" />
+    <option name="totallyTimeSpent" value="99386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -488,15 +487,15 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.24208145" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24208145" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007542" side_tool="true" weight="0.32977098" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5015083" side_tool="true" visible="true" weight="0.32824427" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32977098" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32977098" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.49924585" weight="0.32977098" />
       <window_info anchor="bottom" id="Database Changes" order="4" weight="0.3296" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49924585" weight="0.32977098" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49924585" weight="0.3296" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.4984917" visible="true" weight="0.32824427" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32977098" />
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49924585" weight="0.32977098" />
@@ -600,7 +599,8 @@
     <MESSAGE value="md5" />
     <MESSAGE value="monitor" />
     <MESSAGE value="Ping" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ping" />
+    <MESSAGE value="download file" />
+    <option name="LAST_COMMIT_MESSAGE" value="download file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/crawler/RandomRequest.java">
@@ -822,8 +822,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        <state relative-caret-position="-1159">
+          <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
