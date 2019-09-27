@@ -1,20 +1,19 @@
 package team.AI.servlet;
 
 import com.alibaba.fastjson.*;
-import team.AI.IMG.DealUrl;
-import team.AI.IMG.ImgAddress;
-import team.AI.bean.AIHeckerCheckBean;
-import team.AI.serviceIMP.AIHeckerCheckServiceIMP;
-import team.AI.utils.PickkPicText;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.DomAttr;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import team.AI.IMG.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.io.*;
+import java.net.URL;
+import java.util.*;
 
 @WebServlet("/AIHackerCheckServlet")
 public class AIHackerCheckServlet extends HttpServlet {
@@ -23,136 +22,88 @@ public class AIHackerCheckServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         String url = request.getParameter("url");
         String keyword = request.getParameter("keyword");
-        if(!url.equals("")&&keyword.equals("")){
-            AIHeckerCheckServiceIMP aiHeckerCheckServiceIMP=new AIHeckerCheckServiceIMP();
-            ArrayList HeckerCheck = aiHeckerCheckServiceIMP.HeckerCheck();
-            ArrayList<String> lists = new ArrayList<>();
-            if(!url.equals("")){
-                ImgAddress imgAddress=new ImgAddress();
-                ArrayList address = imgAddress.imgAddress(url);
-                DealUrl dealUrl=new DealUrl();
+        ArrayList lists = new ArrayList();
+        int i = 0;
+        DeleteFiles deleteFiles = new DeleteFiles();
+        String address = null;
+        InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
+        Properties properties = new Properties();
+        try {
+            properties.load(iStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        address = properties.getProperty("address");
+        ThreadLocalClientFactory threadLocalClientFactory = new ThreadLocalClientFactory();
+        WebClient webClient = threadLocalClientFactory.getWebClient();
+        DealUrl dealUrl = new DealUrl();
+        HtmlPage page = null;
+        String newURL = null;
+        if (!url.equals("")) {
+            try {
+                //获取HTML页面
+                page = webClient.getPage(url);
+                List<DomAttr> byXPath = page.getByXPath("//img/@src");
+                deleteFiles.CreateFile(address);
+                for (DomAttr domAttr : byXPath) {
+                    try {
+                        String dealU = dealUrl.getNetwork(url);
+                        if (!dealUrl.isNet(domAttr.getValue())) {
+                            newURL = dealU + dealUrl.getUrl(domAttr.getValue());
+                        }
+                        URL u = new URL(newURL);
+                        DataInputStream dataInputStream = new DataInputStream(u.openStream());
+                        FileOutputStream fileOutputStream = new FileOutputStream(new File(address + "/img" + i + ".jpg"));
+                        ByteArrayOutputStream output = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[1024];
+                        int length;
 
-                PickkPicText pickkPicText=new PickkPicText();
-                Iterator iterator = address.iterator();
-                while(iterator.hasNext()){
-                    String imgHalfAddr = (String)iterator.next();//图片地址
-                    if(dealUrl.isNet(imgHalfAddr)){
-                        ArrayList danger = pickkPicText.isDanger(imgHalfAddr);
-                        Iterator iterator1 = danger.iterator();
-                        int i=0;
-                        while(iterator1.hasNext()){
-                            Iterator iterator2 = HeckerCheck.iterator();
-                            while(iterator2.hasNext()){
-                                AIHeckerCheckBean heckerCheckBean =(AIHeckerCheckBean) iterator2.next();
-                                if(iterator1.next().equals(heckerCheckBean.getWords())){
-                                    //返回url
-                                    if(i==0){
-                                        lists.add(imgHalfAddr);
-                                        i++;
-                                    }
+                        while ((length = dataInputStream.read(buffer)) > 0) {
+                            output.write(buffer, 0, length);
+                        }
+                        fileOutputStream.write(output.toByteArray());
+                        dataInputStream.close();
+                        fileOutputStream.close();
+
+                        Sample sample = new Sample();
+                        ArrayList list = sample.PicText(address + "/img" + i + ".jpg");
+                        i++;
+                        Iterator iterator = list.iterator();
+                        while (iterator.hasNext()) {
+                            String next = (String) iterator.next();
+                            if (keyword.equals("")) {
+                                if (next.equals("反共黑客") || next.equals("反共") || next.equals("反黑") || next.equals("反客") || next.equals("黑客") || next.equals("反黑")) {
+                                    lists.add(newURL);
                                 }
-
+                            }
+                            if (!keyword.equals("")) {
+                                if (next.equals(keyword)) {
+                                    lists.add(newURL);
+                                }
                             }
                         }
-                        if(lists.isEmpty()){
-                            response.getWriter().print("none");
-                        }
-
-                    }else{
-                        String network = dealUrl.getNetwork(url);
-                        String addReve = dealUrl.getUrl(imgHalfAddr);
-                        String fullUrlAddr=network+addReve;//图片地址
-                        ArrayList danger = pickkPicText.isDanger(fullUrlAddr);
-                        Iterator iterator1 = danger.iterator();
-                        int i=0;
-                        while(iterator1.hasNext()){
-                            Iterator iterator2 = HeckerCheck.iterator();
-                            while(iterator2.hasNext()){
-                                AIHeckerCheckBean heckerCheckBean =(AIHeckerCheckBean) iterator2.next();
-                                if(iterator1.next().equals(heckerCheckBean)){
-                                    //返回url
-                                    if(i==0){
-                                        lists.add(imgHalfAddr);
-                                        i++;
-                                    }
-                                }else{
-                                    //安全
-                                }
-
-                            }
-                        }
-                        if(lists.isEmpty()){
-                            //你要检查的网站暂时安全,请继续关注本网站
-                            response.getWriter().print("none");
-                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
-                String resultJson = JSONObject.toJSONString(lists);
-                response.getWriter().print(resultJson);
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                webClient.getCurrentWindow().getJobManager().removeAllJobs();
+                System.gc();
+                webClient.close();
+                File file = new File(address);
+                deleteFiles.delete(file);
             }
-        }
-
-
-        if(!url.equals("")&&!keyword.equals("")){
-            ArrayList<String> lists = new ArrayList<>();
-            if(!url.equals("")){
-                ImgAddress imgAddress=new ImgAddress();
-                ArrayList address = imgAddress.imgAddress(url);
-                DealUrl dealUrl=new DealUrl();
-                PickkPicText pickkPicText=new PickkPicText();
-                Iterator iterator = address.iterator();
-                while(iterator.hasNext()){
-                    String imgHalfAddr = (String)iterator.next();//图片地址
-                    if(dealUrl.isNet(imgHalfAddr)){
-                        ArrayList danger = pickkPicText.isDanger(imgHalfAddr);
-                        Iterator iterator1 = danger.iterator();
-                        int i=0;
-                        while(iterator1.hasNext()){
-                                if(iterator1.next().equals(keyword)){
-                                    //返回url
-                                    if(i==0){
-                                        lists.add(imgHalfAddr);
-                                        i++;
-                                    }
-                            }
-                        }
-                        if(lists.isEmpty()){
-                            response.getWriter().print("none");
-                        }
-
-                    }else{
-                        String network = dealUrl.getNetwork(url);
-                        String addReve = dealUrl.getUrl(imgHalfAddr);
-                        String fullUrlAddr=network+addReve;//图片地址
-                        ArrayList danger = pickkPicText.isDanger(fullUrlAddr);
-                        Iterator iterator1 = danger.iterator();
-                        int i=0;
-                        while(iterator1.hasNext()){
-                                if(iterator1.next().equals(keyword)){
-                                    //返回url
-                                    if(i==0){
-                                        lists.add(imgHalfAddr);
-                                        i++;
-                                    }
-                                }else{
-                                    //安全
-                                }
-
-
-                        }
-                        if(lists.isEmpty()){
-                            //你要检查的网站暂时安全,请继续关注本网站
-                            response.getWriter().print("none");
-                        }
-                    }
-                }
-                String resultJson = JSONObject.toJSONString(lists);
-                response.getWriter().print(resultJson);
+            if (lists.isEmpty()) {
+                response.getWriter().print("none");
             }
-        }
+            String resultJson = JSONObject.toJSONString(lists);
+            response.getWriter().print(resultJson);
+        } else {
+            System.out.println("输入错误");
 
+        }
 
     }
 }
