@@ -5,6 +5,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import team.AI.IMG.*;
+import team.AI.utils.Sample;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +27,7 @@ public class AIHackerCheckServlet extends HttpServlet {
         int i = 0;
         DeleteFiles deleteFiles = new DeleteFiles();
         String address = null;
-        InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
+        InputStream iStream = AIHackerCheckServlet.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
         Properties properties = new Properties();
         try {
             properties.load(iStream);
@@ -72,6 +73,7 @@ public class AIHackerCheckServlet extends HttpServlet {
                         while (iterator.hasNext()) {
                             String next = (String) iterator.next();
                             if (keyword.equals("")) {
+                                System.out.println(next);
                                 if (next.equals("反共黑客") || next.equals("反共") || next.equals("反黑") || next.equals("反客") || next.equals("黑客") || next.equals("反黑")) {
                                     lists.add(newURL);
                                 }
@@ -92,9 +94,9 @@ public class AIHackerCheckServlet extends HttpServlet {
                 webClient.getCurrentWindow().getJobManager().removeAllJobs();
                 System.gc();
                 webClient.close();
-                File file = new File(address);
-                deleteFiles.delete(file);
             }
+            File file = new File(address);
+            deleteFiles.delete(file);
             if (lists.isEmpty()) {
                 response.getWriter().print("none");
             }

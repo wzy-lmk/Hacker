@@ -7,97 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="new project">
-      <change afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/CheckWebServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/downloadAddr.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/AIHeckerCheckDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/AIHeckerCheckIMP.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/bean/AIHeckerCheckBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/AIHeckerCheckService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/AIHeckerCheckServiceIMP.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AIHackerCheckServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/Excel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/ant-1.8.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/ant-launcher-1.8.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/commons-collections4-4.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/curvesapi-1.04.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/fastjson-1.2.61.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/poi-3.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/poi-excelant-3.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/poi-ooxml-3.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/poi-ooxml-schemas-3.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/poi-scratchpad-3.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/stax-api-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/xmlbeans-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/assets/images/logo-lightdd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/monitor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/AllUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/AllUrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/DownloadIMG.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/DownloadIMG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgMd5.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgMd5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ZipUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ZipUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/AllUrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/AllUrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DownloadIMG.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DownloadIMG.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgAddress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgMd5.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ImgMd5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ZipUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/Dao/AIHeckerCheckDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/Dao/AIHeckerCheckDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/DaoIMP/AIHeckerCheckIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/DaoIMP/AIHeckerCheckIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/DaoIMP/UserIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/DaoIMP/UserIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/HistroyAct.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/HistroyAct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/AIHeckerCheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/AIHeckerCheckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/AIHeckerCheckServiceIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/AIHeckerCheckServiceIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/UserServiceIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/UserServiceIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/ChangeInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/ChangeInfoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/PickkPicText.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/PickkPicText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/resources/downloadAddr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/downloadAddr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/META-INF/HackerWeb.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/META-INF/HackerWeb.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/UserIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/DaoIMP/UserIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/bean/HistroyAct.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/bean/HistroyAct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/UserServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/UserServiceIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/ChangeInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/ChangeInfoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/Email.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/PickkPicText.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/PickkPicText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/AllUrl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/DownloadIMG.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/Sample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/CheckWebServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/CheckWebServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Excel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AIHackerCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AIHackerCheckServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/commons-codec-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/commons-logging-1.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/imgcheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/imgcheck.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/META-INF/HackerWeb.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/META-INF/HackerWeb.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/downloadAddr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/downloadAddr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/DaoIMP/AIHeckerCheckIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/DaoIMP/AIHeckerCheckIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/DaoIMP/UserIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/DaoIMP/UserIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/bean/HistroyAct.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/bean/HistroyAct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/UserServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/UserServiceIMP.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/AIHackerCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/AIHackerCheckServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/ChangeInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/ChangeInfoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/Email.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/Excel.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/Excel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/PickkPicText.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/PickkPicText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/CheckWebServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/CheckWebServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -376,10 +296,10 @@
     <list>
       <item itemvalue="Application.AIHeckerCheckIMP" />
       <item itemvalue="Application.PickkPicText" />
-      <item itemvalue="Tomcat Server.Antihacker" />
       <item itemvalue="Application.Sample" />
       <item itemvalue="Application.Sample (1)" />
       <item itemvalue="Application.DeleteFiles" />
+      <item itemvalue="Tomcat Server.Antihacker" />
     </list>
     <recent_temporary>
       <list>
@@ -437,7 +357,8 @@
       <workItem from="1569555206366" duration="2163000" />
       <workItem from="1569561090504" duration="296000" />
       <workItem from="1569561411900" duration="4803000" />
-      <workItem from="1569569817794" duration="10728000" />
+      <workItem from="1569569817794" duration="13475000" />
+      <workItem from="1569628772041" duration="1158000" />
     </task>
     <task id="LOCAL-00001" summary="new project">
       <created>1569120254623</created>
@@ -481,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569583145297</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new project">
+      <created>1569583446522</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569583446522</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">

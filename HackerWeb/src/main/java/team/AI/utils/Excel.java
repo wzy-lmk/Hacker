@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import team.AI.IMG.DownloadIMG;
 import team.SensitiveWord.entity.UrlInfo;
 
 import java.io.File;
@@ -49,7 +48,7 @@ public class Excel {
                 j++;
             }
 
-        InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
+        InputStream iStream = Excel.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
         Properties properties = new Properties();
         try {
             properties.load(iStream);

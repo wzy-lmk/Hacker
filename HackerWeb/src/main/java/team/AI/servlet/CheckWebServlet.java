@@ -1,5 +1,6 @@
 package team.AI.servlet;
 
+import com.alibaba.fastjson.JSONObject;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -12,27 +13,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 @WebServlet("/CheckWebServlet")
 public class CheckWebServlet extends HttpServlet {
+    ArrayList arrayList=new ArrayList();
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String url = request.getParameter("url");
         NewimgChange(url);
-//        MD5IMP md5IMP=new MD5IMP();
-//        MD5Bean md5Bean=new MD5Bean();
-//        md5Bean.setNewurl(url);
-//        Boolean aBoolean = md5IMP.SelectUrl(md5Bean);
-//        if(aBoolean){
-//            AllUrl allUrl=new AllUrl();
-//            allUrl.imgChange(url);
-//        }else{
-//            NewimgChange(url);
-//        }
+        String resultJson = JSONObject.toJSONString(arrayList);
+        response.getWriter().print(resultJson);
+
 
 
     }
@@ -75,10 +71,11 @@ public class CheckWebServlet extends HttpServlet {
 
 
     public String  NewimgAddress(String url) {
+
         int i=0;
         DeleteFiles deleteFiles=new DeleteFiles();
         String address=null;
-        InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
+        InputStream iStream = CheckWebServlet.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
         Properties properties = new Properties();
         try {
             properties.load(iStream);
@@ -136,11 +133,11 @@ public class CheckWebServlet extends HttpServlet {
                             md5IMP.InsertMD5(md5Bean);
                             System.out.println("加入成功");
                         }else{
-                            if(md5Bean1.getMd5().equals(md5)){
-
-                                System.out.println("没有改变");
-                            }else{
+                            if(!md5Bean1.getMd5().equals(md5)){
+                                arrayList.add(newURL);
                                 System.out.println("发生了改变");
+                            }else{
+                                System.out.println("没有改变");
                             }
                         }
                     }
