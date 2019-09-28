@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="team.AI.bean.UserBean" %>
 <%@ page import="team.AI.bean.HistroyAct" %>
+<%@ page import="team.AI.serviceIMP.UserServiceIMP" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -316,6 +318,14 @@
 															
 															
 						<%
+							UserServiceIMP userServiceIMP=new UserServiceIMP();
+							HistroyAct histroyAct1=new HistroyAct();
+							histroyAct1.setUser(userBean.getName());
+							List<HistroyAct> list = userServiceIMP.Selecthistroyinfo(histroyAct1);
+							for(int i=0;i<3;i++){
+								HistroyAct histroyAct =(HistroyAct) list.get(i);
+								session.setAttribute("histroy"+i,histroyAct);
+							}
 						    for(int i=0;i<3;i++){
     						HistroyAct histroyAct =(HistroyAct) session.getAttribute("histroy"+i);
     					%>
@@ -343,37 +353,7 @@
 											</div>
 										</div>
 								<%}%>
-								
-								<!--
-										<font style="vertical-align: inherit;"><font
-												style="vertical-align: inherit;">发送短信
-										</font></font>
-										<div class="timeline-item">
-											<i class="mdi mdi-upload bg-primary-lighten text-primary timeline-icon"></i>
-											<div class="timeline-item-info">
-												<a href="#" class="text-primary font-weight-bold mb-1 d-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Audrey Tobey </font></font></a>
-												<small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上传了一张照片
-												</font></font><span class="font-weight-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“Error.jpg”</font></font></span>
-												</small>
-												<p class="mb-0 pb-2">
-													<small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14小时前</font></font></small>
-												</p>
-											</div>
-										</div>
-										
-										<div class="timeline-item">
-											<i class="mdi mdi-upload bg-primary-lighten text-primary timeline-icon"></i>
-											<div class="timeline-item-info">
-												<a href="#" class="text-primary font-weight-bold mb-1 d-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Audrey Tobey </font></font></a>
-												<small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载了文件
-												</font></font><span class="font-weight-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“Error.zip”</font></font></span>
-												</small>
-												<p class="mb-0 pb-2">
-													<small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22小时前</font></font></small>
-												</p>
-											</div>
-										</div>-->
-									</div>
+															</div>
 									<!-- end timeline -->
 								</div><div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 247.5px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- end slimscroll -->
 							</div>

@@ -34,12 +34,12 @@ public class ImgAddress {
     }
 
     public static void main(String[] args) {
-        ImgAddress imgAddress=new ImgAddress();
-        ArrayList arrayList = imgAddress.imgAddress("http://www.chzu.edu.cn");
-        Iterator iterator = arrayList.iterator();
-        while(iterator.hasNext()){
-            System.out.println((String)iterator.next());
-        }
-        System.out.println(arrayList.size());
+//        ImgAddress imgAddress=new ImgAddress();
+//        ArrayList arrayList = imgAddress.imgAddress("http://www.chzu.edu.cn");
+//        Iterator iterator = arrayList.iterator();
+//        while(iterator.hasNext()){
+//            System.out.println((String)iterator.next());
+//        }
+//        System.out.println(arrayList.size());
     }
 }

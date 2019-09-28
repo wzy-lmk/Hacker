@@ -28,6 +28,11 @@
             <artifactId>htmlunit</artifactId>
             <version>2.35.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.11.3</version>
+        </dependency>
     </dependencies>
 
 

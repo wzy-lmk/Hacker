@@ -37,16 +37,15 @@ public class ChangeInfoServlet extends HttpServlet {
             userBean.setEmail(email);
             userBean.setPhone(tel);
             userBean.setNewPhone(NewPhone);
+
             UserServiceIMP userServiceIMP=new UserServiceIMP();
             int i = userServiceIMP.ChangeSelfinfo(userBean);
             HistroyAct histroyAct=new HistroyAct();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String time = String.valueOf(df.format(new Date()));
             if(i!=0){
+                histroyAct.setUser(bean.getName());
                 histroyAct.setActname("修改个人信息");
-                if(!bean.getName().equals(username)){
-                    change=change+bean.getName()+" to "+"username"+"  ";
-                }
                 if(!tel.equals(NewPhone)){
                     change=change+NewPhone+" to "+tel+"  ";
                 }
@@ -65,6 +64,7 @@ public class ChangeInfoServlet extends HttpServlet {
                     System.out.println("修改失败");
                 }
             }else{
+                histroyAct.setUser(username);
                 histroyAct.setActname("修改个人信息");
                 histroyAct.setActcontent("修改失败");
                 histroyAct.setActtime(time);

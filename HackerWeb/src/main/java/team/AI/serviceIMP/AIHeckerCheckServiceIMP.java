@@ -1,7 +1,7 @@
 package team.AI.serviceIMP;
 
 import team.AI.DaoIMP.AIHeckerCheckIMP;
-import team.AI.bean.AIHeckerCheckBean;
+import team.AI.IMG.MD5Bean;
 import team.AI.service.AIHeckerCheckService;
 
 import java.util.ArrayList;
@@ -14,4 +14,5 @@ public class AIHeckerCheckServiceIMP implements AIHeckerCheckService {
     public ArrayList HeckerCheck() {
         return aiHeckerCheckIMP.HeckerCheck();
     }
+
 }

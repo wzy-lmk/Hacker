@@ -132,8 +132,8 @@ public class UserIMP implements UserDao {
     */
     public int InsertHistroyinfo(HistroyAct histroyAct) {
         QueryRunner runner = new QueryRunner(DBUtiles.getDataSource());
-        Object objects[] = {histroyAct.getActname(), histroyAct.getActcontent(), histroyAct.getActtime()};
-        String sql = "insert histroyrecode (actname,actcontent,acttime)values(?,?,?)";
+        Object objects[] = {histroyAct.getUser(),histroyAct.getActname(), histroyAct.getActcontent(), histroyAct.getActtime()};
+        String sql = "insert histroyrecode (user,actname,actcontent,acttime)values(?,?,?,?)";
         try {
             int update = 0;
             update = runner.update(sql, objects);
@@ -150,15 +150,14 @@ public class UserIMP implements UserDao {
     /*
         查询历史信息
     */
-    public List<HistroyAct> Selecthistroyinfo() {
+    public List<HistroyAct> Selecthistroyinfo(HistroyAct histroyAct) {
         QueryRunner runner=new QueryRunner(DBUtiles.getDataSource());
-        String sql="select actname,actcontent,acttime from histroyrecode order by acttime desc";
+        String sql="select * from histroyrecode where user='"+histroyAct.getUser()+"' order by acttime desc";
         try {
             List<HistroyAct> list = runner.query(sql, new BeanListHandler<HistroyAct>(HistroyAct.class));
             if(!list.isEmpty()){
                 return list;
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -193,10 +192,11 @@ public class UserIMP implements UserDao {
 //        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //        String s = String.valueOf(df.format(new Date()));
 //        histroyAct.setActtime(s);
-        List<HistroyAct> list = loginIMP.Selecthistroyinfo();
+        HistroyAct histroyAct=new HistroyAct();
+        histroyAct.setUser("李梦可");
+        List<HistroyAct> list = loginIMP.Selecthistroyinfo(histroyAct);
        for(int i=0;i<list.size();i++){
-           HistroyAct histroyAct1 = (HistroyAct)list.get(i);
-           System.out.println(histroyAct1.getActname());
+           System.out.println(list.get(i).getActname()+"  "+list.get(i).getUser()+"  "+list.get(i).getActtime());
        }
 
 

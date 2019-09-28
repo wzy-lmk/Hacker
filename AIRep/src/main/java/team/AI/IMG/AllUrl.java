@@ -4,17 +4,12 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
-import java.util.Properties;
 
 public class AllUrl {
-    private String imgpath = null;
 
-    public String imgChange(String url, String imgpath) {
+    public void imgChange(String url) {
         DownloadIMG downloadIMG = new DownloadIMG();
         DealUrl dealUrl = new DealUrl();
         String newUrl = url;
@@ -28,13 +23,14 @@ public class AllUrl {
             page = webClient.getPage(url);
             List<DomAttr> byXPath = page.getByXPath("//a/@href");
             for (DomAttr domAttr : byXPath) {
+                newUrl=domAttr.getValue();
                 boolean net1 = dealUrl.isNet(domAttr.getValue());
                 if (!net1) {
                     newUrl = dealUrl.getNetwork(url) + dealUrl.getUrl(domAttr.getValue());
                 }
-                System.out.println("newUrl" +newUrl);
                 if (dealUrl.getNetwork(newUrl).equals(dealUrl.getNetwork(url))) {
-                    imgpath = downloadIMG.imgAddress(newUrl, imgpath);
+                    downloadIMG.imgAddress(newUrl);
+
                 }
             }
         } catch (IOException e) {
@@ -44,32 +40,33 @@ public class AllUrl {
             System.gc();
             webClient.close();
         }
-        return imgpath;
     }
 
     public static void main(String[] args) {
-        InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
-        Properties properties = new Properties();
-        try {
-            properties.load(iStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String address=properties.getProperty("address");
+
+
+
+//        InputStream iStream = DownloadIMG.class.getClassLoader().getResourceAsStream("downloadAddr.properties");
+//        Properties properties = new Properties();
+//        try {
+//            properties.load(iStream);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        String address=properties.getProperty("address");
 
         AllUrl allUrl = new AllUrl();
-        String imgpath = allUrl.imgChange("http://ipv6.pdsu.edu.cn", address);
-        try {
-            FileOutputStream fos1 = new FileOutputStream(new File(imgpath + ".zip"));
-            ZipUtils zipUtils = new ZipUtils();
-            Boolean toZip = zipUtils.toZip(imgpath, fos1, true);
-            if (toZip) {
-                ImgMd5 imgMd5 = new ImgMd5();
-                String md5 = imgMd5.getMd5(new File(imgpath + ".zip"));
-                System.out.println(md5);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        allUrl.imgChange("http://www.chzu.edu.cn");
+//        try {
+//            FileOutputStream fos1 = new FileOutputStream(new File(address + ".zip"));
+//            ZipUtils zipUtils = new ZipUtils();
+//            Boolean toZip = zipUtils.toZip(address, fos1, true);
+//            if (toZip) {
+//                ImgMd5 imgMd5 = new ImgMd5();
+//                String md5 = imgMd5.getMd5(new File(address + ".zip"));
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

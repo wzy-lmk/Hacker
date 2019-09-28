@@ -62,7 +62,7 @@ public class UserServiceIMP implements UserService {
     /*
         查询历史信息
     */
-    public List<HistroyAct> Selecthistroyinfo() {
-        return loginIMP.Selecthistroyinfo();
+    public List<HistroyAct> Selecthistroyinfo(HistroyAct histroyAct) {
+        return loginIMP.Selecthistroyinfo(histroyAct);
     }
 }

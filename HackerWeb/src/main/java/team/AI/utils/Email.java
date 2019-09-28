@@ -42,17 +42,6 @@ public class Email {
         prop.setProperty("mail.smtp.host", myEmailSMTPHost);
         // 设置验证机制
         prop.setProperty("mail.smtp.auth", "true");
-
-        // SMTP 服务器的端口 (非 SSL 连接的端口一般默认为 25, 可以不添加, 如果开启了 SSL 连接,
-        // 需要改为对应邮箱的 SMTP 服务器的端口, 具体可查看对应邮箱服务的帮助,
-        // QQ邮箱的SMTP(SLL)端口为465或587, 其他邮箱自行去查看)
-
-        /*final String smtpPort = "465";
-        prop.setProperty("mail.smtp.port", smtpPort);
-        prop.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        prop.setProperty("mail.smtp.socketFactory.fallback", "false");
-        prop.setProperty("mail.smtp.socketFactory.port", smtpPort);*/
-
         // 创建对象回话跟服务器交互
         Session session = Session.getInstance(prop);
         // 会话采用debug模式
@@ -76,16 +65,6 @@ public class Email {
 
     }
 
-    /**
-     * @param @param  session
-     * @param @return
-     * @param @throws Exception    设定文件
-     * @return Message    返回类型
-     * @throws
-     * @Title: createSimpleMail
-     * @Description: 创建邮件对象
-     * @author: chengpeng
-     */
     public static Message createSimpleMail(Session session,String name,String newPWD) throws Exception {
 
         MimeMessage message = new MimeMessage(session);

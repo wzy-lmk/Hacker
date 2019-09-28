@@ -414,7 +414,7 @@
             function submitImg(){
                 $.ajax({
                     type: "post",
-                    url: "ImgServlet",
+                    url: "AIHackerCheckServlet",
                     data: $('#imgcheck').serialize(),
                     dataType: "json",
                     success: function (res) {
