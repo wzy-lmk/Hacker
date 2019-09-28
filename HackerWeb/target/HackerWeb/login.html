@@ -33,7 +33,24 @@
                                     <h4 class="text-dark-50 text-center mt-0 font-weight-bold">登录</h4>
                                     <p class="text-muted mb-4">输入你的邮箱地址和密码进行登录.</p>
                                 </div>
+                                <!--提示信息-->
+                                <div class="alert alert-success alert-dismissable" id="alert-success" style="display: none">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-hidden="true">
+                                        &times;
+                                    </button>登录成功！即将进入首页</div>
+                                <div class="alert alert-danger alert-dismissable" id="alert-danger" style="display: none">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-hidden="true">
+                                        &times;
+                                    </button>邮箱或密码错误，请重试</div>
+                                <div class="alert alert-warning alert-dismissable" id="alert-warning" style="display: none">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-hidden="true">
+                                        &times;
+                                    </button>邮箱或密码不能为空</div>
 
+                                <!--登录表单-->
                                 <form id="login-form">
 
                                     <div class="form-group">
@@ -86,6 +103,11 @@
 
 
             function login() {
+                //隐藏提示信息
+                document.getElementById("alert-danger").style.display="none"
+                document.getElementById("alert-success").style.display="none"
+                document.getElementById("alert-warning").style.display="none"
+
                 $.ajax({
                     type: "post",
                     url: "LoginServlet",
@@ -95,38 +117,16 @@
                         console.log(data)
                         // var res = $.parseJSON(data)
                         if (data.fail2!=null){
-                            alert("账号或者密码错误")
+                            document.getElementById("alert-danger").style.display=""
                         }else if (data.fail1!=null) {
-                            alert("账号密码不能为空")
+                            document.getElementById("alert-warning").style.display=""
                         }else {
-                            alert("登陆成功")
+                            document.getElementById("alert-success").style.display=""
                             window.location="index.jsp";
                         }
                     }
                 });
             }
-            // function sendCode() {
-            //     var phone =$('#username').val()
-            //     $('#codebutton').text="已发送"
-            //     if(phone == ""){ //输入不能为空
-            //         alert("手机号不能为空")
-            //         return false;
-            //     }else if(!(/^1[3456789]\d{9}$/.test(phone))){ //正则验证不通过，格式不对
-            //         alert("手机号格式错误");
-            //         return false;
-            //     }
-            //
-            //     $.ajax({
-            //         type: "post",
-            //         url: "url",
-            //         data: {"tel":phone,"date":new Date()},
-            //         dataType: "dataType",
-            //         success: function (response) {
-            //
-            //         }
-            //     });
-            //
-            // }
         </script>
     </body>
 </html>

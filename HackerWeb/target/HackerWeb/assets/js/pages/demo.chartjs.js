@@ -46,7 +46,6 @@ function submitCheck() {
     document.getElementById("loading").style.display = "";
     //隐藏查询按钮
     document.getElementById("querybutton").style.display = "none";
-
     //不显示图表
     document.getElementById("result-chart").style.display = "none";
 
@@ -55,7 +54,6 @@ function submitCheck() {
     var content = $('#summernote-editmode').summernote('code')
     var url = $('#curl').val()
 
-    alert("sss")
     $.ajax({
         type: "post",
         url: "SensitiveWord",
@@ -72,6 +70,7 @@ function submitCheck() {
             if (res.result == "fail") {
                 $.NotificationApp.send("查询失败", "输入的url不正确，或该站点禁制爬虫访问。", "top-center", "rgba(0,0,0,0.2)", "fail")
             } else {
+                $.NotificationApp.send("查询成功", "可以下载文件查看敏感词详细信息", "top-center", "rgba(0,0,0,0.2)", "success")
                 var data = res.data.toString().split(",")
                 var nums = new Array(6);
                 for (var i = 0; i < data.length; i++) {

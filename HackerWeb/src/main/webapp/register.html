@@ -35,7 +35,22 @@
                                     <h4 class="text-dark-50 text-center mt-0 font-weight-bold">注册账户</h4>
                                     <p class="text-muted mb-4">没有帐户？创建您的帐户，只需不到一分钟 </p>
                                 </div>
-
+                                <!--提示信息-->
+                                <div class="alert alert-success alert-dismissable" id="alert-success" style="display: none">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-hidden="true">
+                                        &times;
+                                    </button>注册成功，请再次登录</div>
+                                <div class="alert alert-danger alert-dismissable" id="alert-danger" style="display: none">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-hidden="true">
+                                        &times;
+                                    </button>手机号或邮箱已经存在</div>
+                                <div class="alert alert-warning alert-dismissable" id="alert-warning" style="display: none">
+                                    <button type="button" class="close" data-dismiss="alert"
+                                            aria-hidden="true">
+                                        &times;
+                                    </button>服务器繁忙，请稍后再试</div>
                                 <form action="#" id="regeister-from">
 
                                     <div class="form-group">
@@ -97,6 +112,11 @@
         <script src="assets/js/app.min.js"></script>
         <script>
             function regeister() {
+                //隐藏提示信息
+                document.getElementById("alert-danger").style.display="none"
+                document.getElementById("alert-success").style.display="none"
+                document.getElementById("alert-warning").style.display="none"
+
                 $.ajax({
                     type: "post",
                     url: "RegServlet",
@@ -104,12 +124,13 @@
                     dataType: "json",
                     success: function (data) {
                         if (data.fail1!=null){
-                            alert("手机号或者邮箱已经存在")
+                            document.getElementById("alert-danger").style.display=""
                         }else if (data.fail2!=null) {
-                            alert("服务器繁忙，请稍后再试")
+                            document.getElementById("alert-warning").style.display=""
                         }else {
-                            alert("注册成功,请登录")
                             window.location="http://localhost:8080/AI_war_exploded/login.html";
+                            document.getElementById("alert-success").style.display=""
+                            window.location="login.html";
                         }
                     }
                 });

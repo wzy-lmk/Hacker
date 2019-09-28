@@ -17,6 +17,13 @@ public class PingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         String url = req.getParameter("url");
+        if (url.startsWith("http")){
+            if (url.startsWith("https")){
+                url=url.substring(8,url.length());
+            }else{
+                url=url.substring(7,url.length());
+            }
+        }
         int timeout = 300;
         boolean status=false;
         try {

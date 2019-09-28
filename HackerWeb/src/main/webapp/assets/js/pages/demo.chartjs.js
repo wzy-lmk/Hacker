@@ -46,7 +46,6 @@ function submitCheck() {
     document.getElementById("loading").style.display = "";
     //隐藏查询按钮
     document.getElementById("querybutton").style.display = "none";
-
     //不显示图表
     document.getElementById("result-chart").style.display = "none";
 

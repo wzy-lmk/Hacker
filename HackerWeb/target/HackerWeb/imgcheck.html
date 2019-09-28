@@ -201,7 +201,10 @@
                                             <div class="input-group mt-3 mb-3">
                                                 <div class="input-group-prepend">
                                                     <button type="button" class="btn btn-outline-secondary " data-toggle="dropdown">
-                                                        URL
+                                                        <span class="badge badge-warning" id="ping-warn" style="display: block">未检测</span>
+                                                        <span class="badge badge-info" id="ping-info" style="display: none">检测中</span>
+                                                        <span class="badge badge-success" id="ping-success" style="display: none">运行中</span>
+                                                        <span class="badge badge-danger" id="ping-danger" style="display: none">未运行</span>
                                                     </button>
                                                 </div>
                                                 <input type="text" id="curl" name="url" class="form-control" placeholder=" 请输入要查询的网站url">
@@ -210,8 +213,13 @@
                                                 <label for="inputAddress2" class="col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义关键字</font></font></label>
                                                 <input type="text"  name="keyword" class="form-control"  data-toggle="tooltip" data-placement="bottom" data-original-title="不同词语用逗号分隔，如“黑客，反共，到此一游”" id="inputAddress2" placeholder="输入自定义关键字，不超过20字">
                                             </div>
-                                            <div class="col-sm-6" style="margin-left: auto;margin-right:auto;">
-                                                <button type="button" onclick="submitImg()"  id="submit-minganci" class="btn btn-block btn-xs btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交查询</font></font></button>
+                                            <div class="col-sm-6" id="querybutton" style="margin-left: auto;margin-right:auto;display: block">
+                                                <button type="button" onclick="submitImg()" id="submit-minganci" class="btn btn-block btn-xs btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交查询</font></font></button>
+                                            </div>
+                                            <div class="text-center" id="loading" style="display:none">
+                                                <div class="spinner-border text-success" role="status">
+                                                    <span class="sr-only"></span>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -222,7 +230,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="grid-structure">
+                                        <div class="grid-structure" id="query-content" style="display: none;">
                                                 <div class="col-lg-12">
                                                     <div class="grid-container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                        <a href="http://www.runoob.com/js/js-obj-array.html">http://www.runoob.com/js/js-obj-array.jpg</a>
@@ -405,6 +413,44 @@
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
         <script>
+
+            //输入url
+            $("#curl").click(function () {
+
+                document.getElementById("ping-warn").style.display="";
+                document.getElementById("ping-success").style.display="none";
+                document.getElementById("ping-danger").style.display="none";
+                document.getElementById("ping-info").style.display="none";
+            });
+
+            //鼠标移出输入框，查询url是否可用
+            $("#curl").blur(function(){
+                //隐藏其他
+                document.getElementById("ping-warn").style.display="none";
+                document.getElementById("ping-success").style.display="none";
+                document.getElementById("ping-danger").style.display="none";
+                //查询显示检测中
+                document.getElementById("ping-info").style.display="";
+                $.ajax({
+                    type: "get",
+                    url: "Ping",
+                    data: {"url":$("#curl").val()},
+                    dataType: "json",
+                    async:"true",
+                    success: function (res) {
+                        console.log(res)
+                        document.getElementById("ping-info").style.display="none";
+                        if (res==true) {
+                            document.getElementById("ping-success").style.display="";
+                        }else{
+                            document.getElementById("ping-danger").style.display="";
+                        }
+                    }
+                });
+
+            });
+
+
             // 查询按钮响应
             $("#submit-minganci").on("click", function (i) {
                 $.NotificationApp.send("正在查询", "这可能需要一段时间，请耐心等候。", "top-center","rgba(0,0,0,0.2)","success")
@@ -412,21 +458,42 @@
             })
 
             function submitImg(){
+                //隐藏结果显示区域
+                document.getElementById("query-content").style.display="none"
+                //显示加载按钮
+                document.getElementById("loading").style.display="";
+                //隐藏查询按钮
+                document.getElementById("querybutton").style.display="none";
+
                 $.ajax({
                     type: "post",
                     url: "AIHackerCheckServlet",
                     data: $('#imgcheck').serialize(),
                     dataType: "json",
-                    success: function (res) {
-                        if (res=="none"){
+                    async:"true",
+                    success:function (result) {
+                        alert("res:"+result)
+                        //显示查询按钮
+                        document.getElementById("querybutton").style.display ="";
+                        //隐藏加载按钮
+                        document.getElementById("loading").style.display="none";
+
+                        if (result.res=="none"){
                             $.NotificationApp.send("查询成功", "你要检查的网站暂时安全,请继续关注本网站", "top-center","rgba(0,0,0,0.2)","success")
+                            document.getElementById("query-content").style.display=""
                         }
-                        esle
+                        else
                         {
-                            console.log(res);
-                            console.log(res.type)
+                            //显示结果区域
+                            document.getElementById("query-content").style.display=""
+                            console.log(result);
+                            console.log(result.type)
                         }
+                    },error: function(){
+                        alert(arguments[1]);
                     }
+
+
                 });
             }
         </script>

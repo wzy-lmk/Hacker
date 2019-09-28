@@ -98,10 +98,15 @@ public class AIHackerCheckServlet extends HttpServlet {
             File file = new File(address);
             deleteFiles.delete(file);
             if (lists.isEmpty()) {
-                response.getWriter().print("none");
+                Map map = new HashMap();
+                map.put("res","none");
+                response.getWriter().print(JSONObject.toJSONString(map));
+
+            }else{
+                String resultJson = JSONObject.toJSONString(lists);
+                response.getWriter().print(resultJson);
             }
-            String resultJson = JSONObject.toJSONString(lists);
-            response.getWriter().print(resultJson);
+
         } else {
             System.out.println("输入错误");
 
