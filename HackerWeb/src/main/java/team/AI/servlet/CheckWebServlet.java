@@ -28,12 +28,7 @@ public class CheckWebServlet extends HttpServlet {
         NewimgChange(url);
         String resultJson = JSONObject.toJSONString(arrayList);
         response.getWriter().print(resultJson);
-
-
-
     }
-
-
 
     public void NewimgChange(String url) {
         DealUrl dealUrl = new DealUrl();

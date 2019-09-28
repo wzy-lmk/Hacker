@@ -472,7 +472,6 @@
                     dataType: "json",
                     async:"true",
                     success:function (result) {
-                        alert("res:"+result)
                         //显示查询按钮
                         document.getElementById("querybutton").style.display ="";
                         //隐藏加载按钮
@@ -480,7 +479,7 @@
 
                         if (result.res=="none"){
                             $.NotificationApp.send("查询成功", "你要检查的网站暂时安全,请继续关注本网站", "top-center","rgba(0,0,0,0.2)","success")
-                            document.getElementById("query-content").style.display=""
+                            // document.getElementById("query-content").style.display=""
                         }
                         else
                         {
