@@ -1,6 +1,7 @@
 package team.AI.serviceIMP;
 
 import com.alibaba.fastjson.JSONObject;
+import org.apache.log4j.Logger;
 import team.AI.service.SenesitiveWordService;
 import team.SensitiveWord.crawler.WebsiteProcessor;
 import team.SensitiveWord.entity.UrlInfo;
@@ -8,17 +9,38 @@ import team.SensitiveWord.entity.UrlInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class SensitiveWordServiceIMP implements SenesitiveWordService {
     ArrayList<UrlInfo> urlInfos ;
     Map<String,String> result= new HashMap<>();
     FileDowmLoadServiceIMP serviceIMP = new FileDowmLoadServiceIMP();
+    private static Logger log = Logger.getLogger(SensitiveWordServiceIMP.class.getClass());
 
     @Override
-    public String startCrawler(String url, int... type) {
-        urlInfos = WebsiteProcessor.StartCrawler(url, type);
-        System.out.println("==========="+urlInfos);
-        return  getResult(urlInfos);
+    public int startCrawler(String url, int... type) {
+
+        Runnable runner = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("========================================");
+                System.out.println("excute crawler ------>"+url);
+                //获取结果信息
+                urlInfos = WebsiteProcessor.StartCrawler(url, type);
+
+
+
+            }
+        };
+
+
+        ScheduledExecutorService service  = Executors.newSingleThreadScheduledExecutor();
+        //执行结束后的两分钟再次执行
+        service.scheduleWithFixedDelay(runner,0,2, TimeUnit.MINUTES);
+        //service.schedule(runner,10,TimeUnit.MILLISECONDS);
+        return 0;
     }
 
     public String getFile(){
@@ -39,7 +61,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
             System.out.println(JSONObject.toJSONString(result));
             return JSONObject.toJSONString(result);
         }else{
-            return statistics(infolist);
+            return statisticsAll(infolist);
         }
     }
 
@@ -88,4 +110,17 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
         result.put("file",serviceIMP.CreateFile(urlInfos));
         return JSONObject.toJSONString(result);
     }
+
+    /**
+     * 获取敏感词文件下载信息
+     * @param infolist
+     * @return
+     */
+    @Override
+    public String statisticsAll(ArrayList<UrlInfo> infolist) {
+        result.put("file",serviceIMP.CreateFile(urlInfos));
+        return JSONObject.toJSONString(result);
+    }
+
+
 }

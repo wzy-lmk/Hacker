@@ -233,24 +233,15 @@
                                         <div class="grid-structure" id="query-content" style="display: none;">
                                                 <div class="col-lg-12">
                                                     <div class="grid-container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                                       <a href="http://www.runoob.com/js/js-obj-array.html">http://www.runoob.com/js/js-obj-array.jpg</a>
+                                                       <a href="https://i.loli.net/2019/09/28/dHFjXeL8fZJa61r.jpg">https://i.loli.net/2019/09/28/dHFjXeL8fZJa61r.jpg</a>
                                                     </font></font></div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="grid-container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                                        <a href="http://www.runoob.com/js/js-obj-array.html">http://www.runoob.com/php/pritacle/php-o.jpg</a>
+                                                        <a href="http://www.runoob.com/js/js-obj-array.html">https://i.loli.net/2019/09/28/dHXdfrgerwHJK6vv63.png</a>
                                                     </font></font></div>
                                                 </div>
-                                                <div class="col-lg-12">
-                                                    <div class="grid-container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                                        <a href="http://www.runoob.com/js/js-obj-array.html">http://www.runoob.com/js/array/lis.png</a>
-                                                    </font></font></div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="grid-container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                                        <a href="http://www.runoob.com/js/js-obj-array.html">http://www.runoob.com/java/js-obj-array/test/01.img.html</a>
-                                                    </font></font></div>
-                                                </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -483,8 +474,20 @@
                         }
                         else
                         {
+                            $.NotificationApp.send("查询成功", "检测到可能存在风险的图片，请注意查看", "top-center","rgba(0,0,0,0.2)","fail")
                             //显示结果区域
                             document.getElementById("query-content").style.display=""
+
+                            for (let i = 0; i <result.length ; i++) {
+
+                                var html="<div class=\"col-lg-12\">\n" +
+                                    "                                                    <div class=\"grid-container\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">\n" +
+                                    "                                                       <a href=\"http://www.runoob.com/js/js-obj-array.html\">"+result[i]+"</a>\n" +
+                                    "                                                    </font></font></div>\n" +
+                                    "                                                </div>";
+
+                                $('#dispaly').append(html)
+                            }
                             console.log(result);
                             console.log(result.type)
                         }

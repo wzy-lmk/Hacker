@@ -7,11 +7,14 @@ import cn.edu.hfut.dmic.webcollector.plugin.rocks.BreadthCrawler;
 import team.SensitiveWord.entity.UrlInfo;
 import team.SensitiveWord.util.SensitivewordFilter;
 import team.SensitiveWord.util.urlTool;
+import team.SensitiveWord.verifySensitive.AlexWord;
+
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
 
 public class WebsiteProcessor extends BreadthCrawler {
+
     private  static  ArrayList<UrlInfo> infolists = new ArrayList<>();
     //爬取链接
     private static String crawerurl ="";
@@ -24,7 +27,9 @@ public class WebsiteProcessor extends BreadthCrawler {
     private static int[] sentype;
 
     public ArrayList getInfoList(){
-        return infolists;
+        ArrayList<UrlInfo> temp = infolists;
+        infolists = new ArrayList<>();
+        return temp;
     }
 
     public WebsiteProcessor(String crawlPath, boolean autoParse) {
@@ -79,7 +84,9 @@ public class WebsiteProcessor extends BreadthCrawler {
             //服务器原因，启动失败
             return null;
         }
-        return infolists;//启动成功
+        ArrayList<UrlInfo> temp = infolists;
+        infolists = new ArrayList<>();
+        return temp;//启动成功
     }
 
     /**
@@ -128,7 +135,10 @@ public class WebsiteProcessor extends BreadthCrawler {
                 if (cont.trim()!=""&&cont!=null){
 
                     UrlInfo info = new UrlInfo(page.url(),cont);
-                    info = sensitivewordFilter.getSensitiveWord(info, 1,sentype);
+                    //DFA获取敏感词
+                    //info = sensitivewordFilter.getSensitiveWord(info, 1,sentype);
+                    //使用jar包获取敏感词信息，不可自定义
+                    info= AlexWord.CheckWord(info);
                     infolists.add(info);
                 }
 

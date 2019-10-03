@@ -25,7 +25,7 @@ public class FileDowmLoadServiceIMP implements FileDownLoadService {
     public String CreateFile(ArrayList<UrlInfo> arrayList){
         Excel excel = new Excel();
         excel.Excel(arrayList.size(),2,arrayList,getFileName());
-        System.out.println("file:"+getFileName()+"---->create success!");
+        System.out.println("file:"+filename+"---->create success!");
         return filename+".xlsx";
     }
 

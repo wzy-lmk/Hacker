@@ -1,4 +1,5 @@
 package team.AI.servlet;
+import org.apache.log4j.Logger;
 import team.AI.serviceIMP.SensitiveWordServiceIMP;
 import team.SensitiveWord.crawler.WebsiteProcessor;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/SensitiveWord")
 public class SensitiveWordServlet extends HttpServlet {
 
-    SensitiveWordServiceIMP serviceIMP = new SensitiveWordServiceIMP();
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,30 +31,15 @@ public class SensitiveWordServlet extends HttpServlet {
 //        session.setAttribute("count",count);
 //        session.setAttribute("sum",sum);
 
-        String choose = req.getParameter("choose");
+//        String choose = req.getParameter("choose");
         String url = req.getParameter("url");
-        String content = req.getParameter("content");
+//        String content = req.getParameter("content");
         String result=null;
         int type[];
 
-        if (null!=choose&&choose.trim()!=""){
-            String[] split = choose.split(",");
+        SensitiveWordServiceIMP serviceIMP = new SensitiveWordServiceIMP();
 
-            if (content!=null){
-                type = new int[split.length+1];
-            }else{
-                type = new int[split.length];
-            }
-
-            for (int i = 0; i < split.length; i++) {
-                type[i]=Integer.parseInt(split[i]);
-            }
-            //启动爬虫
-            result = serviceIMP.startCrawler(url, type);
-
-        }else {
-            result=serviceIMP.startCrawler(url,0,1,2,3,4);
-        }
+        serviceIMP.startCrawler(url);
 
         resp.getWriter().print(result);
     }

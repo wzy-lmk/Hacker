@@ -151,8 +151,6 @@
 							</div>
 						</div>
 						<!-- end Topbar -->
-						
-						
 						<div class="container-fluid">
 							
 							<!-- Begin page -->
@@ -181,14 +179,14 @@
 										<li class="side-nav-title side-nav-item">功能列表</li>
 										
 										<li class="side-nav-item">
-											<a href="javascript: void(0);" class="side-nav-link">
+											<a href="index.jsp" class="side-nav-link">
 												<i class="dripicons-meter"></i>
 												<span> 个人首页 </span>
 											</a>
 										</li>
 										
 										<li class="side-nav-item">
-											<a href="javascript: void(0);" class="side-nav-link">
+											<a href="minganci.html" class="side-nav-link">
 												<i class="dripicons-copy"></i>
 												<span> 网站敏感词查询 </span>
 											</a>
@@ -197,21 +195,21 @@
 										<li class="side-nav-title side-nav-item mt-1">入侵检测</li>
 										
 										<li class="side-nav-item">
-											<a href="javascript: void(0);" class="side-nav-link">
+											<a href="Attackrecord.html" class="side-nav-link">
 												<i class="dripicons-view-apps"></i>
 												<span> 攻击信息 </span>
 											</a>
 										</li>
 										
 										<li class="side-nav-item">
-											<a href="javascript: void(0);" class="side-nav-link">
+											<a href="monitor.html" class="side-nav-link">
 												<i class="dripicons-briefcase"></i>
 												<span>网站监控</span>
 											</a>
 										</li>
 										
 										<li class="side-nav-item">
-											<a href="widgets.html" class="side-nav-link">
+											<a href="imgcheck.html" class="side-nav-link">
 												<i class="dripicons-heart"></i>
 												<!--<span class="badge badge-light float-right">New</span>-->
 												<span>黑客入侵检测</span>

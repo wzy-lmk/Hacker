@@ -76,7 +76,8 @@ public class SMS {
     public static void main(String[] args) {
 
         SMS sMS =new SMS();
-        sMS.SendCode("17856002383");
+//        sMS.SendCode("17856002383");
+        sMS.SendNoticeMessage("17856002383","您提交的任务“chzu检测”，已经完成，请登录网站查看，或在邮箱中查看结果");
     }
 
 }

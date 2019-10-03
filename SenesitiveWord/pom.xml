@@ -34,6 +34,11 @@
             <artifactId>java-sdk</artifactId>
             <version>4.11.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>alex-word-filter</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 </project>
