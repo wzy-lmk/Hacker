@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="HackerWeb:war" />
       <artifact name="HackerWeb:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="new project">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ZhenziSmsSDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1569921227659.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/DownLoadServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/HTMLMail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/logo4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="d2430ddf-5972-4487-8d8b-54940bf068aa" name="Default Changelist" comment="10.15">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AIRep/target/classes/META-INF/AIRep.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FGHacker/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FGHacker/src/main/java/team/FGHacker/crawler/MainProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FGHacker/src/main/resources/newinfo.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FGHacker/target/classes/newinfo.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FGHacker/target/classes/team/FGHacker/crawler/MainProcessor$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FGHacker/target/classes/team/FGHacker/crawler/MainProcessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/TaskInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/SendHtmlMail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/logo4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/bean/TaskInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/FileDownLoadService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/FileDowmLoadServiceIMP.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/SensitiveWordServiceIMP$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/DownLoadServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/FileDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/PingServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/HTMLMail.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/MySendMailAuthenticator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/SMS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/SendHtmlMail$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/SendHtmlMail$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/SendHtmlMail.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/alex-word-filter-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/logo4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/bean/TaskInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/FileDownLoadService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/FileDowmLoadServiceIMP.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/SensitiveWordServiceIMP$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/DownLoadServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/FileDown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/PingServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/HTMLMail.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/MySendMailAuthenticator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/SMS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/SendHtmlMail$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/SendHtmlMail$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/SendHtmlMail.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenesitiveWord/target/classes/team/SensitiveWord/verifySensitive/AlexWord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1569921227659.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AIRep/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIRep/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DBU.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DBU.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DealUrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DealUrl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DeleteFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/DeleteFiles.class" afterDir="false" />
@@ -28,61 +67,22 @@
       <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ThreadLocalClientFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ThreadLocalClientFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/AIRep/target/classes/team/AI/IMG/ZipUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/SenesitiveWordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/SenesitiveWordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/FileDowmLoadServiceIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/FileDowmLoadServiceIMP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/SensitiveWordServiceIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/SensitiveWordServiceIMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/PingServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/PingServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Excel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/SMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/HTMLMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/HTMLMail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/resources/downloadAddr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/resources/downloadAddr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/Attackrecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/Attackrecord.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/js/pages/demo.chartjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/js/pages/demo.chartjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/minganci.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/minganci.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/src/main/webapp/monitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/src/main/webapp/monitor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/Attackrecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/Attackrecord.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/SenesitiveWordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/service/SenesitiveWordService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/SensitiveWordServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/serviceIMP/SensitiveWordServiceIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AIHackerCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/AIHackerCheckServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/Excel.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/classes/team/AI/utils/Excel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/AIRep-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/HackerWeb-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/WEB-INF/lib/SenesitiveWord-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/assets/js/pages/demo.chartjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/assets/js/pages/demo.chartjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/imgcheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/imgcheck.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/minganci.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/minganci.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/monitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/HackerWeb/monitor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/downloadAddr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/downloadAddr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/SenesitiveWordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/service/SenesitiveWordService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/SensitiveWordServiceIMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/serviceIMP/SensitiveWordServiceIMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/AIHackerCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/AIHackerCheckServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/SensitiveWordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/servlet/SensitiveWordServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/Excel.class" beforeDir="false" afterPath="$PROJECT_DIR$/HackerWeb/target/classes/team/AI/utils/Excel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenesitiveWord/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/crawler/WebsiteProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/crawler/WebsiteProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/verifySensitive/AlexWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/verifySensitive/AlexWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenesitiveWord/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/src/main/resources/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenesitiveWord/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/target/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenesitiveWord/target/classes/team/SensitiveWord/crawler/WebsiteProcessor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/target/classes/team/SensitiveWord/crawler/WebsiteProcessor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenesitiveWord/target/classes/team/SensitiveWord/crawler/WebsiteProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/SenesitiveWord/target/classes/team/SensitiveWord/crawler/WebsiteProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/null'2019_09_24_09_09_410'.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/null'2019_09_24_09_09_620'.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/HackerWeb/target/" />
-    <ignored path="$PROJECT_DIR$/SenesitiveWord/target/" />
-    <ignored path="$PROJECT_DIR$/AIRep/target/" />
-    <ignored path="D:\IDEA-WorkSpace\Antihacker\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,128 +100,34 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="AI@10.128.184.52" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="AI@10.128.184.52" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="AI@10.128.184.52" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="AI: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="AI@10.128.184.52" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="AI: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tasks: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/resources/logo4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="441" column="15" selection-start-line="441" selection-start-column="15" selection-end-line="441" selection-end-column="15" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#3;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#0;n#button#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#0;n#font#0;n#button#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#0;n#font#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/SensitiveWordServiceIMP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Email.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/SenesitiveWordService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/minganci.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="543" column="7" selection-start-line="543" selection-start-column="7" selection-end-line="543" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#3;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#0;n#button#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#0;n#font#0;n#button#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#src#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/RegServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/js/pages/demo.chartjs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-141">
-              <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FavoritesManager">
+    <favorites_list name="Antihacker" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -230,6 +136,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindBugs-IDEA-Workspace">
+    <toolWindowGroupBy>Class</toolWindowGroupBy>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -252,54 +161,11 @@
       </GitPushTagMode>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/SenesitiveWord/src/main/java/SensitiveWord/util/urlTool.java" />
-        <option value="$PROJECT_DIR$/SenesitiveWord/src/main/java/SensitiveWord/baidu/access_token.java" />
-        <option value="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/verifySensitive/VerifyWord.java" />
-        <option value="$PROJECT_DIR$/AIRep/src/main/java/IMG/DealUrl.java" />
-        <option value="$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/DealUrl.java" />
-        <option value="$PROJECT_DIR$/AIRep/pom.xml" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/java/team/AI/bean/UserBean.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AttackRecordServlet.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/pom.xml" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/DBUtiles.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/500.html" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/404.html" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/test.jsp" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/FileDown.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/FileDownLoadService.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f9252cde-d2f5-45ab-840b-7fbcc0a32e88/console.sql" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/CheckWebServlet.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/SMS.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/FileDowmLoadServiceIMP.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/DownLoadServlet.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Excel.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/monitor.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/Attackrecord.html" />
-        <option value="$PROJECT_DIR$/SenesitiveWord/src/main/resources/database.properties" />
-        <option value="$PROJECT_DIR$/SenesitiveWord/pom.xml" />
-        <option value="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/verifySensitive/AlexWord.java" />
-        <option value="$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/crawler/WebsiteProcessor.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/resources/logo4j.properties" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/minganci.html" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/PingServlet.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/js/pages/demo.chartjs.js" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/SenesitiveWordService.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/SensitiveWordServiceIMP.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/HTMLMail.java" />
-        <option value="$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties" />
-        <option value="$PROJECT_DIR$/AIRep/src/main/resources/database.properties" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\IDEA-WorkSpace\Antihacker\.idea" />
+      </set>
     </option>
   </component>
   <component name="LogFilters">
@@ -309,113 +175,12 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="775" />
-  </component>
+  <component name="ProjectId" id="1SENh2AQ2l6Vk5JkgSHYhXZUltk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="AIRep" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="AIRep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="AIRep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="AIRep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerWeb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="AI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Antihacker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Antihacker" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="AI" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
@@ -426,12 +191,12 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="antihacker" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570097781277" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570347761888" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/myjava/jar包/ZhenziSmsSDK.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41686746" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -457,39 +222,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HTMLMail">
+  <component name="RunManager" selected="JUnit.team.AI.utils in HackerWeb">
     <configuration name="AlexWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="team.SensitiveWord.verifySensitive.AlexWord" />
       <module name="SenesitiveWord" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="team.SensitiveWord.verifySensitive.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBUtiles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="team.AI.utils.DBUtiles" />
-      <module name="HackerWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="team.AI.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileDowmLoadServiceIMP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="team.AI.serviceIMP.FileDowmLoadServiceIMP" />
-      <module name="HackerWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="team.AI.serviceIMP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -510,6 +249,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="team.FGHacker.crawler.MainProcessor" />
+      <module name="FGHacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="team.FGHacker.crawler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SMS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="team.AI.utils.SMS" />
       <module name="HackerWeb" />
@@ -519,6 +271,20 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="team.AI.utils in HackerWeb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HackerWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="team.AI.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="team.AI.utils" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -596,20 +362,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DBUtiles" />
-      <item itemvalue="Application.FileDowmLoadServiceIMP" />
       <item itemvalue="Application.SMS" />
-      <item itemvalue="Tomcat Server.Antihacker" />
       <item itemvalue="Application.AlexWord" />
       <item itemvalue="Application.HTMLMail" />
+      <item itemvalue="Application.MainProcessor" />
+      <item itemvalue="JUnit.team.AI.utils in HackerWeb" />
+      <item itemvalue="Tomcat Server.Antihacker" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.team.AI.utils in HackerWeb" />
+        <item itemvalue="Application.MainProcessor" />
         <item itemvalue="Application.HTMLMail" />
         <item itemvalue="Application.AlexWord" />
         <item itemvalue="Application.SMS" />
-        <item itemvalue="Application.FileDowmLoadServiceIMP" />
-        <item itemvalue="Application.DBUtiles" />
       </list>
     </recent_temporary>
   </component>
@@ -626,7 +392,15 @@
       <workItem from="1569074097547" duration="48281000" />
       <workItem from="1569327528298" duration="12858000" />
       <workItem from="1569399535441" duration="20678000" />
-      <workItem from="1569887794496" duration="23568000" />
+      <workItem from="1569887794496" duration="47671000" />
+      <workItem from="1570330930485" duration="1412000" />
+      <workItem from="1570332513274" duration="1173000" />
+      <workItem from="1570333820704" duration="323000" />
+      <workItem from="1570334248778" duration="3178000" />
+      <workItem from="1570345595700" duration="1167000" />
+      <workItem from="1570346915235" duration="1035000" />
+      <workItem from="1571123544956" duration="922000" />
+      <workItem from="1571124928524" duration="1931000" />
     </task>
     <task id="LOCAL-00001" summary="new project">
       <created>1569120254623</created>
@@ -691,11 +465,20 @@
       <option name="project" value="LOCAL" />
       <updated>1569635202821</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="HTMLEmail">
+      <created>1570097979500</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1570097979501</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150473000" />
+  <component name="TestHistory">
+    <history-entry file="team_AI_utils_in_HackerWeb - 2019.10.06 at 14h 45m 12s.xml">
+      <configuration name="team.AI.utils in HackerWeb" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,79 +489,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <layout>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Capture Tool" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2066365" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5015083" side_tool="true" weight="0.32824427" />
-      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32977098" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.49924585" weight="0.32977098" />
-      <window_info anchor="bottom" id="Database Changes" order="4" weight="0.3296" />
-      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49924585" weight="0.32977098" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4984917" weight="0.32824427" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32977098" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49924585" weight="0.49618322" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49924585" weight="0.4687023" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" weight="0.32977098" />
-      <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32977098" />
-      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32977098" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" weight="0.2081448" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.3295626" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Capture Tool" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24208145" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007542" side_tool="true" weight="0.32977098" />
-      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32977098" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32977098" />
-      <window_info anchor="bottom" id="Database Changes" order="4" weight="0.3296" />
-      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49924585" weight="0.32977098" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49924585" weight="0.3296" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32977098" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49924585" weight="0.32977098" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49924585" weight="0.84732825" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" weight="0.32977098" />
-      <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32977098" />
-      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32977098" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" weight="0.19984917" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.3295626" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -788,20 +498,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -830,444 +527,9 @@
     <MESSAGE value="download file" />
     <MESSAGE value="ImgCheck" />
     <MESSAGE value="监控" />
-    <option name="LAST_COMMIT_MESSAGE" value="监控" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/entity/UrlInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/InfoBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/target/classes/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/target/classes/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/bean/JsonBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20102">
-          <caret line="1058" column="44" selection-start-line="1058" selection-start-column="44" selection-end-line="1058" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/js/pages/demo.datatable-init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/POIXMLDocument.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1742">
-          <caret line="115" column="69" lean-forward="true" selection-start-line="115" selection-start-column="69" selection-end-line="115" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/resources/downloadAddr.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f9252cde-d2f5-45ab-840b-7fbcc0a32e88/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/WEB-INF/classes/team/AI/servlet/SensitiveWordServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#2202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/util/SensitivewordFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="114" column="33" lean-forward="true" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/xssf/usermodel/XSSFRow.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="164" column="25" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AIRep/src/main/java/team/AI/IMG/ImgMd5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/CheckWebServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="123" column="80" selection-start-line="123" selection-start-column="80" selection-end-line="123" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/SMS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="78" column="38" lean-forward="true" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-307">
-          <caret line="571" column="28" selection-start-line="571" selection-start-column="28" selection-end-line="571" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/FileDown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/FileDownLoadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/util/urlTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="254" selection-start-line="254" selection-end-line="254" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/DownLoadServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="27" column="106" selection-start-line="27" selection-start-column="106" selection-end-line="27" selection-end-column="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Excel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f9252cde-d2f5-45ab-840b-7fbcc0a32e88/schema/AI/table/redhat">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/monitor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3154">
-          <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
-          <folding>
-            <marker date="1569679538444" expanded="true" signature="34021:34028" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/FileDowmLoadServiceIMP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/AIHackerCheckServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="117" column="51" selection-start-line="117" selection-start-column="51" selection-end-line="117" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/Attackrecord.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="210" column="49" selection-start-line="210" selection-start-column="49" selection-end-line="210" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/belerweb/alex-word-filter/1.0/alex-word-filter-1.0.jar!/alex/zhrenjie04/wordfilter/result/FilteredResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/verifySensitive/AlexWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="42" lean-forward="true" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/minganci.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="543" column="7" selection-start-line="543" selection-start-column="7" selection-end-line="543" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#3;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#button#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#font#0;n#button#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#src#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/PingServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/resources/logo4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SenesitiveWord/src/main/java/team/SensitiveWord/crawler/WebsiteProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="34" column="66" lean-forward="true" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/imgcheck.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="441" column="15" selection-start-line="441" selection-start-column="15" selection-end-line="441" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#3;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#button#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#font#0;n#button#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#font#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/concurrent/TimeUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="132" column="43" lean-forward="true" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/concurrent/ScheduledExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="97" column="29" lean-forward="true" selection-start-line="96" selection-start-column="7" selection-end-line="97" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/webapp/assets/js/pages/demo.chartjs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/concurrent/ExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2128">
-          <caret line="155" column="20" lean-forward="true" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/serviceIMP/SensitiveWordServiceIMP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/HTMLMail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="e#3157#3203#0" expanded="true" />
-            <element signature="e#7681#7696#0" expanded="true" />
-            <element signature="e#8374#8389#0" expanded="true" />
-            <element signature="e#8448#8456#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/service/SenesitiveWordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/SensitiveWordServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AIRep/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/servlet/RegServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerWeb/src/main/java/team/AI/utils/Email.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <MESSAGE value="HTMLEmail" />
+    <MESSAGE value="10.15" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.15" />
   </component>
   <component name="masterDetails">
     <states>
@@ -1287,11 +549,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web</last-edited>
+          <last-edited>Web (HackerWeb)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.41686746" />
               </list>
             </option>
           </splitter-proportions>
@@ -1302,7 +564,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.41686746" />
               </list>
             </option>
           </splitter-proportions>
@@ -1314,7 +576,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.41686746" />
               </list>
             </option>
           </splitter-proportions>
@@ -1322,7 +584,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>AIRep</last-edited>
+          <last-edited>FGHacker</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1348,6 +610,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>ZhenziSmsSDK</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.41686746" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
