@@ -1,47 +1,112 @@
 package team.AI.serviceIMP;
 
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.apache.log4j.Logger;
+
+import team.AI.bean.TaskInfo;
 import team.AI.service.SenesitiveWordService;
+import team.AI.utils.DBUtiles;
+import team.AI.utils.SendHtmlMail;
 import team.SensitiveWord.crawler.WebsiteProcessor;
 import team.SensitiveWord.entity.UrlInfo;
 
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class SensitiveWordServiceIMP implements SenesitiveWordService {
-    ArrayList<UrlInfo> urlInfos ;
+
+    ArrayList<UrlInfo> urlInfos;
     Map<String,String> result= new HashMap<>();
     FileDowmLoadServiceIMP serviceIMP = new FileDowmLoadServiceIMP();
+    private TaskInfo taskinfo;
     private static Logger log = Logger.getLogger(SensitiveWordServiceIMP.class.getClass());
+    Runnable runner=null;
+    ScheduledExecutorService service  = Executors.newSingleThreadScheduledExecutor();
+    QueryRunner queryRunner  = new QueryRunner(DBUtiles.getDataSource());
+    ScheduledFuture<?> scheduledFuture=null;
 
+    /**
+     * 开始执行任务
+     *
+     * 设置执行时间间隔
+     * @param url
+     * @param type
+     * @return
+     */
     @Override
     public int startCrawler(String url, int... type) {
 
-        Runnable runner = new Runnable() {
+         runner = new Runnable() {
             @Override
             public void run() {
                 System.out.println("========================================");
                 System.out.println("excute crawler ------>"+url);
                 //获取结果信息
                 urlInfos = WebsiteProcessor.StartCrawler(url, type);
-
-
-
+                //发送邮箱
+                SendMial(urlInfos);
+                //次数加一
+                taskinfo.setRunNumber(taskinfo.getRunNumber()+1);
+                //更新任务状态
             }
         };
 
-
-        ScheduledExecutorService service  = Executors.newSingleThreadScheduledExecutor();
         //执行结束后的两分钟再次执行
-        service.scheduleWithFixedDelay(runner,0,2, TimeUnit.MINUTES);
+        scheduledFuture = service.scheduleWithFixedDelay(runner, 0, 2, TimeUnit.MINUTES);
+
         //service.schedule(runner,10,TimeUnit.MILLISECONDS);
         return 0;
     }
+
+
+    public void SendMial(ArrayList<UrlInfo> urlInfos){
+
+        Map<String,Map<String,Integer>> result = new HashMap<>();
+        Map<String,Integer> map = null;
+        for (UrlInfo urlInfo : urlInfos) {
+            if (!urlInfo.getHits().equals("无敏感词")){
+                int num=urlInfo.getHits().split(",").length;
+                map = new HashMap<>();
+                map.put(urlInfo.getHits(),num);
+                result.put(urlInfo.getUrl(),map);
+            }
+        }
+
+        SendHtmlMail.SendSenitiveTaskMail(result,taskinfo);
+    }
+
+    /**
+     * 记录用户提交的任务
+     * @param url 任务url
+     * @param email 用户邮箱
+     * @param type  任务类型
+     */
+    public void RecordingTask(String url,String email,String type){
+        Date date = new Date(System.currentTimeMillis());
+        taskinfo = new TaskInfo(type,date,email,0,true,url);
+
+        try {
+
+            queryRunner.insert("insert into tasks (type,startTime,email,runNumber,isrun,taskurl) values(?,?,?,?,?,?)",
+                    new ScalarHandler<>(),new Object[]{taskinfo.getType(),taskinfo.getStarttime(),taskinfo.getEmail(),taskinfo.getRunNumber(),taskinfo.isIsrun(),taskinfo.getTaskurl()});
+
+            //获取id
+            int id = queryRunner.query("select id form tasks where startTime=? and taskurl=?",new ScalarHandler<>(),new Object[]{taskinfo.getStarttime(),taskinfo.getTaskurl()});
+            taskinfo.setId(id);
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+    }
+
 
     public String getFile(){
         if (null!=urlInfos&&urlInfos.size()!=0){
@@ -66,52 +131,6 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
     }
 
     /**
-     *
-     * @param infolist
-     * @return
-     */
-    @Override
-    public String statistics(ArrayList<UrlInfo> infolist) {
-        int zero=0;
-        int one=0;
-        int two=0;
-        int three=0;
-        int four=0;
-        int five=0;
-        int total=0;
-        /**
-         * 0：暴恐敏感词
-         * 1：反动敏感词
-         * 2：色情敏感词
-         * 3：其他敏感词
-         * 4：民生敏感词
-         * 5：自定义敏感词
-         */
-        for (UrlInfo info : infolist) {
-            if (info.getHits()!="无敏感词"){
-                System.out.println(info.getHits());
-                if (info.getHits().contains("0")){
-                    zero++;
-                }if (info.getHits().contains("1")){
-                    one++;
-                }if (info.getHits().contains("2")){
-                    two++;
-                }if (info.getHits().contains("3")){
-                    three++;
-                }if (info.getHits().contains("4")){
-                    four++;
-                }if (info.getHits().contains("5")){
-                    five++;
-                }
-            }
-        }
-        total=zero+one+two+three+four+five;
-        result.put("data","["+zero+","+one+","+two+","+three+","+four+","+five+"]");
-        result.put("file",serviceIMP.CreateFile(urlInfos));
-        return JSONObject.toJSONString(result);
-    }
-
-    /**
      * 获取敏感词文件下载信息
      * @param infolist
      * @return
@@ -122,5 +141,26 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
         return JSONObject.toJSONString(result);
     }
 
+    /**
+     * 更新任务状态
+     */
+    public void UpdateTask(){
 
+        try {
+            queryRunner.update("update tasks set type=?,startTime=?,email=?,runNumber=?,isrun=?,taskurl=? where id=?",
+                    new ScalarHandler<>(),new Object[]{taskinfo.getType(),taskinfo.getStarttime(),taskinfo.getEmail(),taskinfo.getRunNumber(),taskinfo.isIsrun(),taskinfo.getTaskurl(),taskinfo.getId()});
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * 停止任务
+     */
+    public void FinishTask(){
+        scheduledFuture.cancel(true);
+        taskinfo.setIsrun(false);
+        UpdateTask();
+    }
 }

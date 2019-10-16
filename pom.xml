@@ -12,6 +12,7 @@
         <module>HackerWeb</module>
         <module>SenesitiveWord</module>
         <module>AIRep</module>
+        <module>FGHacker</module>
     </modules>
 
     <dependencies>

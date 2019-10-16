@@ -10,7 +10,5 @@ public interface SenesitiveWordService {
 
     public String getResult(ArrayList<UrlInfo> infolist);
 
-    public String statistics(ArrayList<UrlInfo> infolist);
-
     public String statisticsAll(ArrayList<UrlInfo> infolist);
 }
