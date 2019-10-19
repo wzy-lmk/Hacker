@@ -87,7 +87,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
      * @param email 用户邮箱
      * @param type  任务类型
      */
-    public void RecordingTask(String url,String email,String type){
+    public void RecordingTask(String url, String email, String type){
         Date date = new Date(System.currentTimeMillis());
         taskinfo = new TaskInfo(type,date,email,0,true,url);
 

@@ -215,12 +215,10 @@ public class SensitivewordFilter extends initSensitiveWordsMap {
 					break;
 				}
 			}
-
 			if(matchFlag >= 2&& flag){
 				res.add(new Object[]{k,matchFlag});
 				return res;
 			}
-
 		}
 		return null;
 	}

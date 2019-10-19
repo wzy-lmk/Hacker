@@ -13,12 +13,92 @@ import java.util.function.BiConsumer;
  */
 public class SendHtmlMail {
 
+
+    /**
+     *发送文件监测结果邮件
+     * @param title 任务名称
+     * @param time 创建时间
+     * @param info 监测结果信息
+     *             {
+     *                  改动文件所在页面链接
+     *                  文件名称
+     *                  改动类型：增加，修改
+     *             }
+     */
+    public static void sendFileCheckMail(String title, String time, ArrayList<Object> info,List<String> userMails){
+        String mails = String.join(",",userMails);
+
+        //拼接表格内容
+        String tableContent="";
+
+        String mailContent = " <style type=\"text/css\">\n" +
+                "        #customers {\n" +
+                "            font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n" +
+                "            border-collapse: collapse;\n" +
+                "            width: 100%;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers td,\n" +
+                "        #customers th {\n" +
+                "            border: 1px solid #ddd;\n" +
+                "            padding: 8px;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers tr:nth-child(even) {\n" +
+                "            background-color: #f2f2f2;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers tr:hover {\n" +
+                "            background-color: #ddd;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers th {\n" +
+                "            padding-top: 12px;\n" +
+                "            padding-bottom: 12px;\n" +
+                "            text-align: left;\n" +
+                "            background-color: #4CAF50;\n" +
+                "            color: white;\n" +
+                "        }\n" +
+                "    </style>" +
+                " <div>\n" +
+                "            <div style=\"text-align: center\">\n" +
+                "                <img src=\"https://s2.ax1x.com/2019/10/02/udZr1H.png\">\n" +
+                "            </div>\n" +
+                "            <br>\n" +
+                "            <div style=\"width:80%;margin: 0 auto;\">\n" +
+                "                <div style=\"text-align: center\" id=\"title\">\n" +
+                "                    <h3>您提交的监测任务有新的结果</h3>\n" +
+                "                </div>\n" +
+                "                <hr>\n" +
+                "                <div id=\"content-info\" style=\"text-align: center\">\n" +
+                "                    <span>任务名称： "+title+"</span>\n" +
+                "                    <span style=\"margin-left: 40px\">类型：网站文件监测</span>\n" +
+                "                    <span style=\"margin-left: 40px\">创建时间："+time+"</span>\n" +
+                "                </div>\n" +
+                "                <div><h4>结果详情</h4></div>\n" +
+                "                <div>\n" +
+                "                    新的监测结果\n" +
+                "                </div>\n" +
+                "                <div id=\"content-body\">\n" +
+                "                        <table id=\"customers\" aria-disabled=\"false\">\n" +
+                "                            <tbody><tr>\n" +
+                "                                <th>链接</th><th>文件名</th><th>状态</th>\n" +
+                "                            </tr>\n" +
+                "                            <tr>\n" +
+                                                 tableContent+ //添加表格内容
+                "                            </tr>\n" +
+                "                        </tbody></table>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "        </div>    ";
+    }
+
     /**
      * 发送反共黑客网监测邮件
-     * @param title
-     * @param time
-     * @param content
-     * @param userMails
+     * @param title 任务名称
+     * @param time 创建时间
+     * @param content 监测结果内容
+     * @param userMails 要发送的用户邮件列表
      */
     public static void SendFGHackerMail(String title,String time,String content,List<String> userMails){
         String mails = String.join(",",userMails);
@@ -60,7 +140,7 @@ public class SendHtmlMail {
                 "            <div id=\"content-info\" style=\"text-align: center\">\n" +
                 "                <span>任务名称：网站监测 </span>\n" +
                 "                <span style=\"margin-left: 40px\">类型：反共黑客网监测</span>\n" +
-                "                <span style=\"margin-left: 40px\">创建时间：2019-09-30</span>\n" +
+                "                <span style=\"margin-left: 40px\">创建时间："+time+"</span>\n" +
                 "            </div>\n" +
                 "            <div><h4>结果详情</h4></div>\n" +
                 "            <div>\n" +
@@ -114,10 +194,10 @@ public class SendHtmlMail {
 
     /**
      * 发送敏感词监测邮件
-     * @param tablemap
-     * @param info
+     * @param tablemap 表格内容
+     * @param info 任务信息
      */
-    public static void SendSenitiveTaskMail(Map<String,Map<String,Integer>> tablemap, TaskInfo info){
+    public static void SendSenitiveTaskMail(Map<String, Map<String, Integer>> tablemap, TaskInfo info){
 
         StringBuilder tablebuilder = new StringBuilder();
 
