@@ -1,11 +1,15 @@
 package team.AI.utils;
 
+import com.sun.mail.util.MailSSLSocketFactory;
 import team.AI.bean.TaskInfo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.mail.*;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.security.GeneralSecurityException;
+import java.sql.Date;
+import java.util.*;
 import java.util.function.BiConsumer;
 
 /**
@@ -25,10 +29,7 @@ public class SendHtmlMail {
      *                  改动类型：增加，修改
      *             }
      */
-    public static void sendFileCheckMail(String title, String time, ArrayList<Object> info,List<String> userMails){
-        String mails = String.join(",",userMails);
-
-        //拼接表格内容
+    public static void sendFileCheckMail(String title, String time, ArrayList<Object> info,String userMails){
         String tableContent="";
 
         String mailContent = " <style type=\"text/css\">\n" +
@@ -91,6 +92,8 @@ public class SendHtmlMail {
                 "                </div>\n" +
                 "            </div>\n" +
                 "        </div>    ";
+
+        mailSend(mailContent,userMails);
     }
 
     /**
@@ -159,37 +162,7 @@ public class SendHtmlMail {
                 "        </div>\n" +
                 "    </div>";
 
-        Map<String,String> map=new HashMap<String,String>();
-
-        //邮件服务器主机名(smtp服务器地址)
-        //如：qq的smtp服务器地址：smtp.qq.com
-        map.put("smtp", "smtp.qq.com");
-        //邮件传输协议：如smtp
-        map.put("protocol", "smtp");
-        //登录邮箱的用户名
-        map.put("username", "319732708@qq.com");
-        //登录邮箱的密码
-        map.put("password", "comgmkjavictbgde");
-        //发送人的帐号
-        map.put("from", "319732708@qq.com");
-        //接收人的帐号，多个以","号隔开
-        map.put("to", mails);
-        //邮件主题
-        map.put("subject", "任务监测结果");
-        //邮件内容
-        map.put("body", content);
-        //内嵌了多少张图片，如果没有，则new一个不带值的Map
-        Map<String,String> image=new HashMap<String,String>();
-        List<String> list=new ArrayList<String>();
-
-        //创建实例
-        HTMLMail sm=new HTMLMail(map,list,image);
-        //执行发送
-        try {
-            sm.send();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+       mailSend(mailContent,mails);
     }
 
     /**
@@ -200,6 +173,7 @@ public class SendHtmlMail {
     public static void SendSenitiveTaskMail(Map<String, Map<String, Integer>> tablemap, TaskInfo info){
 
         StringBuilder tablebuilder = new StringBuilder();
+        Map<String,String> map= new HashMap<>();
 
         //拼接表格内容
         tablemap.forEach(new BiConsumer<String, Map<String, Integer>>() {
@@ -261,36 +235,84 @@ public class SendHtmlMail {
                 "    </div>\n" +
                 "</div>";
 
-        Map<String,String> map=new HashMap<String,String>();
+        mailSend(content,info.getEmail());
+    }
 
-        //邮件服务器主机名(smtp服务器地址)
-        //如：qq的smtp服务器地址：smtp.qq.com
-        map.put("smtp", "smtp.qq.com");
-        //邮件传输协议：如smtp
-        map.put("protocol", "smtp");
-        //登录邮箱的用户名
-        map.put("username", "319732708@qq.com");
-        //登录邮箱的密码
-        map.put("password", "comgmkjavictbgde");
-        //发送人的帐号
-        map.put("from", "319732708@qq.com");
-        //接收人的帐号，多个以","号隔开
-        map.put("to", "319732708@qq.com");
-        //邮件主题
-        map.put("subject", "任务监测结果");
-        //邮件内容
-        map.put("body", content);
-        //内嵌了多少张图片，如果没有，则new一个不带值的Map
-        Map<String,String> image=new HashMap<String,String>();
-        List<String> list=new ArrayList<String>();
-
-        //创建实例
-        HTMLMail sm=new HTMLMail(map,list,image);
-        //执行发送
+    public static void mailSend(String content,String email){
+        Properties props = new Properties();
+        props.setProperty("mail.smtp.port","465");
+        props.setProperty("mail.transport.protocol", "smtp");
+        props.setProperty("mail.host", "smtp.qq.com");
+        props.setProperty("mail.smtp.auth", "true");
+        props.setProperty("mail.smtps.connectiontimeout","60000");
+        props.setProperty("mail.smtp.timeout","60000");
         try {
-            sm.send();
-        } catch (Exception e) {
+            MailSSLSocketFactory sf = new MailSSLSocketFactory();
+            sf.setTrustAllHosts(true);
+            props.put("mail.smtp.ssl.enable", "true");
+            props.put("mail.smtp.ssl.socketFactory", sf);
+
+            //使用JavaMail发送邮件的5个步骤
+            //1、创建session
+            Session mailSession = Session.getInstance(props);
+            //开启Session的debug模式，这样就可以查看到程序发送Email的运行状态
+            mailSession.setDebug(true);
+            //2、通过session得到transport对象
+            Transport transport = mailSession.getTransport();
+
+            //3、使用邮箱的用户名和密码连上邮件服务器,这里有多个构造器,可传入host、端口、user、password
+            transport.connect( "319732708@qq.com", "jrarkexjuxuzbjac");//jrarkexjuxuzbjac  //mwkpgvzdraimbhig
+
+            MimeMessage message = new MimeMessage(mailSession);
+            message.setSubject("监测结果通知");
+            message.setFrom(new InternetAddress("319732708@qq.com"));
+            //4、创建邮件
+            message.setContent("<h1>This is a test</h1>" + "<img src=\"https://s2.ax1x.com/2019/10/02/udZr1H.png\">",
+                    "text/html");
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) throws MessagingException, GeneralSecurityException {
+
+        Properties props = new Properties();
+        props.setProperty("mail.smtp.port","465");
+        props.setProperty("mail.transport.protocol", "smtp");
+        props.setProperty("mail.host", "smtp.qq.com");
+        props.setProperty("mail.smtp.auth", "true");
+        props.setProperty("mail.smtps.connectiontimeout","60000");
+        props.setProperty("mail.smtp.timeout","60000");
+        MailSSLSocketFactory sf = new MailSSLSocketFactory();
+        sf.setTrustAllHosts(true);
+        props.put("mail.smtp.ssl.enable", "true");
+        props.put("mail.smtp.ssl.socketFactory", sf);
+
+        //使用JavaMail发送邮件的5个步骤
+        //1、创建session
+        Session mailSession = Session.getInstance(props);
+        //开启Session的debug模式，这样就可以查看到程序发送Email的运行状态
+        mailSession.setDebug(true);
+        //2、通过session得到transport对象
+        Transport transport = mailSession.getTransport();
+
+        //3、使用邮箱的用户名和密码连上邮件服务器,这里有多个构造器,可传入host、端口、user、password
+        transport.connect( "319732708@qq.com", "jrarkexjuxuzbjac");//jrarkexjuxuzbjac  //mwkpgvzdraimbhig
+
+        MimeMessage message = new MimeMessage(mailSession);
+        message.setSubject("监测结果通知");
+        message.setFrom(new InternetAddress("319732708@qq.com"));
+        //4、创建邮件
+        message.setContent("<h1>This is a test</h1>" + "<img src=\"https://s2.ax1x.com/2019/10/02/udZr1H.png\">",
+                "text/html");
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress());
+        transport.sendMessage(message, message.getAllRecipients());
+        transport.close();
+    }
 }
+
+
