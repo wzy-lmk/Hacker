@@ -30,11 +30,11 @@ public class MD5IMP {
     }
 
     /*
-        查询是否存在
+            查询网页url和图片的newurl是否存在
      */
     public Boolean SelectUrl(MD5Bean md5Bean){
         QueryRunner runner=new QueryRunner(DBU.getDataSource());
-        String sql="select * from md5 where url='"+md5Bean.getNewurl()+"'";
+        String sql="select * from md5 where url='"+md5Bean.getUrl()+"'";
         try {
             List<Object[]> query = runner.query(sql, new ArrayListHandler());
             if(!query.isEmpty()){
@@ -49,7 +49,7 @@ public class MD5IMP {
     }
 
     /*
-        通过网页url和图片的url来查找
+        通过网页url和图片的newurl来查找图片的MD5的值
     */
     public MD5Bean NewUrlAndUrl(MD5Bean md5Bean){
         QueryRunner runner=new QueryRunner(DBU.getDataSource());
