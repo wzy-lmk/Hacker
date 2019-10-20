@@ -5,6 +5,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.apache.log4j.Logger;
 
+import team.AI.bean.HistroyAct;
 import team.AI.bean.TaskInfo;
 import team.AI.bean.UserBean;
 import team.AI.service.SenesitiveWordService;
@@ -13,6 +14,8 @@ import team.AI.utils.SendHtmlMail;
 import team.SensitiveWord.crawler.WebsiteProcessor;
 import team.SensitiveWord.entity.UrlInfo;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -105,6 +108,16 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
             e.printStackTrace();
 
         }
+
+        //历史记录
+        HistroyAct histroyAct=new HistroyAct();
+        histroyAct.setUser(userinfo.getName());
+        String time = date.toLocaleString();
+        histroyAct.setActtime(time);
+        histroyAct.setActname("敏感词检测");
+        histroyAct.setActcontent("检测网站  "+url);
+        UserServiceIMP userServiceIMP=new UserServiceIMP();
+        userServiceIMP.InsertHistroyinfo(histroyAct);
     }
 
 
