@@ -4,14 +4,19 @@ import java.sql.Date;
 
 public class TaskInfo {
     private int id;
+    private String taskid;
     private String type;
-    private Date starttime;
+    private String starttime;
     private String email;
     private int runNumber;
     private boolean isrun;
     private String taskurl;
 
-    public TaskInfo(String type, Date starttime, String email, int runNumber, boolean isrun, String taskurl) {
+    public TaskInfo(){
+
+    }
+
+    public TaskInfo(String type, String starttime, String email, int runNumber, boolean isrun, String taskurl) {
         this.type = type;
         this.starttime = starttime;
         this.email = email;
@@ -20,7 +25,7 @@ public class TaskInfo {
         this.taskurl = taskurl;
     }
 
-    public TaskInfo(int id, String type, Date starttime, String email, int runNumber, boolean isrun, String taskurl) {
+    public TaskInfo(int id, String type, String starttime, String email, int runNumber, boolean isrun, String taskurl) {
         this.id = id;
         this.type = type;
         this.starttime = starttime;
@@ -46,11 +51,11 @@ public class TaskInfo {
         this.type = type;
     }
 
-    public Date getStarttime() {
+    public String getStarttime() {
         return starttime;
     }
 
-    public void setStarttime(Date starttime) {
+    public void setStarttime(String starttime) {
         this.starttime = starttime;
     }
 
@@ -84,5 +89,13 @@ public class TaskInfo {
 
     public void setTaskurl(String taskurl) {
         this.taskurl = taskurl;
+    }
+
+    public String getTaskid() {
+        return taskid;
+    }
+
+    public void setTaskid(String taskid) {
+        this.taskid = taskid;
     }
 }

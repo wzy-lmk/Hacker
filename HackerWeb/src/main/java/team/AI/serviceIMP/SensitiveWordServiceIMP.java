@@ -16,9 +16,10 @@ import team.SensitiveWord.entity.UrlInfo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
@@ -93,8 +94,9 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
      */
     public void RecordingTask(String url, UserBean userinfo, String type){
         userinfo=userinfo;
-        Date date = new Date(System.currentTimeMillis());
-        taskinfo = new TaskInfo(type,date,userinfo.getEmail(),0,true,url);
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-mm-dd");
+        String times = simpleDateFormat.format(new Date());
+        taskinfo = new TaskInfo(type,times,userinfo.getEmail(),0,true,url);
         try {
             queryRunner.insert("insert into tasks (type,taskid,startTime,email,runNumber,isrun,taskurl) values(?,?,?,?,?,?,?)",
                     new ScalarHandler<>(),new Object[]{taskinfo.getType(),taskid,taskinfo.getStarttime(),taskinfo.getEmail(),taskinfo.getRunNumber(),taskinfo.isIsrun(),taskinfo.getTaskurl()});
@@ -112,6 +114,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
         //历史记录
         HistroyAct histroyAct=new HistroyAct();
         histroyAct.setUser(userinfo.getName());
+        Date date=new Date();
         String time = date.toLocaleString();
         histroyAct.setActtime(time);
         histroyAct.setActname("敏感词检测");
