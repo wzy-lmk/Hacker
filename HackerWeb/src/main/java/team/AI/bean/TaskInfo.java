@@ -13,10 +13,10 @@ public class TaskInfo {
     private String taskurl;
 
     public TaskInfo(){
-
     }
 
-    public TaskInfo(String type, String starttime, String email, int runNumber, boolean isrun, String taskurl) {
+    public TaskInfo(String type,String taskid,String starttime, String email, int runNumber, boolean isrun, String taskurl) {
+        this.taskid=taskid;
         this.type = type;
         this.starttime = starttime;
         this.email = email;
@@ -25,8 +25,9 @@ public class TaskInfo {
         this.taskurl = taskurl;
     }
 
-    public TaskInfo(int id, String type, String starttime, String email, int runNumber, boolean isrun, String taskurl) {
+    public TaskInfo(int id, String type,String taskid, String starttime, String email, int runNumber, boolean isrun, String taskurl) {
         this.id = id;
+        this.taskid=taskid;
         this.type = type;
         this.starttime = starttime;
         this.email = email;
