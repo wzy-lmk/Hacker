@@ -5,31 +5,61 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import team.AI.IMG.*;
+import team.AI.bean.HistroyAct;
+import team.AI.bean.UserBean;
+import team.AI.serviceIMP.UserServiceIMP;
+import team.AI.utils.SendHtmlMail;
+import team.AI.utils.TaskPool;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet("/CheckWebServlet")
 public class CheckWebServlet extends HttpServlet {
-    ArrayList arrayList = new ArrayList();
+    ArrayList arrayList2 = new ArrayList();//存放事件的唯一ID
+    ArrayList arrayList=new ArrayList();//存放arrayList1，传递到发送邮件
+    ArrayList arrayList1=new ArrayList();//存放url、文件名称和时间
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String url = request.getParameter("url");
-        NewimgChange(url);
-        String resultJson = JSONObject.toJSONString(arrayList);
-        response.getWriter().print(resultJson);
+        HttpSession session = request.getSession();
+        UserBean userBean = (UserBean) session.getAttribute("userinfo");
+        String title = "文件检测";
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+                NewimgChange(url,title,userBean);
+                arrayList=null;
+                arrayList1=null;
+            }
+        };
+        String time=String.valueOf(System.currentTimeMillis());
+        TaskPool.addTask(time,runnable,1);
+
+
+        arrayList2.add(time);
+        String resultJson = JSONObject.toJSONString(arrayList2);
+        try {
+            response.getWriter().print(resultJson);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    public void NewimgChange(String url) {
+    public void NewimgChange(String url,String title,UserBean userBean) {
+        arrayList=new ArrayList();
         DealUrl dealUrl = new DealUrl();
         String newUrl = url;
         //实例化客户端
@@ -52,6 +82,24 @@ public class CheckWebServlet extends HttpServlet {
 
                 }
             }
+            Date date=new Date();
+            String time = date.toLocaleString();
+
+
+
+            //发送邮件
+            SendHtmlMail.sendFileCheckMail(title,time,arrayList,userBean.getEmail());
+
+
+
+            //添加历史记录
+            UserServiceIMP userServiceIMP=new UserServiceIMP();
+            HistroyAct histroyAct=new HistroyAct();
+            histroyAct.setUser(userBean.getName());
+            histroyAct.setActcontent(title+"   "+url);
+            histroyAct.setActname("网站监控");
+            histroyAct.setActtime(time);
+            userServiceIMP.InsertHistroyinfo(histroyAct);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -63,6 +111,7 @@ public class CheckWebServlet extends HttpServlet {
 
 
     public String NewimgAddress(String url) {
+
         ThreadLocalClientFactory threadLocalClientFactory = new ThreadLocalClientFactory();
         WebClient webClient = threadLocalClientFactory.getWebClient();
         //实例化客户端
@@ -87,27 +136,40 @@ public class CheckWebServlet extends HttpServlet {
                 if(md5IMP.SelectNewUrlAndUrl(md5Bean)){
                     md5Bean.setMd5(md5);
                     md5IMP.InsertMD5(md5Bean);
+                    arrayList1.add(url);
+                    String substring = newURL.substring(newURL.lastIndexOf('/')+1, newURL.length());
+                    arrayList1.add(substring);
+                    arrayList1.add("新增");
+                    System.out.println("newurl   "+newURL);
+                    System.out.println("url   "+url);
+                    arrayList.add(arrayList1);
                     System.out.println("加入成功");
                 }else{
                     MD5Bean md5bean = md5IMP.NewUrlAndUrl(md5Bean);
                     if(md5bean.getMd5().equals(md5)){
                         System.out.println("没有改变");
                     }else{
-                        System.out.println("newURL   "+newURL);
-                        System.out.println("url   "+url);
-                        System.out.println("md5   "+md5);
+                        arrayList1.add(url);
+                        String substring = newURL.substring(newURL.lastIndexOf('/')+1, newURL.length());
+                        arrayList1.add(substring);
+                        arrayList1.add("修改");
+                        arrayList.add(arrayList1);
                         System.out.println("发生改变");
                     }
                 }
 
 
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             webClient.getCurrentWindow().getJobManager().removeAllJobs();
             System.gc();
             webClient.close();
+        }
+        if(arrayList.isEmpty()){
+            //没有改变网页
         }
         return null;
     }

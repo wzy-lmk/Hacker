@@ -1,12 +1,17 @@
 package team.AI.servlet;
+import team.AI.bean.HistroyAct;
 import team.AI.bean.UserBean;
 import team.AI.serviceIMP.SensitiveWordServiceIMP;
+import team.AI.serviceIMP.UserServiceIMP;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * @author 王智源
@@ -28,6 +33,9 @@ public class SensitiveWordServlet extends HttpServlet {
         serviceIMP.RecordingTask(url,userinfo,"敏感词查询");
         //启动爬虫
         serviceIMP.startCrawler(url);
+
+
+
 
 
         resp.getWriter().print(result);
