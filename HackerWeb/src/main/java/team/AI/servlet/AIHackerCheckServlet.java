@@ -136,11 +136,13 @@ public class AIHackerCheckServlet extends HttpServlet {
         TaskPool.addTask(time,runnable,1);
 
         //添加历史记录
+        Date date=new Date();
+        String time1 = date.toLocaleString();
         HttpSession session = request.getSession();
         UserBean userBean = (UserBean) session.getAttribute("userinfo");
         HistroyAct histroyAct=new HistroyAct();
         histroyAct.setUser(userBean.getName());
-        histroyAct.setActtime(time);
+        histroyAct.setActtime(time1);
         if(!url.equals("")&&keyword.equals("")){
             histroyAct.setActcontent("检测网站   "+url);
         }
