@@ -25,7 +25,7 @@ public class SensitiveWordServlet extends HttpServlet {
         String result=null;
         SensitiveWordServiceIMP serviceIMP = new SensitiveWordServiceIMP();
         //记录任务
-        serviceIMP.RecordingTask(url,userinfo.getEmail(),"敏感词查询");
+        serviceIMP.RecordingTask(url,userinfo,"敏感词查询");
         //启动爬虫
         serviceIMP.startCrawler(url);
 

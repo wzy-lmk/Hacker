@@ -6,6 +6,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.apache.log4j.Logger;
 
 import team.AI.bean.TaskInfo;
+import team.AI.bean.UserBean;
 import team.AI.service.SenesitiveWordService;
 import team.AI.utils.DBUtiles;
 import team.AI.utils.SendHtmlMail;
@@ -20,7 +21,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 public class SensitiveWordServiceIMP implements SenesitiveWordService {
-
+    UserBean userinfo = null;
     ArrayList<UrlInfo> urlInfos;
     Map<String,String> result= new HashMap<>();
     FileDowmLoadServiceIMP serviceIMP = new FileDowmLoadServiceIMP();
@@ -30,6 +31,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
     ScheduledExecutorService service  = Executors.newSingleThreadScheduledExecutor();
     QueryRunner queryRunner  = new QueryRunner(DBUtiles.getDataSource());
     ScheduledFuture<?> scheduledFuture=null;
+    String taskid= String.valueOf(System.currentTimeMillis());
 
     /**
      * 开始执行任务
@@ -60,7 +62,6 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
         //执行结束后的两分钟再次执行
         scheduledFuture = service.scheduleWithFixedDelay(runner, 0, 2, TimeUnit.MINUTES);
 
-        //service.schedule(runner,10,TimeUnit.MILLISECONDS);
         return 0;
     }
 
@@ -84,17 +85,16 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
     /**
      * 记录用户提交的任务
      * @param url 任务url
-     * @param email 用户邮箱
+     * @param userinfo 用户信息
      * @param type  任务类型
      */
-    public void RecordingTask(String url, String email, String type){
+    public void RecordingTask(String url, UserBean userinfo, String type){
+        userinfo=userinfo;
         Date date = new Date(System.currentTimeMillis());
-        taskinfo = new TaskInfo(type,date,email,0,true,url);
-
+        taskinfo = new TaskInfo(type,date,userinfo.getEmail(),0,true,url);
         try {
-
-            queryRunner.insert("insert into tasks (type,startTime,email,runNumber,isrun,taskurl) values(?,?,?,?,?,?)",
-                    new ScalarHandler<>(),new Object[]{taskinfo.getType(),taskinfo.getStarttime(),taskinfo.getEmail(),taskinfo.getRunNumber(),taskinfo.isIsrun(),taskinfo.getTaskurl()});
+            queryRunner.insert("insert into tasks (type,taskid,startTime,email,runNumber,isrun,taskurl) values(?,?,?,?,?,?,?)",
+                    new ScalarHandler<>(),new Object[]{taskinfo.getType(),taskid,taskinfo.getStarttime(),taskinfo.getEmail(),taskinfo.getRunNumber(),taskinfo.isIsrun(),taskinfo.getTaskurl()});
 
             //获取id
             int id = queryRunner.query("select id form tasks where startTime=? and taskurl=?",new ScalarHandler<>(),new Object[]{taskinfo.getStarttime(),taskinfo.getTaskurl()});
