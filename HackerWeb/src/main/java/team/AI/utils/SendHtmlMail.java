@@ -17,20 +17,30 @@ import java.util.function.BiConsumer;
  */
 public class SendHtmlMail {
 
+    /*
+        发送黑客入侵检测结果邮件
+    */
+    public static void sendHackerMail(String title, String time, ArrayList<ArrayList> info, String userMails){
+        StringBuilder stringBuilder = new StringBuilder();
 
-    /**
-     *发送文件监测结果邮件
-     * @param title 任务名称
-     * @param time 创建时间
-     * @param info 监测结果信息
-     *             {
-     *                  改动文件所在页面链接
-     *                  文件名称
-     *                  改动类型：增加，修改
-     *             }
-     */
-    public static void sendFileCheckMail(String title, String time, ArrayList<Object> info,String userMails){
-        String tableContent="";
+        String url = null;
+        String status = null;
+        ArrayList list = info.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (i % 2 == 0) {
+                url = (String) list.get(i);
+                continue;
+            }
+            if (i % 2 == 1) {
+                status = (String) list.get(i);
+            }
+
+            stringBuilder.append("<tr><td>").append(url)
+                    .append("</td><td>").append(status)
+                    .append("</td></tr>");
+
+        }
+
 
         String mailContent = " <style type=\"text/css\">\n" +
                 "        #customers {\n" +
@@ -72,9 +82,114 @@ public class SendHtmlMail {
                 "                </div>\n" +
                 "                <hr>\n" +
                 "                <div id=\"content-info\" style=\"text-align: center\">\n" +
-                "                    <span>任务名称： "+title+"</span>\n" +
+                "                    <span>任务名称： " + title + "</span>\n" +
                 "                    <span style=\"margin-left: 40px\">类型：网站文件监测</span>\n" +
-                "                    <span style=\"margin-left: 40px\">创建时间："+time+"</span>\n" +
+                "                    <span style=\"margin-left: 40px\">创建时间：" + time + "</span>\n" +
+                "                </div>\n" +
+                "                <div><h4>结果详情</h4></div>\n" +
+                "                <div>\n" +
+                "                    新的监测结果\n" +
+                "                </div>\n" +
+                "                <div id=\"content-body\">\n" +
+                "                        <table id=\"customers\" aria-disabled=\"false\">\n" +
+                "                            <tbody><tr>\n" +
+                "                                <th>链接</th><th>结果</th>\n" +
+                "                            </tr>\n" +
+                "                            <tr>\n" +
+                                                stringBuilder.toString() + //添加表格内容
+                "                            </tr>\n" +
+                "                        </tbody></table>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "        </div>    ";
+
+        mailSend(mailContent, userMails);
+
+    }
+
+
+    /**
+     * 发送文件监测结果邮件
+     *
+     * @param title 任务名称
+     * @param time  创建时间
+     * @param info  监测结果信息
+     *              {
+     *              改动文件所在页面链接
+     *              文件名称
+     *              改动类型：增加，修改
+     *              }
+     */
+    public static void sendFileCheckMail(String title, String time, ArrayList<ArrayList> info, String userMails) {
+        StringBuilder stringBuilder = new StringBuilder();
+        String url = null;
+        String fileName = null;
+        String type = null;
+        ArrayList list = info.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (i % 3 == 0) {
+                url = (String) list.get(i);
+                continue;
+            }
+            if (i % 3 == 1) {
+                fileName = (String) list.get(i);
+                continue;
+            }
+            if (i % 3 == 2) {
+                type = (String) list.get(i);
+            }
+
+            stringBuilder.append("<tr><td>").append(url)
+                    .append("</td><td>").append(fileName)
+                    .append("</td><td>").append(type)
+                    .append("</td></tr>");
+
+        }
+
+
+        String mailContent = " <style type=\"text/css\">\n" +
+                "        #customers {\n" +
+                "            font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n" +
+                "            border-collapse: collapse;\n" +
+                "            width: 100%;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers td,\n" +
+                "        #customers th {\n" +
+                "            border: 1px solid #ddd;\n" +
+                "            padding: 8px;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers tr:nth-child(even) {\n" +
+                "            background-color: #f2f2f2;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers tr:hover {\n" +
+                "            background-color: #ddd;\n" +
+                "        }\n" +
+                "\n" +
+                "        #customers th {\n" +
+                "            padding-top: 12px;\n" +
+                "            padding-bottom: 12px;\n" +
+                "            text-align: left;\n" +
+                "            background-color: #4CAF50;\n" +
+                "            color: white;\n" +
+                "        }\n" +
+                "    </style>" +
+                " <div>\n" +
+                "            <div style=\"text-align: center\">\n" +
+                "                <img src=\"https://s2.ax1x.com/2019/10/02/udZr1H.png\">\n" +
+                "            </div>\n" +
+                "            <br>\n" +
+                "            <div style=\"width:80%;margin: 0 auto;\">\n" +
+                "                <div style=\"text-align: center\" id=\"title\">\n" +
+                "                    <h3>您提交的监测任务有新的结果</h3>\n" +
+                "                </div>\n" +
+                "                <hr>\n" +
+                "                <div id=\"content-info\" style=\"text-align: center\">\n" +
+                "                    <span>任务名称： " + title + "</span>\n" +
+                "                    <span style=\"margin-left: 40px\">类型：网站文件监测</span>\n" +
+                "                    <span style=\"margin-left: 40px\">创建时间：" + time + "</span>\n" +
                 "                </div>\n" +
                 "                <div><h4>结果详情</h4></div>\n" +
                 "                <div>\n" +
@@ -86,25 +201,26 @@ public class SendHtmlMail {
                 "                                <th>链接</th><th>文件名</th><th>状态</th>\n" +
                 "                            </tr>\n" +
                 "                            <tr>\n" +
-                                                 tableContent+ //添加表格内容
+                stringBuilder.toString() + //添加表格内容
                 "                            </tr>\n" +
                 "                        </tbody></table>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
                 "        </div>    ";
 
-        mailSend(mailContent,userMails);
+        mailSend(mailContent, userMails);
     }
 
     /**
      * 发送反共黑客网监测邮件
-     * @param title 任务名称
-     * @param time 创建时间
-     * @param content 监测结果内容
+     *
+     * @param title     任务名称
+     * @param time      创建时间
+     * @param content   监测结果内容
      * @param userMails 要发送的用户邮件列表
      */
-    public static void SendFGHackerMail(String title,String time,String content,List<String> userMails){
-        String mails = String.join(",",userMails);
+    public static void SendFGHackerMail(String title, String time, String content, List<String> userMails) {
+        String mails = String.join(",", userMails);
 
         String mailContent = "        <style type=\"text/css\">\n" +
                 "           #customers {\n" +
@@ -143,7 +259,7 @@ public class SendHtmlMail {
                 "            <div id=\"content-info\" style=\"text-align: center\">\n" +
                 "                <span>任务名称：网站监测 </span>\n" +
                 "                <span style=\"margin-left: 40px\">类型：反共黑客网监测</span>\n" +
-                "                <span style=\"margin-left: 40px\">创建时间："+time+"</span>\n" +
+                "                <span style=\"margin-left: 40px\">创建时间：" + time + "</span>\n" +
                 "            </div>\n" +
                 "            <div><h4>结果详情</h4></div>\n" +
                 "            <div>\n" +
@@ -155,25 +271,26 @@ public class SendHtmlMail {
                 "                            <th>时间</th><th>标题</th><th>内容</th>\n" +
                 "                        </tr>\n" +
                 "                        <tr>\n" +
-                "                            <td>"+time+"</td><td>"+title+"</td><td>"+content+"</td>\n" +
+                "                            <td>" + time + "</td><td>" + title + "</td><td>" + content + "</td>\n" +
                 "                        </tr>\n" +
                 "                    </tbody></table>\n" +
                 "            </div>\n" +
                 "        </div>\n" +
                 "    </div>";
 
-       mailSend(mailContent,mails);
+        mailSend(mailContent, mails);
     }
 
     /**
      * 发送敏感词监测邮件
+     *
      * @param tablemap 表格内容
-     * @param info 任务信息
+     * @param info     任务信息
      */
-    public static void SendSenitiveTaskMail(Map<String, Map<String, Integer>> tablemap, TaskInfo info){
+    public static void SendSenitiveTaskMail(Map<String, Map<String, Integer>> tablemap, TaskInfo info) {
 
         StringBuilder tablebuilder = new StringBuilder();
-        Map<String,String> map= new HashMap<>();
+        Map<String, String> map = new HashMap<>();
 
         //拼接表格内容
         tablemap.forEach(new BiConsumer<String, Map<String, Integer>>() {
@@ -191,7 +308,7 @@ public class SendHtmlMail {
             }
         });
 
-        String content="<style type=\"text/css\">\n" +
+        String content = "<style type=\"text/css\">\n" +
                 "    #customers {  font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;  border-collapse: collapse;  width: 100%;}#customers td, #customers th {  border: 1px solid #ddd;  padding: 8px;}#customers tr:nth-child(even){background-color: #f2f2f2;}#customers tr:hover {background-color: #ddd;}#customers th {  padding-top: 12px;  padding-bottom: 12px;  text-align: left;  background-color: #4CAF50;  color: white;}\n" +
                 "</style>\n" +
                 "<div>\n" +
@@ -208,13 +325,13 @@ public class SendHtmlMail {
                 "        <hr>\n" +
                 "        <div id=\"content-info\" style=\"text-align: center\">\n" +
                 "            <span>\n" +
-                "                任务名称：" +info.getType()+
+                "                任务名称：" + info.getType() +
                 "            </span>\n" +
                 "            <span style=\"margin-left: 40px\">\n" +
                 "                类型：敏感词查询\n" +
                 "            </span>\n" +
                 "            <span style=\"margin-left: 40px\">\n" +
-                "                创建时间：" +info.getStarttime().toLocalDate()+
+                "                创建时间：" + info.getStarttime() +
                 "            </span>\n" +
                 "        </div>\n" +
                 "        <div>\n" +
@@ -229,23 +346,23 @@ public class SendHtmlMail {
                 "          <table id=\"customers\" aria-disabled=\"false\">\n" +
                 "                        <tbody><tr>\n" +
                 "                            <th>出现链接</th><th>敏感词</th><th>数量</th>\n" +
-               tablebuilder.toString() +
+                tablebuilder.toString() +
                 "              </tbody></table>\n" +
                 "        </div>\n" +
                 "    </div>\n" +
                 "</div>";
 
-        mailSend(content,info.getEmail());
+        mailSend(content, info.getEmail());
     }
 
-    public static void mailSend(String content,String email){
+    public static void mailSend(String content, String email) {
         Properties props = new Properties();
-        props.setProperty("mail.smtp.port","465");
+        props.setProperty("mail.smtp.port", "465");
         props.setProperty("mail.transport.protocol", "smtp");
         props.setProperty("mail.host", "smtp.qq.com");
         props.setProperty("mail.smtp.auth", "true");
-        props.setProperty("mail.smtps.connectiontimeout","60000");
-        props.setProperty("mail.smtp.timeout","60000");
+        props.setProperty("mail.smtps.connectiontimeout", "60000");
+        props.setProperty("mail.smtp.timeout", "60000");
         try {
             MailSSLSocketFactory sf = new MailSSLSocketFactory();
             sf.setTrustAllHosts(true);
@@ -261,19 +378,19 @@ public class SendHtmlMail {
             Transport transport = mailSession.getTransport();
 
             //3、使用邮箱的用户名和密码连上邮件服务器,这里有多个构造器,可传入host、端口、user、password
-            transport.connect( "319732708@qq.com", "jrarkexjuxuzbjac");//jrarkexjuxuzbjac  //mwkpgvzdraimbhig
+            transport.connect("319732708@qq.com", "jrarkexjuxuzbjac");//jrarkexjuxuzbjac  //mwkpgvzdraimbhig
 
             MimeMessage message = new MimeMessage(mailSession);
             message.setSubject("监测结果通知");
             message.setFrom(new InternetAddress("319732708@qq.com"));
             //4、创建邮件
-            message.setContent("<h1>This is a test</h1>" + "<img src=\"https://s2.ax1x.com/2019/10/02/udZr1H.png\">",
-                    "text/html");
+            message.setContent(content,
+                    "text/html;charset=gb2312");
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -281,12 +398,12 @@ public class SendHtmlMail {
     public static void main(String[] args) throws MessagingException, GeneralSecurityException {
 
         Properties props = new Properties();
-        props.setProperty("mail.smtp.port","465");
+        props.setProperty("mail.smtp.port", "465");
         props.setProperty("mail.transport.protocol", "smtp");
         props.setProperty("mail.host", "smtp.qq.com");
         props.setProperty("mail.smtp.auth", "true");
-        props.setProperty("mail.smtps.connectiontimeout","60000");
-        props.setProperty("mail.smtp.timeout","60000");
+        props.setProperty("mail.smtps.connectiontimeout", "60000");
+        props.setProperty("mail.smtp.timeout", "60000");
         MailSSLSocketFactory sf = new MailSSLSocketFactory();
         sf.setTrustAllHosts(true);
         props.put("mail.smtp.ssl.enable", "true");
@@ -301,13 +418,13 @@ public class SendHtmlMail {
         Transport transport = mailSession.getTransport();
 
         //3、使用邮箱的用户名和密码连上邮件服务器,这里有多个构造器,可传入host、端口、user、password
-        transport.connect( "319732708@qq.com", "jrarkexjuxuzbjac");//jrarkexjuxuzbjac  //mwkpgvzdraimbhig
+        transport.connect("319732708@qq.com", "jrarkexjuxuzbjac");//jrarkexjuxuzbjac  //mwkpgvzdraimbhig
 
         MimeMessage message = new MimeMessage(mailSession);
         message.setSubject("监测结果通知");
         message.setFrom(new InternetAddress("319732708@qq.com"));
         //4、创建邮件
-        message.setContent("<h1>This is a test</h1>" + "<img src=\"https://s2.ax1x.com/2019/10/02/udZr1H.png\">",
+        message.setContent("",
                 "text/html");
         message.addRecipient(Message.RecipientType.TO, new InternetAddress());
         transport.sendMessage(message, message.getAllRecipients());

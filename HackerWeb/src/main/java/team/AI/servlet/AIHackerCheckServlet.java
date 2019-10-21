@@ -4,7 +4,9 @@ import com.alibaba.fastjson.*;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import team.AI.DaoIMP.AIHeckerCheckIMP;
 import team.AI.IMG.*;
+import team.AI.bean.AIHeckerCheckBean;
 import team.AI.bean.HistroyAct;
 import team.AI.bean.TaskInfo;
 import team.AI.bean.UserBean;
@@ -12,6 +14,7 @@ import team.AI.serviceIMP.AIHeckerCheckServiceIMP;
 import team.AI.serviceIMP.TaskInfoServiceIMP;
 import team.AI.serviceIMP.UserServiceIMP;
 import team.AI.utils.Sample;
+import team.AI.utils.SendHtmlMail;
 import team.AI.utils.TaskPool;
 
 import javax.servlet.ServletException;
@@ -28,18 +31,22 @@ import java.util.*;
 @WebServlet("/AIHackerCheckServlet")
 public class AIHackerCheckServlet extends HttpServlet {
     Boolean isrun = false;
+    ArrayList arrayList = new ArrayList();
+    ArrayList lists = new ArrayList();
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String url = request.getParameter("url");
         String keyword = request.getParameter("keyword");
+        HttpSession session = request.getSession();
+        UserBean userBean = (UserBean) session.getAttribute("userinfo");
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 String words = "";
-                ArrayList arrayList = new ArrayList();
-                ArrayList lists = new ArrayList();
+                arrayList.clear();
+                lists.clear();
                 int i = 0;
                 DeleteFiles deleteFiles = new DeleteFiles();
                 String address = null;
@@ -90,27 +97,29 @@ public class AIHackerCheckServlet extends HttpServlet {
                                 words = words + next;
                             }
                         }
-                        words=words.trim();
+                        words = words.trim();
                         System.out.println(words);
                         if (keyword.equals("")) {
-                            AIHeckerCheckServiceIMP aiHeckerCheckServiceIMPH = new AIHeckerCheckServiceIMP();
-                            ArrayList arrayList1 = aiHeckerCheckServiceIMPH.HeckerCheck();
+                            AIHeckerCheckIMP aiHeckerCheckIMP=new AIHeckerCheckIMP();
+                            ArrayList arrayList1 = aiHeckerCheckIMP.HeckerCheck();
                             Iterator iterator1 = arrayList1.iterator();
                             while (iterator1.hasNext()) {
-                                String next = (String) iterator1.next();
-                                int count = words.indexOf(next);
+                                AIHeckerCheckBean next = (AIHeckerCheckBean) iterator1.next();
+                                String words1 = next.getWords();
+                                int count = words.indexOf(words1);
                                 if (count != -1) {
                                     lists.add(newURL);
-                                    lists.add(next);
+                                    lists.add("危险  " + words1);
                                     arrayList.add(lists);
                                 }
                             }
                         }
                         if (!keyword.equals("")) {
-                            int i1 = words.indexOf(keyword);
+                            int i1=-1;
+                            i1 = words.indexOf(keyword);
                             if (i1 != -1) {
                                 lists.add(newURL);
-                                lists.add(keyword);
+                                lists.add("存在  " + keyword);
                                 arrayList.add(lists);
                             }
                         }
@@ -123,36 +132,28 @@ public class AIHackerCheckServlet extends HttpServlet {
                     }
                     File file = new File(address);
                     deleteFiles.delete(file);
-//                    if (lists.isEmpty()) {
-//                        Map map = new HashMap();
-//                        map.put("res","none");
-//                        try {
-//                            response.getWriter().print(JSONObject.toJSONString(map));
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }else{
-//                        String resultJson = JSONObject.toJSONString(lists);
-//                        try {
-//                            response.getWriter().print(resultJson);
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
                 } else {
                     System.out.println("输入错误");
                 }
                 isrun = true;
+                if(arrayList.size()==0){
+                    lists.add(url);
+                    lists.add("安全");
+                    arrayList.add(lists);
+                }
+                //发送邮件
+                Date date = new Date();
+                String time1 = date.toLocaleString();
+                SendHtmlMail.sendHackerMail("黑客入侵检测", time1, arrayList, userBean.getEmail());
             }
-            //发送邮件
+
+
         };
 
         String time = String.valueOf(System.currentTimeMillis());
         //添加历史记录
         Date date = new Date();
         String time1 = date.toLocaleString();
-        HttpSession session = request.getSession();
-        UserBean userBean = (UserBean) session.getAttribute("userinfo");
         HistroyAct histroyAct = new HistroyAct();
         histroyAct.setUser(userBean.getName());
         histroyAct.setActtime(time1);
