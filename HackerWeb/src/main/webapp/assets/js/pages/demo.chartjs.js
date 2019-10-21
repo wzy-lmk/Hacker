@@ -39,21 +39,37 @@
 //     }
 // });
 
+/**
+ *
+ * @constructor
+ */
+function AddSensitiveWordTasks(){
+    //创建中过渡区域
+    var temphtml =
+        "                                    <div id='temp-card' class=\"card mb-0\">\n" +
+        "                                    <div class=\"card-body p-3\">\n" +
+        "                                        <div class=\"d-flex align-items-center text-success m-2\">\n" +
+        "                                            <strong>正在创建任务，请稍后</strong>\n" +
+        "                                            <div class=\"spinner-grow ml-auto\" role=\"status\" aria-hidden=\"true\"></div>\n" +
+        "                                        </div>\n" +
+        "                                    </div>\n" +
+        "                                    </div>";
+
+    //第一次创建不包含间隔
+    let card = document.getElementsByClassName("card")
+    if (card.length!=0){
+        temphtml = "<br><br>\n" +temphtml;
+    }
+    $('#content').append(temphtml);
+    submitCheck()
+}
+
 
 function submitCheck() {
-
     //显示加载按钮
     document.getElementById("loading").style.display = "";
     //隐藏查询按钮
     document.getElementById("querybutton").style.display = "none";
-    //不显示图表
-    // document.getElementById("result-chart").style.display = "none";
-    //不显示结果区域
-    document.getElementById("query-result").style.display = "none";
-
-    //获取查询内容
-    // var choose = $('#wordschoose').val().toString()
-    // var content = $('#summernote-editmode').summernote('code')
     var url = $('#curl').val()
 
     $.ajax({
@@ -62,34 +78,53 @@ function submitCheck() {
         data: {"url": url},
         dataType: "json",
         success: function (res) {
-
+            console.log(res)
             //显示查询按钮
             document.getElementById("querybutton").style.display = "";
             //隐藏加载按钮
             document.getElementById("loading").style.display = "none";
+            if (null!=res){
+                //结果HTML
+                var taskHtml = "<div class=\"card mb-0\"><div class=\"card-body p-3\">\n" +
+                    "                                                <small class=\"float-right text-muted\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">"+res.starttime+"</font></font></small>\n" +
+                    "                                                <span class=\"badge badge-success\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">运行中</font></font></span>\n" +
+                    "                                                <h5 class=\"mt-2 mb-2\">\n" +
+                    "                                                    <a href=\"#\" data-toggle=\"modal\" data-target=\"#task-detail-modal\" class=\"text-body\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">"+res.type+"</font></font></a>\n" +
+                    "                                                </h5>\n" +
+                    "                                                <p class=\"mb-0\">\n" +
+                    "                                                    <span class=\"pr-2 text-nowrap mb-2 d-inline-block\">\n" +
+                    "                                                        <i class=\"mdi mdi-briefcase-outline text-muted\"></i><font style=\"vertical-align: inherit;\"><span style=\"vertical-align: inherit;\">\n" +
+                    "                                                       <strong>任务id:</strong><span class='taskid'>"+ res.taskid+
+                    "                                                    </span></font></font></span>\n" +
+                    "                                                </p>\n" +
+                    "                                                <div class=\"dropdown float-right\">\n" +
+                    "                                                    <a href=\"#\" class=\"dropdown-toggle text-muted arrow-none\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n" +
+                    "                                                        <i class=\"mdi mdi-dots-vertical font-18\"></i>\n" +
+                    "                                                    </a>\n" +
+                    "                                                    <div class=\"dropdown-menu dropdown-menu-right\">\n" +
+                    "                                                        <!-- item-->\n" +
+                    "                                                        <a href=\"javascript:void(0);\"   class=\"dropdown-item stop-spinner\"><i class=\"mdi mdi-pencil mr-1\"></i>&nbsp;&nbsp;&nbsp;&nbsp;停止</a>\n" +
+                    "                                                        <!-- item-->\n" +
+                    "                                                        <a href=\"javascript:void(0);\"  class=\"dropdown-item cancel-spinner\"><i class=\"mdi mdi-delete mr-1\"></i>删除</a>\n" +
+                    "                                                    </div>\n" +
+                    "                                                </div>\n" +
+                    "\n" +
+                    "                                                <p class=\"mb-0\">\n" +
+                    "                                                    <!-- <img src=\"assets/images/users/avatar-2.jpg\" alt=\"用户IMG\" class=\"avatar-xs rounded-circle mr-1\"> -->\n" +
+                    "                                                    <span class=\"align-middle\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">"+res.taskurl+"</font></font></span>\n" +
+                    "                                                </p>\n" +
+                    "                                                <div class=\"normal-cancel-spinner\" id=\"stop-spinner\" style=\"display: none\">\n" +
+                    "                                                    <hr>\n" +
+                    "                                                    <div class=\"d-flex align-items-center text-secondary m-2\">\n" +
+                    "                                                        <strong>取消中...</strong>\n" +
+                    "                                                        <div class=\"spinner-grow ml-auto\" role=\"status\" aria-hidden=\"true\"></div>\n" +
+                    "                                                    </div>\n" +
+                    "                                                </div>\n" +
+                    "                                            </div></div>";
 
-
-            if (res.result == "fail") {
-                $.NotificationApp.send("查询失败", "输入的url不正确，或该站点禁制爬虫访问。", "top-center", "rgba(0,0,0,0.2)", "fail")
-            } else {
-                $.NotificationApp.send("查询成功", "可以下载文件查看敏感词详细信息", "top-center", "rgba(0,0,0,0.2)", "success")
-                // var data = res.data.toString().split(",")
-                // var nums = new Array(6);
-                // for (var i = 0; i < data.length; i++) {
-                //     nums[i] = parseInt(data[i]);
-                // }
-                // console.log(nums.type)
-                //
-                document.getElementById("query-result").style.display = "";
-                $('#filename').attr("href","DownLoad?filename="+res.file)
-                document.getElementById("filename").innerText=res.file;
-                // document.getElementById("result-chart").style.display = "";
-                // circle.data.datasets[0].data = nums;
-                // leida.data.datasets[0].data = nums;
-                // circle.update();
-                // leida.update();
+                $("div").remove("#temp-card")
+                $('#content').append(taskHtml)
             }
-            // $("#submit-minganci").attr("disable", "false")
         }
     });
 }

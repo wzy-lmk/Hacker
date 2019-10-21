@@ -11,11 +11,10 @@ import team.AI.bean.UserBean;
 import team.AI.service.SenesitiveWordService;
 import team.AI.utils.DBUtiles;
 import team.AI.utils.SendHtmlMail;
+import team.AI.utils.TaskPool;
 import team.SensitiveWord.crawler.WebsiteProcessor;
 import team.SensitiveWord.entity.UrlInfo;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
     ScheduledExecutorService service  = Executors.newSingleThreadScheduledExecutor();
     QueryRunner queryRunner  = new QueryRunner(DBUtiles.getDataSource());
     ScheduledFuture<?> scheduledFuture=null;
-    String taskid= String.valueOf(System.currentTimeMillis());
+    String taskid=null;
 
     /**
      * 开始执行任务
@@ -62,10 +61,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
                 //更新任务状态
             }
         };
-
-        //执行结束后的两分钟再次执行
-        scheduledFuture = service.scheduleWithFixedDelay(runner, 0, 2, TimeUnit.MINUTES);
-
+        TaskPool.addTask(taskid,runner,1);
         return 0;
     }
 
@@ -92,11 +88,12 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
      * @param userinfo 用户信息
      * @param type  任务类型
      */
-    public void RecordingTask(String url, UserBean userinfo, String type){
+    public TaskInfo RecordingTask(String url, UserBean userinfo, String type){
+        taskid = String.valueOf(System.currentTimeMillis());
         userinfo=userinfo;
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         String times = simpleDateFormat.format(new Date());
-        taskinfo = new TaskInfo(type,times,userinfo.getEmail(),0,true,url);
+        taskinfo = new TaskInfo(type,taskid,times,userinfo.getEmail(),0,true,url);
         try {
             queryRunner.insert("insert into tasks (type,taskid,startTime,email,runNumber,isrun,taskurl) values(?,?,?,?,?,?,?)",
                     new ScalarHandler<>(),new Object[]{taskinfo.getType(),taskid,taskinfo.getStarttime(),taskinfo.getEmail(),taskinfo.getRunNumber(),taskinfo.isIsrun(),taskinfo.getTaskurl()});
@@ -106,9 +103,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
             taskinfo.setId(id);
 
         } catch (SQLException e) {
-
             e.printStackTrace();
-
         }
 
         //历史记录
@@ -121,6 +116,7 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
         histroyAct.setActcontent("检测网站  "+url);
         UserServiceIMP userServiceIMP=new UserServiceIMP();
         userServiceIMP.InsertHistroyinfo(histroyAct);
+        return taskinfo;
     }
 
 

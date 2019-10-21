@@ -57,5 +57,4 @@ $('body').on("click",'.cancel-spinner',function () {
  */
 $('#createTask').on("click",function () {
     $('#add-new-task-modal').modal('hide')
-    AddTasks()
 })

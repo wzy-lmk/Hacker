@@ -99,4 +99,18 @@ public class TaskInfo {
     public void setTaskid(String taskid) {
         this.taskid = taskid;
     }
+
+    @Override
+    public String toString() {
+        return "TaskInfo{" +
+                "id=" + id +
+                ", taskid='" + taskid + '\'' +
+                ", type='" + type + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", email='" + email + '\'' +
+                ", runNumber=" + runNumber +
+                ", isrun=" + isrun +
+                ", taskurl='" + taskurl + '\'' +
+                '}';
+    }
 }

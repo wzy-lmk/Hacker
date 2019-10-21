@@ -28,6 +28,9 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * @author limengke
+ */
 @WebServlet("/AIHackerCheckServlet")
 public class AIHackerCheckServlet extends HttpServlet {
     Boolean isrun = false;

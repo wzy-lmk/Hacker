@@ -34,7 +34,7 @@
 			<div class="modal-body">
 				<div class="text-center mt-2 mb-4">
 					<a href="index.html" class="text-success">
-						<span><img src="assets/images/logo-light.png" alt="" height="18"></span>
+						<span><img src="assets/images/logo.png" alt="" height="18"></span>
 					</a>
 				</div>
 				<form id="changeform" class="pl-3 pr-3">

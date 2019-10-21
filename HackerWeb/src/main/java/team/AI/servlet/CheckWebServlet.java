@@ -31,7 +31,7 @@ public class CheckWebServlet extends HttpServlet {
     ArrayList arrayList1=new ArrayList();//存放url、文件名称和时间
     TaskInfo taskInfo=new TaskInfo();//放入任务表
     int runNumber=0;//运行次数
-    Boolean isrun=null;//运行状态
+    Boolean isrun=true;//运行状态
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -43,6 +43,7 @@ public class CheckWebServlet extends HttpServlet {
         String title = "文件检测";
         Runnable runnable = new Runnable(){
 
+            @Override
             public void run() {
                 isrun=true;
                 NewimgChange(url,title,userBean);
