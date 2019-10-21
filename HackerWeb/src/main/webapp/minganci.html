@@ -110,15 +110,6 @@
 
     <!-- Begin page -->
     <div class="wrapper">
-
-        <!-- ============================================================== -->
-
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
-        <!-- Start Content-->
-
-        <!-- ========== Left Sidebar Start ========== -->
         <div class="left-side-menu">
 
             <div class="leftbar-user">
@@ -180,6 +171,22 @@
 
         <!-- Left Sidebar End -->
 
+        <!-- 删除任务 模态窗口 -->
+        <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body p-4">
+                        <div class="text-center">
+                            <i class="dripicons-information h1 text-info"></i>
+                            <h4 class="mt-2">提示!</h4>
+                            <p class="mt-3">是否确定删除任务，任务将不会再出现在你的任务列表中，确认请继续。点击空白取消</p>
+                            <button type="button" id="cancel-button" class="btn btn-info my-2" data-dismiss="modal">继续</button>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
         <div class="content-page">
             <div class="content">
 
@@ -220,44 +227,15 @@
                                         </div>
                                         <input type="text" id="curl" class="form-control" placeholder=" 请输入要查询的网站url">
                                     </div>
-                                    <!--<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-->
-                                        <!--敏感词类型选择-->
-                                    <!--</font></font>-->
-                                    <!--<select id="wordschoose" name="sensitive" class="select2 form-control select2-multiple select2-hidden-accessible" data-toggle="select2" multiple="" data-placeholder="Choose ..." data-select2-id="4" tabindex="-1" aria-hidden="true">-->
-                                        <!--<optgroup label="常用敏感词" data-select2-id="81">-->
-                                            <!--<option value="4" data-select2-id="82">民生敏感词</option>-->
-                                            <!--<option value="1" data-select2-id="83">反动敏感词</option>-->
-                                            <!--<option value="2" data-select2-id="84">色情敏感词</option>-->
-                                            <!--<option value="0" data-select2-id="85">暴力敏感词</option>-->
-                                        <!--</optgroup>-->
-                                        <!--<optgroup label="其他敏感词" data-select2-id="88">-->
-                                            <!--<option value="3" data-select2-id="86">其他敏感词</option>-->
-                                            <!--<option value="5" data-select2-id="87">自定义敏感词</option>-->
-                                        <!--</optgroup>-->
-                                    <!--</select>-->
-                                    <!--<br>-->
-                                    <!--<div class="mb-2">-->
-                                        <!--<br>-->
-                                        <!--<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-->
-                                            <!--自定义敏感词(可选)-->
-                                        <!--</font></font>-->
-                                        <!--<p class="text-muted font-14 mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">点击编辑按钮在下方输入自定义敏感词，使用逗号分割</font></font></p>-->
-                                        <!--<div id="summernote-editmode" style="">法轮功，中共下台，中共伪政权</div>-->
-                                        <!--<button id="summernote-edit" class="btn btn-primary btn-sm" style=""><i class="mdi mdi-pencil mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 编辑</font></font></button>-->
-                                        <!--<button id="summernote-save" class="btn btn-success btn-sm mt-2" style="display: none;"><i class="mdi mdi-content-save-outline mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 保存更改</font></font></button>-->
-                                    <!--</div>-->
-                                    <!--<hr>-->
-                                    <!--<div class="clearfix"></div>-->
                                     <br>
                                     <div class="col-sm-6" id="querybutton" style="margin-left: auto;margin-right:auto;display: block">
-                                        <button type="button" onclick="submitCheck()" id="submit-minganci" class="btn btn-block btn-xs btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交查询</font></font></button>
+                                        <button type="button" onclick="AddSensitiveWordTasks()" id="submit-minganci" class="btn btn-block btn-xs btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交查询任务</font></font></button>
                                     </div>
                                     <div class="text-center" id="loading" style="display:none">
                                         <div class="spinner-border text-success" role="status">
                                             <span class="sr-only"></span>
                                         </div>
                                     </div>
-
                                 </div>
                                 <br>
                                 <div class="col-md-6"></div>
@@ -266,82 +244,49 @@
                     </div>
                 </div>
 
-                <!-- 查询结果 -->
-                <div class="row" id="query-result" style="display: none">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body" style="margin-left: auto;margin-right:auto;">
-                                <!--<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-->
-                                <!--<span id="query-result">暂无查询结果</span>-->
-                                <!--</font></font>-->
-                                <div class="p-2">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <img data-dz-thumbnail="" class="avatar-sm rounded bg-light" alt="" src="data:image/png;base64,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">
-                                        </div>
-                                        <div class="col pl-0">
-                                            <a href="javascript:void(0);" class="text-muted font-weight-bold" id="filename" data-dz-name="">1569491553785.xlsx</a>
-                                            <p class="mb-0" data-dz-size="">0.73MB</p>
-                                        </div>
-                                        <div class="col-auto">
-                                            <!-- Button -->
-                                            <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove="">
-                                                <i class="dripicons-cross"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                <div id="content">
+                    <!-- 查询结果 -->
+                    <div class="card mb-0">
+                        <div class="card-body p-3">
+                            <small class="float-right text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2019年9月23日</font></font></small>
+                            <span class="badge badge-success"><font style="vertical-align: inherit;">运行中</font></span>
+                            <h5 class="mt-2 mb-2">
+                                <a href="#" data-toggle="modal" data-target="#task-detail-modal" class="text-body"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">检测网页图片更改</font></font></a>
+                            </h5>
+                            <p class="mb-0">
+                                                    <span class="pr-2 text-nowrap mb-2 d-inline-block">
+                                                        <i class="mdi mdi-briefcase-outline text-muted"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                       <strong>任务id:</strong><span class="stakid">184654654</span>
+                                                    </font></font></span>
+                            </p>
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle text-muted arrow-none" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="mdi mdi-dots-vertical font-18"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"   class="dropdown-item stop-spinner"><i class="mdi mdi-pencil mr-1"></i>&nbsp;&nbsp;&nbsp;&nbsp;停止</a>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"  class="dropdown-item cancel-spinner"><i class="mdi mdi-delete mr-1"></i>删除</a>
                                 </div>
                             </div>
-                        </div>
+
+                            <p class="mb-0">
+                                <!-- <img src="assets/images/users/avatar-2.jpg" alt="用户IMG" class="avatar-xs rounded-circle mr-1"> -->
+                                <span class="align-middle"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://www.douban.com</font></font></span>
+                            </p>
+                            <div class="normal-cancel-spinner" id="stop-spinner" style="display: none">
+                                <hr>
+                                <div class="d-flex align-items-center text-secondary m-2">
+                                    <strong>取消中...</strong>
+                                    <div class="spinner-grow ml-auto" role="status" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                        </div> <!-- end card-body -->
                     </div>
                 </div>
 
-                <!--<div class="row" id="result-chart" style="display: none;" >-->
-
-                    <!--&lt;!&ndash; 饼图 &ndash;&gt;-->
-                    <!--<div class="col-xl-6">-->
-                        <!--<div class="card">-->
-                            <!--<div class="card-body">-->
-                                <!--<h4 class="header-title mb-4">-->
-                                    <!--<font style="vertical-align: inherit;">-->
-                                        <!--<font style="vertical-align: inherit;">甜甜圈图</font>-->
-                                    <!--</font>-->
-                                <!--</h4>-->
-                                <!--<div class="mt-3 chartjs-chart" style="height: 320px;">-->
-                                    <!--<div class="chartjs-size-monitor">-->
-                                        <!--<div class="chartjs-size-monitor-expand">-->
-                                            <!--<div class=""></div>-->
-                                        <!--</div>-->
-                                        <!--<div class="chartjs-size-monitor-shrink">-->
-                                            <!--<div class=""></div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<canvas id="donut-chart-example" width="423" height="320"-->
-                                            <!--class="chartjs-render-monitor"-->
-                                            <!--style="display: block; width: 423px; height: 320px;"></canvas>-->
-                                <!--</div>-->
-
-                            <!--</div> &lt;!&ndash; end card body&ndash;&gt;-->
-                        <!--</div> &lt;!&ndash; end card &ndash;&gt;-->
-                    <!--</div>-->
-
-                    <!--&lt;!&ndash; 雷达图 &ndash;&gt;-->
-                    <!--<div class="col-xl-6">-->
-                        <!--<div class="card">-->
-                            <!--<div class="card-body">-->
-                                <!--<h4 class="header-title mb-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">雷达图</font></font></h4>-->
-
-                                <!--<div class="mt-3 chartjs-chart" style="height: 320px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>-->
-                                    <!--<canvas id="radar-chart-example" width="423" class="chartjs-render-monitor" style="display: block; width: 423px; height: 320px;" height="320"></canvas>-->
-                                <!--</div>-->
-
-                            <!--</div> &lt;!&ndash; end card body&ndash;&gt;-->
-                        <!--</div> &lt;!&ndash; end card &ndash;&gt;-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div> &lt;!&ndash; content &ndash;&gt;-->
-
+                <br>
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="row">
@@ -497,13 +442,11 @@
 </div>
 </body>
 <script src="assets/js/app.min.js"></script>
-
 <script src="assets/js/vendor/summernote-bs4.min.js"></script>
 <script src="https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min.js"></script>
-
 <script src="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.js"></script>
 <script src="assets/js/pages/demo.summernote.js"></script>
-
+<script src="assets/js/event/task.js"></script>
 <script>
 
 

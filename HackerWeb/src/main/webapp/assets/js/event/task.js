@@ -8,10 +8,9 @@ function stopTask(taskId){
         url: "StopTask",
         data: {"taskId":taskId},
         dataType: "json",
-        async:true, //异步等待
+        async:"false",
         success: function (res) {
-            //关闭加载图片
-            document.getElementById("stop-spinner").style.display="none"
+
         }
     });
 }
@@ -21,12 +20,15 @@ function stopTask(taskId){
  * 显示加载按钮
  * 传递任务id到后端，停止对应任务
  */
-$('.stop-spinner').on("click",function (taskId) {
+$('body').on("click",'.stop-spinner',function () {
     parent = $(this).parent().parent().parent();
+    var taskId=$(".taskid").text()
+    console.log(taskId)
     //显示加载按钮
     parent.children(".normal-cancel-spinner").css("display","block")
     //发送停止任务请求
-    stopTask()
+    stopTask(taskId)
+    parent.children(".normal-cancel-spinner").css("display","none")
     //完成后显示
     parent.children(".badge").removeClass("badge-success")
     parent.children(".badge").removeClass("badge-success").addClass("badge-secondary")
@@ -40,7 +42,7 @@ $('.stop-spinner').on("click",function (taskId) {
  * 移除任务区域
  * 发送删除请求
  */
-$('.cancel-spinner').on("click",function () {
+$('body').on("click",'.cancel-spinner',function () {
     let tass = $(this)
     $('#info-alert-modal').modal('show')
     $('#cancel-button').click(function () {

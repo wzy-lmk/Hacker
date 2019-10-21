@@ -1,5 +1,7 @@
 package team.AI.servlet;
+import com.alibaba.fastjson.JSONObject;
 import team.AI.bean.HistroyAct;
+import team.AI.bean.TaskInfo;
 import team.AI.bean.UserBean;
 import team.AI.serviceIMP.SensitiveWordServiceIMP;
 import team.AI.serviceIMP.UserServiceIMP;
@@ -30,15 +32,11 @@ public class SensitiveWordServlet extends HttpServlet {
         String result=null;
         SensitiveWordServiceIMP serviceIMP = new SensitiveWordServiceIMP();
         //记录任务
-        serviceIMP.RecordingTask(url,userinfo,"敏感词查询");
+        TaskInfo taskInfo = serviceIMP.RecordingTask(url, userinfo, "敏感词查询");
         //启动爬虫
         serviceIMP.startCrawler(url);
 
-
-
-
-
-        resp.getWriter().print(result);
+        resp.getWriter().write(JSONObject.toJSONString(taskInfo));
     }
 
     @Override
