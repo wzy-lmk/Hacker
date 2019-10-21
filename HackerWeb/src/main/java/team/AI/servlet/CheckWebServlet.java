@@ -6,7 +6,9 @@ import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import team.AI.IMG.*;
 import team.AI.bean.HistroyAct;
+import team.AI.bean.TaskInfo;
 import team.AI.bean.UserBean;
+import team.AI.serviceIMP.TaskInfoServiceIMP;
 import team.AI.serviceIMP.UserServiceIMP;
 import team.AI.utils.SendHtmlMail;
 import team.AI.utils.TaskPool;
@@ -18,28 +20,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @WebServlet("/CheckWebServlet")
 public class CheckWebServlet extends HttpServlet {
-    ArrayList arrayList2 = new ArrayList();//存放事件的唯一ID
     ArrayList arrayList=new ArrayList();//存放arrayList1，传递到发送邮件
     ArrayList arrayList1=new ArrayList();//存放url、文件名称和时间
-
+    TaskInfo taskInfo=new TaskInfo();//放入任务表
+    int runNumber=0;//运行次数
+    Boolean isrun=null;//运行状态
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
+
         String url = request.getParameter("url");
         HttpSession session = request.getSession();
         UserBean userBean = (UserBean) session.getAttribute("userinfo");
         String title = "文件检测";
         Runnable runnable = new Runnable(){
-            @Override
+
             public void run() {
+                isrun=true;
                 NewimgChange(url,title,userBean);
+                isrun=false;
+                runNumber++;
                 arrayList=null;
                 arrayList1=null;
             }
@@ -47,9 +55,19 @@ public class CheckWebServlet extends HttpServlet {
         String time=String.valueOf(System.currentTimeMillis());
         TaskPool.addTask(time,runnable,1);
 
-
-        arrayList2.add(time);
-        String resultJson = JSONObject.toJSONString(arrayList2);
+        //将任务加入到task表中
+        taskInfo.setTaskid(time);
+        taskInfo.setType("网站监控");
+        taskInfo.setEmail(userBean.getEmail());
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        String times = simpleDateFormat.format(new Date());
+        taskInfo.setStarttime(times);
+        taskInfo.setRunNumber(runNumber);
+        taskInfo.setTaskurl(url);
+        taskInfo.setIsrun(isrun);
+        TaskInfoServiceIMP taskInfoServiceIMP=new TaskInfoServiceIMP();
+        taskInfoServiceIMP.Insertinfo(taskInfo);
+        String resultJson = JSONObject.toJSONString(taskInfo);
         try {
             response.getWriter().print(resultJson);
         } catch (IOException e) {
@@ -87,11 +105,14 @@ public class CheckWebServlet extends HttpServlet {
 
 
 
+            if(arrayList.size()==0){
+                arrayList1.add(url);
+                arrayList1.add("全部文件");
+                arrayList1.add("没有改变");
+                arrayList.add(arrayList1);
+            }
             //发送邮件
             SendHtmlMail.sendFileCheckMail(title,time,arrayList,userBean.getEmail());
-
-
-
             //添加历史记录
             UserServiceIMP userServiceIMP=new UserServiceIMP();
             HistroyAct histroyAct=new HistroyAct();
@@ -100,6 +121,10 @@ public class CheckWebServlet extends HttpServlet {
             histroyAct.setActname("网站监控");
             histroyAct.setActtime(time);
             userServiceIMP.InsertHistroyinfo(histroyAct);
+
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -157,10 +182,7 @@ public class CheckWebServlet extends HttpServlet {
                         System.out.println("发生改变");
                     }
                 }
-
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -168,9 +190,7 @@ public class CheckWebServlet extends HttpServlet {
             System.gc();
             webClient.close();
         }
-        if(arrayList.isEmpty()){
-            //没有改变网页
-        }
+
         return null;
     }
 
