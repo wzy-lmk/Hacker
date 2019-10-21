@@ -1,25 +1,29 @@
 package team.AI.IMG;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class ImgMd5 {
 
-    public static String getMd5(File file) {
-        try (FileInputStream fileInputStream = new FileInputStream(file)) {
-            return DigestUtils.md5Hex(IOUtils.toByteArray(fileInputStream));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
+
+    public String getMD5(String path) throws IOException {
+        URL url = new URL(path);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        InputStream in = conn.getInputStream();
+        String md5Hex = DigestUtils.md5Hex(in);
+        DigestUtils.md5Hex(md5Hex);
+        return md5Hex;
     }
 
-    public static void main(String[] args) throws Exception {
-        System.out.println(getMd5(new File("/Users/apple/Desktop/img.zip")));
+
+    public static void main(String[] args) throws IOException {
+        ImgMd5 imgMd5 =new ImgMd5();
+        String md5 = imgMd5.getMD5("http://www.chzu.edu.cn/_visitcount?siteId=3&type=2&columnId=12638");
+        System.out.println(md5);
     }
-
-
 }
