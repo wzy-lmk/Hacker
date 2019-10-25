@@ -6,6 +6,15 @@ public class HistroyAct {
     private String actname;
     private String actcontent;
     private String acttime;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUser() {
         return user;

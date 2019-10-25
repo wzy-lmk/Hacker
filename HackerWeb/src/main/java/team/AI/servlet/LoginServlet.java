@@ -40,18 +40,6 @@ public class LoginServlet extends HttpServlet {
                 int sum=0;
                 int count=0;
                 HttpSession session = request.getSession();
-
-                /*
-                    历史记录
-                 */
-                UserServiceIMP userServiceIMP=new UserServiceIMP();
-                HistroyAct histroyAct1=new HistroyAct();
-                histroyAct1.setUser(bean.getName());
-                List<HistroyAct> list = userServiceIMP.Selecthistroyinfo(histroyAct1);
-                for(int i=0;i<3;i++){
-                    HistroyAct histroyAct =(HistroyAct) list.get(i);
-                    session.setAttribute("histroy"+i,histroyAct);
-                }
                 //用户个人信息
                 session.setAttribute("userinfo",bean);
                 //总任务数

@@ -320,12 +320,35 @@
 							HistroyAct histroyAct1=new HistroyAct();
 							histroyAct1.setUser(userBean.getName());
 							List<HistroyAct> list = userServiceIMP.Selecthistroyinfo(histroyAct1);
+							if(list!=null){
+							    if(list.size()==1){
+							    	for(int i=0;i<2;i++){
+									    HistroyAct histroyAct2=new HistroyAct();
+									    histroyAct2.setActcontent("暂无");
+									    histroyAct2.setActname("暂无");
+									    histroyAct2.setActtime("暂无");
+									    histroyAct2.setUser("暂无");
+									    histroyAct2.setId(100);
+									    list.add(histroyAct2);
+								    }
+							    }
+								if(list.size()==2){
+								    HistroyAct histroyAct2=new HistroyAct();
+								    histroyAct2.setActcontent("暂无");
+								    histroyAct2.setActname("暂无");
+								    histroyAct2.setActtime("暂无");
+								    histroyAct2.setUser("暂无");
+								    histroyAct2.setId(100);
+								    list.add(histroyAct2);
+								}
+								for(int i=0;i<3;i++){
+									HistroyAct histroyAct =(HistroyAct) list.get(i);
+									session.setAttribute("histroy"+i,histroyAct);
+								}
+								
 							for(int i=0;i<3;i++){
-								HistroyAct histroyAct =(HistroyAct) list.get(i);
-								session.setAttribute("histroy"+i,histroyAct);
-							}
-						    for(int i=0;i<3;i++){
-    						HistroyAct histroyAct =(HistroyAct) session.getAttribute("histroy"+i);
+								HistroyAct histroyAct =(HistroyAct) session.getAttribute("histroy"+i);
+							
     					%>
 										
 										<div class="timeline-item">
@@ -350,7 +373,34 @@
 												</p>
 											</div>
 										</div>
-								<%}%>
+								<%}}else{
+									for(int j=0;j<3;j++){
+							    %>
+																
+																<div class="timeline-item">
+																	<i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
+																	<div class="timeline-item-info">
+																		<a href="#" class="text-info font-weight-bold mb-1 d-block"><font
+																				style="vertical-align: inherit;"><font
+																				style="vertical-align: inherit;">
+																			null
+																		</font></font></a>
+																		<small><span class="font-weight-bold"><font
+																				style="vertical-align: inherit;"><font
+																				style="vertical-align: inherit;">null</font></font></span>
+																		</small>
+																		<p class="mb-0 pb-2">
+																			<small class="text-muted"><font
+																					style="vertical-align: inherit;"><font
+																					style="vertical-align: inherit;">
+																				
+																				null</font></font>
+																			</small>
+																		</p>
+																	</div>
+																</div>
+								
+								<%}}%>
 															</div>
 									<!-- end timeline -->
 								</div><div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 247.5px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- end slimscroll -->
