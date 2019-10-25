@@ -10,6 +10,7 @@ import team.AI.bean.TaskInfo;
 import team.AI.bean.UserBean;
 import team.AI.service.SenesitiveWordService;
 import team.AI.utils.DBUtiles;
+import team.AI.utils.ResultSpliceUtil;
 import team.AI.utils.SendHtmlMail;
 import team.AI.utils.TaskPool;
 import team.SensitiveWord.crawler.WebsiteProcessor;
@@ -35,25 +36,25 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
     QueryRunner queryRunner  = new QueryRunner(DBUtiles.getDataSource());
     ScheduledFuture<?> scheduledFuture=null;
     String taskid=null;
+    String taskTime=null;
 
     /**
      * 开始执行任务
      *
      * 设置执行时间间隔
      * @param url
-     * @param type
+     * @param type 已舍弃
      * @return
      */
     @Override
     public int startCrawler(String url, int... type) {
-
          runner = new Runnable() {
             @Override
             public void run() {
-                System.out.println("========================================");
-                System.out.println("excute crawler ------>"+url);
                 //获取结果信息
                 urlInfos = WebsiteProcessor.StartCrawler(url, type);
+                //添加到数据库
+                AddToDB(ResultSpliceUtil.spliceResult(urlInfos,taskid,taskTime));
                 //发送邮箱
                 SendMial(urlInfos);
                 //次数加一
@@ -65,6 +66,17 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
         return 0;
     }
 
+    public void AddToDB(String res){
+        if(null!=res){
+            String sql = "insert into result (taskid,tasktime,content) values(?,?,?)";
+            try {
+                queryRunner.insert(sql,new ScalarHandler<>(),new Object[]{taskid,taskTime,res});
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return;
+    }
 
     public void SendMial(ArrayList<UrlInfo> urlInfos){
 
@@ -89,9 +101,12 @@ public class SensitiveWordServiceIMP implements SenesitiveWordService {
      * @param type  任务类型
      */
     public TaskInfo RecordingTask(String url, UserBean userinfo, String type){
+
         taskid = String.valueOf(System.currentTimeMillis());
         userinfo=userinfo;
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        taskTime = simpleDateFormat1.format(new Date());
         String times = simpleDateFormat.format(new Date());
         taskinfo = new TaskInfo(type,taskid,times,userinfo.getEmail(),0,true,url);
         try {
