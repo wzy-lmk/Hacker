@@ -430,7 +430,7 @@
 								</div>
 								
 								
-								<h4 class="header-title mb-3">任务列表</h4>
+								<h4 class="header-title mb-3">最近重要大事件</h4>
 								
 								<!-- <p><b>107</b> Tasks completed out of 195</p> -->
 								
@@ -439,69 +439,132 @@
 										<tbody>
 										<tr>
 											<td>
-												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Drinking bottle graphics</a></h5>
-												<span class="text-muted font-13">Due in 27 days</span>
+												
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">事件</a></h5>
+												<!--<span class="text-muted font-13">Due in 5 days</span>-->
 											</td>
 											<td>
-												<span class="text-muted font-13">Status</span> <br/>
-												<span class="badge badge-danger-lighten">Outdated</span>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">网址链接</a></h5>
+<%--												<span class="text-muted font-13">Status</span> <br/>--%>
+<%--												<span class="badge badge-warning-lighten">In-progress</span>--%>
 											</td>
 											<td>
-												<span class="text-muted font-13">Assigned to</span>
-												<h5 class="font-14 mt-1 font-weight-normal">Jerry F. Powell</h5>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">时间</a></h5>
+<%--												<span class="text-muted font-13">Total time spend</span>--%>
+<%--												<h5 class="font-14 mt-1 font-weight-normal">26h 58min</h5>--%>
 											</td>
-											<td>
-												<span class="text-muted font-13">Total time spend</span>
-												<h5 class="font-14 mt-1 font-weight-normal">12h 21min</h5>
-											</td>
-											<td class="table-action" style="width: 90px;">
-												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-											</td>
+<%--											<td class="table-action" style="width: 90px;">--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>--%>
+<%--											</td>--%>
 										</tr>
+										
+										
+										
+										
+										
 										<tr>
 											<td>
-												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">App design and development</a></h5>
-												<span class="text-muted font-13">Due in 7 days</span>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">攻克江苏无锡某Weblogic服务器平台</a></h5>
+												<!--<span class="text-muted font-13">Due in 27 days</span>-->
 											</td>
 											<td>
-												<span class="text-muted font-13">Status</span> <br/>
-												<span class="badge badge-success-lighten">Completed</span>
+												<h5 class="font-14 my-1"><a href="http://58.214.20.23:9001" class="text-body">http://58.214.20.23:9001</a></h5>
+<%--												<span class="text-muted font-13">http://58.214.20.23:9001/bea_wls_internal/Index.html</span> <br/>--%>
+												<!--<span class="badge badge-danger-lighten">Outdated</span>-->
 											</td>
+<%--											<td>--%>
+<%--												<!--<span class="text-muted font-13">Assigned to</span>-->--%>
+<%--												<h5 class="font-14 mt-1 font-weight-normal">战果展示：在网站挂上“中国共产党，祝您诸事兴旺！ ”</h5>--%>
+<%--											</td>--%>
 											<td>
-												<span class="text-muted font-13">Assigned to</span>
-												<h5 class="font-14 mt-1 font-weight-normal">Scot M. Smith</h5>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">2019年10月25日晨</a></h5>
+												<!--<span class="text-muted font-13">Total time spend</span>-->
+<%--												<h5 class="font-14 mt-1 font-weight-normal">2019年10月25日晨</h5>--%>
 											</td>
-											<td>
-												<span class="text-muted font-13">Total time spend</span>
-												<h5 class="font-14 mt-1 font-weight-normal">78h 05min</h5>
-											</td>
-											<td class="table-action" style="width: 90px;">
-												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-											</td>
+<%--											<td class="table-action" style="width: 90px;">--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>--%>
+<%--											</td>--%>
 										</tr>
+										
 										<tr>
 											<td>
-												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Poster illustation design</a></h5>
-												<span class="text-muted font-13">Due in 5 days</span>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">攻克深圳某公司akl系统平台</a></h5>
+<%--												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">攻克深圳某公司akl系统平台</a></h5>--%>
+<%--												<span class="text-muted font-13">Due in 7 days</span>--%>
 											</td>
 											<td>
-												<span class="text-muted font-13">Status</span> <br/>
-												<span class="badge badge-warning-lighten">In-progress</span>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">http://218.16.62.178:99 </a></h5>
+<%--												<span class="text-muted font-13">Status</span> <br/>--%>
+<%--												<span class="badge badge-success-lighten">Completed</span>--%>
+											</td>
+<%--											<td>--%>
+<%--												<span class="text-muted font-13">Assigned to</span>--%>
+<%--												<h5 class="font-14 mt-1 font-weight-normal">Scot M. Smith</h5>--%>
+<%--											</td>--%>
+											<td>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">2019年10月21日晨</a></h5>
+<%--												<span class="text-muted font-13">Total time spend</span>--%>
+<%--												<h5 class="font-14 mt-1 font-weight-normal">78h 05min</h5>--%>
+											</td>
+<%--											<td class="table-action" style="width: 90px;">--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>--%>
+<%--											</td>--%>
+										</tr>
+										
+										
+										<tr>
+											<td>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">攻克贵阳职业技术学院数字化信息平台</a></h5>
+<%--												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Poster illustation design</a></h5>--%>
+<%--												<span class="text-muted font-13">Due in 5 days</span>--%>
 											</td>
 											<td>
-												<span class="text-muted font-13">Assigned to</span>
-												<h5 class="font-14 mt-1 font-weight-normal">John P. Ritter</h5>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">http://crp.gyvtc.edu.cn</a></h5>
+<%--												<span class="text-muted font-13">Status</span> <br/>--%>
+<%--												<span class="badge badge-warning-lighten">In-progress</span>--%>
+											</td>
+<%--											<td>--%>
+<%--												<span class="text-muted font-13">Assigned to</span>--%>
+<%--												<h5 class="font-14 mt-1 font-weight-normal">John P. Ritter</h5>--%>
+<%--											</td>--%>
+											<td>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">2019年10月19日晨</a></h5>
+<%--												<span class="text-muted font-13">Total time spend</span>--%>
+<%--												<h5 class="font-14 mt-1 font-weight-normal">26h 58min</h5>--%>
+											</td>
+<%--											<td class="table-action" style="width: 90px;">--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>--%>
+<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>--%>
+<%--											</td>--%>
+										</tr>
+										
+										<tr>
+											<td>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">攻克北京佳网科技围群登录页面</a></h5>
+												<%--												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Poster illustation design</a></h5>--%>
+												<%--												<span class="text-muted font-13">Due in 5 days</span>--%>
 											</td>
 											<td>
-												<span class="text-muted font-13">Total time spend</span>
-												<h5 class="font-14 mt-1 font-weight-normal">26h 58min</h5>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">http://124.163.223.253:8002</a></h5>
+												<%--												<span class="text-muted font-13">Status</span> <br/>--%>
+												<%--												<span class="badge badge-warning-lighten">In-progress</span>--%>
 											</td>
-											<td class="table-action" style="width: 90px;">
-												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+											<%--											<td>--%>
+											<%--												<span class="text-muted font-13">Assigned to</span>--%>
+											<%--												<h5 class="font-14 mt-1 font-weight-normal">John P. Ritter</h5>--%>
+											<%--											</td>--%>
+											<td>
+												<h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">2019年10月16日晨</a></h5>
+												<%--												<span class="text-muted font-13">Total time spend</span>--%>
+												<%--												<h5 class="font-14 mt-1 font-weight-normal">26h 58min</h5>--%>
 											</td>
+											<%--											<td class="table-action" style="width: 90px;">--%>
+											<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>--%>
+											<%--												<a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>--%>
+											<%--											</td>--%>
 										</tr>
 										
 										</tbody>
