@@ -4,12 +4,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 import team.AI.IMG.*;
 import team.AI.bean.HistroyAct;
 import team.AI.bean.TaskInfo;
 import team.AI.bean.UserBean;
 import team.AI.serviceIMP.TaskInfoServiceIMP;
 import team.AI.serviceIMP.UserServiceIMP;
+import team.AI.utils.DBUtiles;
+import team.AI.utils.ResultSpliceUtil;
 import team.AI.utils.SendHtmlMail;
 import team.AI.utils.TaskPool;
 
@@ -20,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,11 +37,13 @@ public class CheckWebServlet extends HttpServlet {
     TaskInfo taskInfo=new TaskInfo();//放入任务表
     int runNumber=0;//运行次数
     Boolean isrun=true;//运行状态
+    String taskid=String.valueOf(System.currentTimeMillis());
+    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+    String starttime = simpleDateFormat.format(new Date());
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-
         String url = request.getParameter("url");
         HttpSession session = request.getSession();
         UserBean userBean = (UserBean) session.getAttribute("userinfo");
@@ -45,24 +52,18 @@ public class CheckWebServlet extends HttpServlet {
 
             @Override
             public void run() {
-                isrun=true;
                 NewimgChange(url,title,userBean);
-                isrun=false;
-                runNumber++;
                 arrayList=null;
                 arrayList1=null;
             }
         };
-        String time=String.valueOf(System.currentTimeMillis());
-        TaskPool.addTask(time,runnable,1);
 
+        TaskPool.addTask(taskid,runnable,1);
         //将任务加入到task表中
-        taskInfo.setTaskid(time);
+        taskInfo.setTaskid(taskid);
         taskInfo.setType("网站监控");
         taskInfo.setEmail(userBean.getEmail());
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-        String times = simpleDateFormat.format(new Date());
-        taskInfo.setStarttime(times);
+        taskInfo.setStarttime(starttime);
         taskInfo.setRunNumber(runNumber);
         taskInfo.setTaskurl(url);
         taskInfo.setIsrun(isrun);
@@ -74,6 +75,8 @@ public class CheckWebServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
 
     }
 
@@ -105,15 +108,19 @@ public class CheckWebServlet extends HttpServlet {
             String time = date.toLocaleString();
 
 
+            if(arrayList.size()!=0){
+//                arrayList1.add(url);
+//                arrayList1.add("全部文件");
+//                arrayList1.add("没有改变");
+//                arrayList.add(arrayList1);
+                //发送邮件
+                SendHtmlMail.sendFileCheckMail(title,time,arrayList,userBean.getEmail());
+                String result = ResultSpliceUtil.spliceResult1(arrayList, taskid, starttime);
+                AddToDB(result);
 
-            if(arrayList.size()==0){
-                arrayList1.add(url);
-                arrayList1.add("全部文件");
-                arrayList1.add("没有改变");
-                arrayList.add(arrayList1);
+
             }
-            //发送邮件
-            SendHtmlMail.sendFileCheckMail(title,time,arrayList,userBean.getEmail());
+
             //添加历史记录
             UserServiceIMP userServiceIMP=new UserServiceIMP();
             HistroyAct histroyAct=new HistroyAct();
@@ -169,6 +176,7 @@ public class CheckWebServlet extends HttpServlet {
                     System.out.println("newurl   "+newURL);
                     System.out.println("url   "+url);
                     arrayList.add(arrayList1);
+
                     System.out.println("加入成功");
                 }else{
                     MD5Bean md5bean = md5IMP.NewUrlAndUrl(md5Bean);
@@ -180,6 +188,7 @@ public class CheckWebServlet extends HttpServlet {
                         arrayList1.add(substring);
                         arrayList1.add("修改");
                         arrayList.add(arrayList1);
+
                         System.out.println("发生改变");
                     }
                 }
@@ -193,6 +202,20 @@ public class CheckWebServlet extends HttpServlet {
         }
 
         return null;
+    }
+
+
+    public void AddToDB(String res){
+        QueryRunner queryRunner  = new QueryRunner(DBUtiles.getDataSource());
+        if(null!=res){
+            String sql = "insert into result (taskid,tasktime,content) values(?,?,?)";
+            try {
+                queryRunner.insert(sql,new ScalarHandler<>(),new Object[]{taskid,starttime,res});
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return;
     }
 
 

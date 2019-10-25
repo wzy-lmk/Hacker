@@ -6,11 +6,7 @@ import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import team.AI.DaoIMP.AIHeckerCheckIMP;
 import team.AI.IMG.*;
-import team.AI.bean.AIHeckerCheckBean;
-import team.AI.bean.HistroyAct;
-import team.AI.bean.TaskInfo;
-import team.AI.bean.UserBean;
-import team.AI.serviceIMP.AIHeckerCheckServiceIMP;
+import team.AI.bean.*;
 import team.AI.serviceIMP.TaskInfoServiceIMP;
 import team.AI.serviceIMP.UserServiceIMP;
 import team.AI.utils.Sample;
@@ -36,7 +32,12 @@ public class AIHackerCheckServlet extends HttpServlet {
     Boolean isrun = false;
     ArrayList arrayList = new ArrayList();
     ArrayList lists = new ArrayList();
-
+    int count=0;
+    String time = String.valueOf(System.currentTimeMillis());
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    String times = simpleDateFormat.format(new Date());
+    Date date = new Date();
+    String time1 = date.toLocaleString();
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
@@ -139,24 +140,22 @@ public class AIHackerCheckServlet extends HttpServlet {
                     System.out.println("输入错误");
                 }
                 isrun = true;
-                if(arrayList.size()==0){
-                    lists.add(url);
-                    lists.add("安全");
-                    arrayList.add(lists);
+                if(arrayList.size()!=0){
+//                    lists.add(url);
+//                    lists.add("安全");
+//                    arrayList.add(lists);
+                    //发送邮件
+                    Date date = new Date();
+                    String time1 = date.toLocaleString();
+                    SendHtmlMail.sendHackerMail("黑客入侵检测", time1, arrayList, userBean.getEmail());
                 }
-                //发送邮件
-                Date date = new Date();
-                String time1 = date.toLocaleString();
-                SendHtmlMail.sendHackerMail("黑客入侵检测", time1, arrayList, userBean.getEmail());
+
             }
-
-
         };
 
-        String time = String.valueOf(System.currentTimeMillis());
+
         //添加历史记录
-        Date date = new Date();
-        String time1 = date.toLocaleString();
+
         HistroyAct histroyAct = new HistroyAct();
         histroyAct.setUser(userBean.getName());
         histroyAct.setActtime(time1);
@@ -176,8 +175,7 @@ public class AIHackerCheckServlet extends HttpServlet {
         taskInfo.setTaskid(time);
         taskInfo.setType("黑客入侵检测");
         taskInfo.setEmail(userBean.getEmail());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String times = simpleDateFormat.format(new Date());
+
         taskInfo.setStarttime(times);
         taskInfo.setRunNumber(0);
         taskInfo.setTaskurl(url);
@@ -190,6 +188,9 @@ public class AIHackerCheckServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+
 
         TaskPool.addTask(time, runnable, 1);
 

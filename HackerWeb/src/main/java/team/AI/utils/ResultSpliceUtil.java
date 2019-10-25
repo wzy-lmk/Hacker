@@ -47,8 +47,37 @@ public class ResultSpliceUtil {
                         "        <hr>\n" +
                         "        <div class=\"task-content\">\n");
 
-        for (ArrayList result : results) {
-
+        ArrayList list = results.get(0);
+        String url = null;
+        String fileName = null;
+        String type = null;
+        for (int i = 0; i < list.size(); i++) {
+            if (i % 3 == 0) {
+                url = (String) list.get(i);
+                continue;
+            }
+            if (i % 3 == 1) {
+                fileName = (String) list.get(i);
+                continue;
+            }
+            if (i % 3 == 2) {
+                type = (String) list.get(i);
+            }
+            builder.append("<div class=\"task-count\">\n" +
+                    "                <span><a href=\"#\">运行时间：")
+                    .append(time)
+                    .append("</span>\n" +
+                            "                <hr><div class=\"content\">\n" +
+                            "                    <span class=\"url\">")
+                    .append(url)
+                    .append("</span>\n" +
+                            "                    <span class=\"word\">")
+                    .append(fileName)
+                    .append("</span>\n" +
+                            "                    <span>")
+                    .append(type)
+                    .append("</span>\n" +
+                            "                </div></div>");
         }
         builder.append("</div>\n" +
                 "    </div>");

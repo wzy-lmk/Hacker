@@ -16,7 +16,7 @@ import java.io.IOException;
 @WebServlet("/ResultPage")
 public class ResultPageServlet extends HttpServlet {
     private String senitiveWord ="敏感词查询";
-    String monitor="monitor";
+    String monitor="网站监控";
     String img="img";
 
     @Override
