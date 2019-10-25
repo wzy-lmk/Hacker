@@ -23,12 +23,12 @@ a {
 
 .task-card{width:100%;margin-top: 20px;}
 .task-title{font-weight: 700;}
-.task-title1{margin-right: 320px;}
-.task-title2{margin-right: 320px;}
+.task-title1{display:-moz-inline-box;  display:inline-block; width: 40%}
+.task-title2{display:-moz-inline-box;  display:inline-block; width:40%}
 .task-count{margin-top:10px;}
 .task-content{margin-left: 20px;display: none;}
 .content{ color: #088acb;}
-.content span.url{padding-right: 40%;}
-.content span.word{padding-right: 20%;}
+.content span.url{display:-moz-inline-box;  display:inline-block; width:50%}
+.content span.word{display:-moz-inline-box;  display:inline-block; width: 35%;}
 
 .expand{transform: rotate(-90deg);}
