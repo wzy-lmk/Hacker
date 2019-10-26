@@ -45,7 +45,12 @@ public class ResultSpliceUtil {
                         "                </span>\n" +
                         "        </div>\n" +
                         "        <hr>\n" +
-                        "        <div class=\"task-content\">\n");
+                        "        <div class=\"task-content\">\n")
+                .append("<div class=\"task-count\">\n" +
+                        "                <span><a href=\"#\">运行时间：")
+                .append(time)
+                .append("</span>\n" +
+                        "                <hr>");
 
         ArrayList list = results.get(0);
         String url = null;
@@ -63,11 +68,7 @@ public class ResultSpliceUtil {
             if (i % 3 == 2) {
                 type = (String) list.get(i);
             }
-            builder.append("<div class=\"task-count\">\n" +
-                    "                <span><a href=\"#\">运行时间：")
-                    .append(time)
-                    .append("</span>\n" +
-                            "                <hr><div class=\"content\">\n" +
+            builder.append("<div class=\"content\">\n" +
                             "                    <span class=\"url\">")
                     .append(url)
                     .append("</span>\n" +
@@ -77,9 +78,9 @@ public class ResultSpliceUtil {
                             "                    <span>")
                     .append(type)
                     .append("</span>\n" +
-                            "                </div></div>");
+                            "                </div>");
         }
-        builder.append("</div>\n" +
+        builder.append("</div></div>\n" +
                 "    </div>");
         return builder.toString();
     }
@@ -120,16 +121,17 @@ public class ResultSpliceUtil {
                         "                </span>\n" +
                         "        </div>\n" +
                         "        <hr>\n" +
-                        "        <div class=\"task-content\">\n");
+                        "        <div class=\"task-content\">\n")
+                .append("<div class=\"task-count\">\n" +
+                        "                <span><a href=\"#\">运行时间：")
+                .append(time)
+                .append("</span>\n" +
+        "                <hr>");
 
         for (UrlInfo urlInfo : urlInfos) {
             if (!"无敏感词".equals(urlInfo.getHits())){
 
-                builder.append("<div class=\"task-count\">\n" +
-                        "                <span><a href=\"#\">运行时间：")
-                        .append(time)
-                        .append("</span>\n" +
-                                "                <hr><div class=\"content\">\n" +
+                builder.append("<div class=\"content\">\n" +
                                 "                    <span class=\"url\">")
                         .append(urlInfo.getUrl())
                         .append("</span>\n" +
@@ -139,10 +141,10 @@ public class ResultSpliceUtil {
                                 "                    <span>")
                         .append(urlInfo.getHits().split(",").length)
                         .append("</span>\n" +
-                                "                </div></div>");
+                                "                </div>");
             }
         }
-        builder.append("</div>\n" +
+        builder.append("</div></div>\n" +
                 "    </div>");
         return builder.toString();
     }
